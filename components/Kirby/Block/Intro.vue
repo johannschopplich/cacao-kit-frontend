@@ -16,5 +16,4 @@ const props = defineProps<{
     {{ props.block.content.text }}
   </h2>
   <hr />
-  <br />
 </template>
