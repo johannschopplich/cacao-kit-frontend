@@ -5,7 +5,7 @@
 <h3 align="center">Cocoa Kit Frontend</h3>
 
 <p align="center">
-  Multi-lang Nuxt app for headless Kirby<br>
+  Nuxt app with i18n support for a headless Kirby project<br>
   <a href="https://kirby-nuxt-starterkit.netlify.app"><strong>Explore the kit live »</strong></a>
 </p>
 
@@ -13,20 +13,21 @@
 
 # Cacao Kit Frontend
 
-This repository provides a minimal but feature-rich Nuxt 3 starter kit for Kirby CMS. It is the evolved version of my [`kirby-nuxt-starterkit`](https://github.com/johannschopplich/kirby-nuxt-starterkit).
+This repository provides a minimal but feature-rich Nuxt 3 starter kit for Kirby CMS. It is the evolved version of my [`kirby-nuxt-starterkit`](https://github.com/johannschopplich/kirby-nuxt-starterkit) and my best practice solution to build a Nuxt 3 based frontend on top of Kirby in headless mode.
 
-The content is fetched with the [`nuxt-kql`](https://nuxt-kql.jhnn.dev) module from a [headless Kirby](https://github.com/johannschopplich/kirby-headless-starter) instance.
+The content is fetched using the [`nuxt-kql`](https://nuxt-kql.jhnn.dev) module from the [`cocoa-kit-backend`](https://github.com/johannschopplich/cocoa-kit-backend), a headless Kirby instance.
 
-This is my best practice solution to build a Nuxt 3 based frontend on top of Kirby in headless mode.
+It's built on a block-first approach. Meaning, you can use Kirby's page structure as the source of truth and don't have to replicate the page structure in Nuxt. All pages are rendered by the [catch-all route](./pages/[...id].vue).
 
 ## Key Features
 
-- 🫂 Kirby Query Language with [`nuxt-kql`](https://nuxt-kql.jhnn.dev)
-- 🏆 Motto: [“Everything is a block”](./components/Kirby/Block/)
-  - No more Nuxt page routes – use Kirby's page structure as the source of truth.
-  - All pages are rendered by the [catch-all route](./pages/[...id].vue).
 - 🌐 Internationalization with [`@leanera/nuxt-i18n`](https://github.com/leanera/nuxt-i18n)
-- 🏛 Global [site data](./plugins/site.ts) similiar to Kirby's `$site`
+- 🏆 Motto: [“Everything is a block”](./components/Kirby/Block/)
+  - No more Nuxt pages – use Kirby's page structure as the source of truth.
+  - All pages are rendered by the [catch-all route](./pages/[...id].vue).
+  - Kirby blocks define what to render for each page.
+- 🫂 Kirby Query Language with [`nuxt-kql`](https://nuxt-kql.jhnn.dev)
+- 🏛 Global [site data](./plugins/site.ts) similar to Kirby's `$site`
 - 🔎 SSR generated SEO data
 - 📐 Prettier & ESLint
 - 🔢 Pre-configured [VSCode settings](./.vscode/settings.json)
@@ -43,7 +44,7 @@ This is my best practice solution to build a Nuxt 3 based frontend on top of Kir
 # Base URL of the Kirby backend
 KIRBY_BASE_URL=
 # Token for bearer authentication
-# See https://github.com/johannschopplich/kirby-headless-starter#bearer-token
+# See https://github.com/johannschopplich/cocoa-kit-backend#bearer-token
 KIRBY_API_TOKEN=
 ```
 
