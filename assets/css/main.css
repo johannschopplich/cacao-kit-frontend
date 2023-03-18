@@ -5,7 +5,7 @@ img {
 
 .grid {
   --columns: 12;
-  --gutter: 3rem;
+  --gutter: 1rem;
   display: grid;
   grid-gap: var(--gutter);
   grid-template-columns: 1fr;
