@@ -2,22 +2,20 @@
   <img src="./public/icon.svg" alt="Cacao Kit Frontend" width="128" height="128">
 </p>
 
-<h3 align="center">Cacao Kit Frontend</h3>
+<h3 align="center">Cacao Kit (Frontend)</h3>
 
 <p align="center">
-  Nuxt app with i18n support for a headless Kirby project<br>
-  <a href="https://kirby-nuxt-starterkit.netlify.app"><strong>Explore the kit live »</strong></a>
+  Nuxt app with i18n support for your headless Kirby project<br>
+  <a href="https://cacao-kit.netlify.app"><strong>Explore the kit live »</strong></a>
 </p>
 
 <br>
 
-# Cacao Kit Frontend
+# Cacao Kit (Frontend)
 
-This repository provides a minimal but feature-rich Nuxt 3 starter kit for Kirby CMS. It is the evolved version of my [`kirby-nuxt-starterkit`](https://github.com/johannschopplich/kirby-nuxt-starterkit) and my best practice solution to build a Nuxt 3 based frontend on top of Kirby in headless mode.
+This repository provides a minimal but feature-rich Nuxt 3 starter kit. It fetches content from the [`cacao-kit-backend`](https://github.com/johannschopplich/cacao-kit-backend), a headless Kirby instance. It is the evolved version of the [`kirby-nuxt-starterkit`](https://github.com/johannschopplich/kirby-nuxt-starterkit) and my best practice solution to build a Nuxt based frontend on top of Kirby CMS.
 
-The content is fetched using the [`nuxt-kql`](https://nuxt-kql.jhnn.dev) module from the [`cacao-kit-backend`](https://github.com/johannschopplich/cacao-kit-backend), a headless Kirby instance.
-
-It's built on a block-first approach. Meaning, you can use Kirby's page structure as the source of truth and don't have to replicate the page structure in Nuxt. All pages are rendered by the [catch-all route](./pages/[...id].vue).
+Key design decisions is a block-first approach. Meaning, you can use Kirby's page structure as the source of truth and don't have to replicate the page structure in Nuxt. All pages are rendered by the [catch-all route](./pages/[...id].vue).
 
 ## Key Features
 

@@ -3,7 +3,7 @@ export default defineNuxtRouteMiddleware((to) => {
 
   if (to.path === '/') {
     const { short } = useServerOrClientLocale()
-    return navigateTo(`/${short ?? defaultLocale}`, { redirectCode: 302 })
+    return navigateTo(`/${short || defaultLocale}`, { redirectCode: 302 })
   }
 })
 
