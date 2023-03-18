@@ -1,8 +1,8 @@
 <p align="center">
-  <img src="./public/icon.svg" alt="Cocoa Kit Frontend" width="128" height="128">
+  <img src="./public/icon.svg" alt="Cacao Kit Frontend" width="128" height="128">
 </p>
 
-<h3 align="center">Cocoa Kit Frontend</h3>
+<h3 align="center">Cacao Kit Frontend</h3>
 
 <p align="center">
   Nuxt app with i18n support for a headless Kirby project<br>
@@ -15,7 +15,7 @@
 
 This repository provides a minimal but feature-rich Nuxt 3 starter kit for Kirby CMS. It is the evolved version of my [`kirby-nuxt-starterkit`](https://github.com/johannschopplich/kirby-nuxt-starterkit) and my best practice solution to build a Nuxt 3 based frontend on top of Kirby in headless mode.
 
-The content is fetched using the [`nuxt-kql`](https://nuxt-kql.jhnn.dev) module from the [`cocoa-kit-backend`](https://github.com/johannschopplich/cocoa-kit-backend), a headless Kirby instance.
+The content is fetched using the [`nuxt-kql`](https://nuxt-kql.jhnn.dev) module from the [`cacao-kit-backend`](https://github.com/johannschopplich/cacao-kit-backend), a headless Kirby instance.
 
 It's built on a block-first approach. Meaning, you can use Kirby's page structure as the source of truth and don't have to replicate the page structure in Nuxt. All pages are rendered by the [catch-all route](./pages/[...id].vue).
 
@@ -44,7 +44,7 @@ It's built on a block-first approach. Meaning, you can use Kirby's page structur
 # Base URL of the Kirby backend
 KIRBY_BASE_URL=
 # Token for bearer authentication
-# See https://github.com/johannschopplich/cocoa-kit-backend#bearer-token
+# See https://github.com/johannschopplich/cacao-kit-backend#bearer-token
 KIRBY_API_TOKEN=
 ```
 
