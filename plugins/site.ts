@@ -1,3 +1,4 @@
+import { siteQuery } from '~/queries'
 import type { FetchError } from 'ofetch'
 
 export default defineNuxtPlugin(async () => {
@@ -28,24 +29,7 @@ export default defineNuxtPlugin(async () => {
 
   async function updateSite() {
     try {
-      const data = await $kql(
-        {
-          query: 'site',
-          select: {
-            title: true,
-            description: true,
-            children: {
-              query: 'site.children',
-              select: ['uri', 'title', 'isListed'],
-            },
-            cover: {
-              query: 'site.cover.toFile?.resize(1200)',
-              select: ['url'],
-            },
-          },
-        },
-        { language: locale.value }
-      )
+      const data = await $kql(siteQuery, { language: locale.value })
 
       site.value = data?.result || {}
     } catch (e) {

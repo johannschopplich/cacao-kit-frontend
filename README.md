@@ -1,11 +1,11 @@
 <p align="center">
-  <img src="https://nuxt-kql.jhnn.dev/logo-shadow.svg" alt="Logo of Kirby Nuxt Starter Kit" width="128" height="128">
+  <img src="./public/icon.svg" alt="Cocoa Kit Frontend" width="128" height="128">
 </p>
 
-<h3 align="center">Kirby Nuxt Starter Kit</h3>
+<h3 align="center">Cocoa Kit Frontend</h3>
 
 <p align="center">
-  Kirby's sample site – but rewritten headless with Nuxt 3!<br>
+  Multi-lang Nuxt app for headless Kirby<br>
   <a href="https://kirby-nuxt-starterkit.netlify.app"><strong>Explore the kit live »</strong></a>
 </p>
 
@@ -13,20 +13,23 @@
 
 # Cacao Kit Frontend
 
-This repository is a port of the [Kirby Starter Kit](https://github.com/getkirby/starterkit) to Nuxt 3. The content is fetched with the [`nuxt-kql`](https://nuxt-kql.jhnn.dev) module from a [headless Kirby](https://github.com/johannschopplich/kirby-headless-starter) instance.
+This repository provides a minimal but feature-rich Nuxt 3 starter kit for Kirby CMS. It is the evolved version of my [`kirby-nuxt-starterkit`](https://github.com/johannschopplich/kirby-nuxt-starterkit).
+
+The content is fetched with the [`nuxt-kql`](https://nuxt-kql.jhnn.dev) module from a [headless Kirby](https://github.com/johannschopplich/kirby-headless-starter) instance.
 
 This is my best practice solution to build a Nuxt 3 based frontend on top of Kirby in headless mode.
 
 ## Key Features
 
 - 🫂 Kirby Query Language with [`nuxt-kql`](https://nuxt-kql.jhnn.dev)
-- 🪁 [Component based Kirby Blocks](./components/Kirby/Block/)
+- 🏆 Motto: [“Everything is a block”](./components/Kirby/Block/)
+  - No more Nuxt page routes – use Kirby's page structure as the source of truth.
+  - All pages are rendered by the [catch-all route](./pages/[...id].vue).
+- 🌐 Internationalization with [`@leanera/nuxt-i18n`](https://github.com/leanera/nuxt-i18n)
 - 🏛 Global [site data](./plugins/site.ts) similiar to Kirby's `$site`
-- 🗳 [Collections](./composables/collections.ts) for pre-defined queries
-- 🔎 SSR generated SEO meta data
+- 🔎 SSR generated SEO data
 - 📐 Prettier & ESLint
 - 🔢 Pre-configured [VSCode settings](./.vscode/settings.json)
-- 🔖 And much more!
 
 ## Usage
 
@@ -56,12 +59,6 @@ KIRBY_API_TOKEN=
 Build the application for production with `pnpm run build`.
 
 Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment).
-
-## FAQ
-
-### Are There Any Drawbacks?
-
-Data is fetched within Suspense components to ensure pre-rendered state for the user and SEO. Thus, the initial server response time is increased by about 50–100 ms for the initial KQL page query. This might be a road blocker for you. You can always [pre-render routes](https://github.com/johannschopplich/kirby-nuxt-starterkit/blob/16110e359d48d2f94f1db497d11a1c2d8f9e7b44/nuxt.config.ts#L15).
 
 ### What's Kirby?
 

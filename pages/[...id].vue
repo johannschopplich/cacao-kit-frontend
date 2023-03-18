@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { joinURL } from 'ufo'
-import type { KirbyQueryResponse, KirbyQuerySchema } from '#nuxt-kql'
+import { getPageQuery } from '~/queries'
+import type { KirbyQueryResponse } from '#nuxt-kql'
 
 const { locale } = useI18n()
 const { hasLocalePrefix, id } = usePathSegments()
@@ -17,37 +18,17 @@ if (!id) {
   setResponseStatus(404)
 }
 
-const select: KirbyQuerySchema['select'] = {
-  uri: true,
-  title: true,
-  intendedTemplate: true,
-  description: true,
-  blocks: 'page.blocks.toResolvedBlocks.toArray',
-  cover: {
-    query: 'page.cover.toFile?.resize(1200)',
-    select: ['url'],
-  },
-}
-
-const { data: defaultData } = await useKql(
-  {
-    query: `page("${kirbyPath}")`,
-    select,
-  },
-  { language: locale.value }
-)
+const { data: defaultData } = await useKql(getPageQuery(kirbyPath), {
+  language: locale.value,
+})
 
 // Fall back to error page if no page data is found
 const data = ref<KirbyQueryResponse | null>(defaultData.value)
 
 if (!data.value?.result) {
-  const { data: errorData } = await useKql(
-    {
-      query: 'page("error")',
-      select,
-    },
-    { language: locale.value }
-  )
+  const { data: errorData } = await useKql(getPageQuery('error'), {
+    language: locale.value,
+  })
   data.value = errorData.value
   setResponseStatus(404)
 }

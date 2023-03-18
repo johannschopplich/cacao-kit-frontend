@@ -7,6 +7,7 @@ const { locale } = useI18n()
 <template>
   <Html :lang="locale">
     <Head>
+      <Link rel="icon" type="image/svg+xml" href="/icon.svg" />
       <Link
         rel="stylesheet"
         href="https://cdn.jsdelivr.net/npm/@exampledev/new.css@1.1.2/new.min.css"
