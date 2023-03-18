@@ -1,0 +1,24 @@
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.grid {
+  --columns: 12;
+  --gutter: 3rem;
+  display: grid;
+  grid-gap: var(--gutter);
+  grid-template-columns: 1fr;
+}
+.grid > .column {
+  margin-bottom: var(--gutter);
+}
+
+@media screen and (min-width: 60rem) {
+  .grid {
+    grid-template-columns: repeat(12, 1fr);
+  }
+  .grid > .column {
+    grid-column: span var(--columns);
+  }
+}
