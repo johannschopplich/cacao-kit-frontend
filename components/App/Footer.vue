@@ -13,15 +13,12 @@ const listedChildren = computed(() =>
   <hr />
   <footer class="grid">
     <div class="column" style="--columns: 6">
-      <h5><a href="https://getkirby.com">Made with Kirby</a></h5>
-      <p>
-        Kirby: the file-based CMS that adapts to any project, loved by
-        developers and editors alike
-      </p>
+      <h5>{{ t('footer.builtWith.title') }}</h5>
+      <p v-html="t('footer.builtWith.text')" />
     </div>
 
     <div class="column" style="--columns: 3">
-      <h5>Languages</h5>
+      <h5>{{ t('languages') }}</h5>
       <ul>
         <li v-for="item in locales" :key="item">
           <component :is="item === locale ? 'span' : NuxtLink" :to="`/${item}`">
@@ -32,7 +29,7 @@ const listedChildren = computed(() =>
     </div>
 
     <div class="column" style="--columns: 3">
-      <h5>Listed Pages</h5>
+      <h5>{{ t('footer.listedPages') }}</h5>
       <ul>
         <li v-for="item in listedChildren" :key="item.uri">
           <NuxtLink :to="`/${locale}/${item.uri}`">{{ item.title }}</NuxtLink>

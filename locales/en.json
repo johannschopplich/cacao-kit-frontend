@@ -1,7 +1,15 @@
 {
+  "footer": {
+    "builtWith": {
+      "text": "The source code is <a href=\"https://github.com/johannschopplich/cacao-kit-frontend\" rel=\"noopener\">available on GitHub</a>.",
+      "title": "Made with Nuxt & Kirby"
+    },
+    "listedPages": "Listed Pages"
+  },
   "home": "Home",
   "language": {
-    "en": "English",
-    "de": "German"
-  }
+    "de": "German",
+    "en": "English"
+  },
+  "languages": "Languages"
 }
