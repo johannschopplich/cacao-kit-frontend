@@ -1,4 +1,4 @@
-import { prefetchQuery } from './queries'
+import { prefetchQuery, siteQuery } from './queries'
 
 export default defineNuxtConfig({
   modules: ['@leanera/nuxt-i18n', '@vueuse/nuxt', 'nuxt-kql'],
@@ -13,6 +13,8 @@ export default defineNuxtConfig({
     auth: 'bearer',
     prefetch: {
       kirbyGlobal: prefetchQuery,
+      // Currently only used to infer the type of the `site` query
+      kirbySite: siteQuery,
     },
     server: {
       cache: true,

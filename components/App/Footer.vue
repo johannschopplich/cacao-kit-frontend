@@ -5,7 +5,7 @@ const { locale, locales, t } = useI18n()
 const site = useSite()
 
 const listedChildren = computed(() =>
-  site.value?.children?.filter((i: any) => i.isListed)
+  site.value?.children?.filter((i) => i.isListed)
 )
 </script>
 
