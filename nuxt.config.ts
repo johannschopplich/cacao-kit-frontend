@@ -1,3 +1,5 @@
+import { prefetchQuery } from './queries'
+
 export default defineNuxtConfig({
   modules: ['@leanera/nuxt-i18n', '@vueuse/nuxt', 'nuxt-kql'],
 
@@ -10,12 +12,7 @@ export default defineNuxtConfig({
   kql: {
     auth: 'bearer',
     prefetch: {
-      kirbyGlobal: {
-        query: 'site',
-        select: {
-          languages: 'kirby.languages',
-        },
-      },
+      kirbyGlobal: prefetchQuery,
     },
     server: {
       cache: true,
@@ -31,15 +28,6 @@ export default defineNuxtConfig({
     routeOverrides: {
       // Use `en` catch-all page for all other locales
       '/en/:id(.*)*': '/:id(.*)*',
-    },
-  },
-
-  nitro: {
-    prerender: {
-      // Enable Nitro's crawler (optional) – this will fetch all pages
-      // If Kirby content changes, the frontend will have to be rebuilt
-      crawlLinks: true,
-      routes: ['/en'],
     },
   },
 
