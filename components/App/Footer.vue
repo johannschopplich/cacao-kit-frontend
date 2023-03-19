@@ -11,12 +11,9 @@ const listedChildren = computed(() =>
 
 <template>
   <hr />
-  <footer class="grid">
-    <div class="column" style="--columns: 6">
-      <h5>{{ t('footer.builtWith.title') }}</h5>
-      <p v-html="t('footer.builtWith.text')" />
-    </div>
+  <img src="/icon.svg" width="72" height="72" style="vertical-align: middle" />
 
+  <footer class="grid">
     <div class="column" style="--columns: 3">
       <h5>{{ t('languages') }}</h5>
       <ul>
@@ -35,6 +32,11 @@ const listedChildren = computed(() =>
           <NuxtLink :to="`/${locale}/${item.uri}`">{{ item.title }}</NuxtLink>
         </li>
       </ul>
+    </div>
+
+    <div class="column" style="--columns: 6">
+      <h5>{{ t('footer.builtWith.title') }}</h5>
+      <p v-html="t('footer.builtWith.text')" />
     </div>
   </footer>
 </template>
