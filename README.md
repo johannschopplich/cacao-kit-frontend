@@ -13,7 +13,7 @@
 
 # Cacao Kit (Frontend)
 
-This repository provides a minimal but feature-rich Nuxt 3 starter kit. It fetches content from the [`cacao-kit-backend`](https://github.com/johannschopplich/cacao-kit-backend), a headless Kirby instance. It is the evolved version of the [`kirby-nuxt-starterkit`](https://github.com/johannschopplich/kirby-nuxt-starterkit) and my best practice solution to build a Nuxt based frontend on top of Kirby CMS.
+This repository provides a minimal but feature-rich Nuxt 3 starter kit. It fetches content from the [Cacao Kit Backend](https://github.com/johannschopplich/cacao-kit-backend), a headless Kirby instance. It is the evolved version of the [Kirby Nuxt Starterkit](https://github.com/johannschopplich/kirby-nuxt-starterkit) and my best practice solution to build a Nuxt based frontend on top of Kirby CMS.
 
 Key design decisions is a block-first approach. Meaning, you can use Kirby's page structure as the source of truth and don't have to replicate the page structure in Nuxt. All pages are rendered by the [catch-all route](./pages/[...id].vue).
 
