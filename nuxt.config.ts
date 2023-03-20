@@ -37,7 +37,7 @@ export default defineNuxtConfig({
     prerender: {
       // Enable Nitro's crawler (optional) – this will fetch all pages
       // If Kirby content changes, the frontend will have to be rebuilt
-      crawlLinks: true,
+      // crawlLinks: true,
       routes: ['/en'],
     },
   },
