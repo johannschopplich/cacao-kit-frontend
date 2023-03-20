@@ -8,10 +8,14 @@ export function usePathSegments(route = useRoute()) {
   return {
     hasLocalePrefix,
     locale,
-    id: withoutLeadingSlash(id),
+    id: withoutTrailingSlash(withoutLeadingSlash(id)),
   }
 }
 
 function withoutLeadingSlash(input = '') {
   return input.startsWith('/') ? input.slice(1) : input
+}
+
+function withoutTrailingSlash(input = '') {
+  return input.endsWith('/') ? input.slice(0, -1) : input
 }
