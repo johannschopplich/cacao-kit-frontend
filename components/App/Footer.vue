@@ -10,8 +10,9 @@ const listedChildren = computed(() =>
 </script>
 
 <template>
-  <hr />
+  <br />
   <img src="/icon.svg" width="72" height="72" style="vertical-align: middle" />
+  <hr />
 
   <footer class="grid">
     <div class="column" style="--columns: 3">

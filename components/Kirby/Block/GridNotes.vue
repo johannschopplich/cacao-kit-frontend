@@ -6,20 +6,7 @@ defineProps<{
 }>()
 
 const { locale } = useI18n()
-const { data } = await useKql(
-  {
-    query: 'page("notes").children.listed',
-    select: {
-      uri: true,
-      title: true,
-      cover: {
-        query: 'page.cover.toFile?.resize(1200)',
-        select: ['width', 'height', 'url'],
-      },
-    },
-  },
-  { language: locale.value }
-)
+const { data } = await useKirbyNotes()
 </script>
 
 <template>
