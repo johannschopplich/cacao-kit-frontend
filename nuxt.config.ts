@@ -12,7 +12,7 @@ export default defineNuxtConfig({
   kql: {
     auth: 'bearer',
     prefetch: {
-      kirbyGlobal: prefetchQuery,
+      kirbyStatic: prefetchQuery,
       // Currently only used to infer the type of the `site` query
       kirbySite: siteQuery,
     },
