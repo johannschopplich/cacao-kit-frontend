@@ -16,22 +16,22 @@ const listedChildren = computed(() =>
   <footer class="grid">
     <div class="column" style="--columns: 3">
       <h5>{{ t('languages') }}</h5>
-      <ul>
-        <li v-for="item in locales" :key="item">
+      <dl>
+        <dd v-for="item in locales" :key="item">
           <component :is="item === locale ? 'span' : NuxtLink" :to="`/${item}`">
             {{ t(`language.${item}`) }}
           </component>
-        </li>
-      </ul>
+        </dd>
+      </dl>
     </div>
 
     <div class="column" style="--columns: 3">
       <h5>{{ t('footer.listedPages') }}</h5>
-      <ul>
-        <li v-for="item in listedChildren" :key="item.uri">
+      <dl>
+        <dd v-for="item in listedChildren" :key="item.uri">
           <NuxtLink :to="`/${locale}/${item.uri}`">{{ item.title }}</NuxtLink>
-        </li>
-      </ul>
+        </dd>
+      </dl>
     </div>
 
     <div class="column" style="--columns: 6">

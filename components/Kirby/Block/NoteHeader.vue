@@ -29,13 +29,12 @@ function formatDateShort(date: Date) {
     </time>
 
     <h5>Tags</h5>
-    <ul v-if="props.block.content.tags">
-      <li
-        v-for="(tag, index) in props.block.content.tags.split(',')"
-        :key="index"
-      >
-        <mark>{{ tag }}</mark>
-      </li>
-    </ul>
+    <span
+      v-for="(tag, index) in props.block.content.tags.split(',')"
+      :key="index"
+    >
+      <mark>{{ tag }}</mark>
+      &nbsp;
+    </span>
   </nav>
 </template>
