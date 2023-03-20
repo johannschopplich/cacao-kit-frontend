@@ -16,9 +16,6 @@ export default defineNuxtConfig({
       // Currently only used to infer the type of the `site` query
       kirbySite: siteQuery,
     },
-    server: {
-      cache: true,
-    },
   },
 
   i18n: {
@@ -35,7 +32,7 @@ export default defineNuxtConfig({
 
   nitro: {
     prerender: {
-      // Enable Nitro's crawler (optional) – this will fetch all pages
+      // Enable Nitro's crawler to prerender all pages (optional)
       // If Kirby content changes, the frontend will have to be rebuilt
       // crawlLinks: true,
       routes: ['/en'],
