@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import type { KirbyBlock } from '#nuxt-kql'
+import type { ResolvedKirbyImage } from '~/types'
 
 defineProps<{
   block: KirbyBlock<
@@ -12,13 +13,7 @@ defineProps<{
       caption: string
       link: string
       resolved?: {
-        image: {
-          url: string
-          width: string
-          height: string
-          srcset: string
-          alt: string
-        }
+        image: ResolvedKirbyImage[]
       }
     }
   >
@@ -38,13 +33,13 @@ const { width } = useElementSize(figure)
         :src="block.content.location === 'web' ? block.content.src : undefined"
         :srcset="
           block.content.location !== 'web'
-            ? block.content.resolved?.image.srcset
+            ? block.content.resolved?.image?.[0].srcset
             : undefined
         "
-        :width="block.content.resolved?.image.width"
-        :height="block.content.resolved?.image.height"
+        :width="block.content.resolved?.image?.[0].width"
+        :height="block.content.resolved?.image?.[0].height"
         :sizes="`${width}px`"
-        :alt="block.content.alt || block.content.resolved?.image.alt"
+        :alt="block.content.alt || block.content.resolved?.image?.[0].alt || ''"
       />
     </component>
 
