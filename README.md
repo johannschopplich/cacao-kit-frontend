@@ -30,6 +30,12 @@ Key design decisions is a block-first approach. Meaning, you can use Kirby's pag
 - 📐 Prettier & ESLint
 - 🔢 Pre-configured [VSCode settings](./.vscode/settings.json)
 
+## Context
+
+### Styling
+
+This kit is written in semantic HTML and styled by the class-less CSS framework [new.css](https://newcss.net/). It is only used for the demo content. You can remove the framework by deleting the `link` tag in the [`app.vue`](./app.vue) component and start over with your own styling.
+
 ## Usage
 
 ### Prerequisites
