@@ -14,7 +14,7 @@ img {
   margin-bottom: var(--gutter);
 }
 
-@media screen and (min-width: 60rem) {
+@media (min-width: 768px) {
   .grid {
     grid-template-columns: repeat(12, 1fr);
   }

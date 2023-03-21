@@ -11,11 +11,10 @@ const listedChildren = computed(() =>
 
 <template>
   <br />
-  <img src="/icon.svg" width="72" height="72" style="vertical-align: middle" />
   <hr />
 
   <footer class="grid">
-    <div class="column" style="--columns: 3">
+    <div class="column" style="--columns: 2">
       <h5>{{ t('languages') }}</h5>
       <dl>
         <dd v-for="item in locales" :key="item">
@@ -26,7 +25,7 @@ const listedChildren = computed(() =>
       </dl>
     </div>
 
-    <div class="column" style="--columns: 3">
+    <div class="column" style="--columns: 4">
       <h5>{{ t('footer.listedPages') }}</h5>
       <dl>
         <dd v-for="item in listedChildren" :key="item.uri">
@@ -38,6 +37,15 @@ const listedChildren = computed(() =>
     <div class="column" style="--columns: 6">
       <h5>{{ t('footer.builtWith.title') }}</h5>
       <p v-html="t('footer.builtWith.text')" />
+    </div>
+
+    <div class="column" style="--columns: 12; text-align: center">
+      <img
+        src="/icon.svg"
+        width="72"
+        height="72"
+        style="vertical-align: middle"
+      />
     </div>
   </footer>
 </template>
