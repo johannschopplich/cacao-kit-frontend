@@ -40,12 +40,7 @@ const listedChildren = computed(() =>
     </div>
 
     <div class="column" style="--columns: 12; text-align: center">
-      <img
-        src="/icon.svg"
-        width="72"
-        height="72"
-        style="vertical-align: middle"
-      />
+      <img src="/icon.svg" width="72" height="72" />
     </div>
   </footer>
 </template>

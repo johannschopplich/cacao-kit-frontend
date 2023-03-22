@@ -1,0 +1,32 @@
+name: Deploy
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          registry-url: https://registry.npmjs.org/
+
+      - run: corepack enable
+
+      - name: Install
+        run: pnpm i
+
+      - name: Build
+        run: NITRO_PRESET=cloudflare pnpm run build
+
+      - run: cp .env.example .env
+
+      - name: Deploy to Cloudflare
+        run: npx wrangler publish
