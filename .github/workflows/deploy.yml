@@ -6,7 +6,7 @@ on:
       - main
 
 jobs:
-  release:
+  deploy:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -23,10 +23,10 @@ jobs:
       - name: Install
         run: pnpm i
 
+      - run: cp .env.example .env
+
       - name: Build
         run: NITRO_PRESET=cloudflare pnpm run build
-
-      - run: cp .env.example .env
 
       - name: Deploy to Cloudflare
         run: npx wrangler publish
