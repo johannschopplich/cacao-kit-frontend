@@ -34,7 +34,7 @@ if (!data.value?.result) {
 }
 
 // Store page data
-const page = data.value?.result
+const page = data.value?.result ?? {}
 usePage().value = page
 
 // Build the page meta tags
@@ -75,8 +75,13 @@ useHead({
 </script>
 
 <template>
+  <KirbyLayouts
+    v-if="page?.layouts?.length"
+    :layouts="page.layouts"
+    :class="[`template-${page.intendedTemplate}`]"
+  />
   <KirbyBlocks
-    v-if="page"
+    v-else
     :blocks="page.blocks"
     :class="[`template-${page.intendedTemplate}`]"
   />

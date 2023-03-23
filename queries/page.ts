@@ -11,6 +11,7 @@ export function getPageQuery(pageId: string): KirbyQuerySchema {
       // The `toResolvedBlocks` method is a custom Kirby field Method to
       // resolve images inside the image block from UUID to a file object
       blocks: 'page.blocks.toResolvedBlocks',
+      layouts: 'page.layouts.toResolvedLayouts',
       cover: {
         query: 'page.cover.toFile?.resize(1200)',
         select: ['url'],
