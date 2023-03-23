@@ -26,7 +26,9 @@ jobs:
       - run: cp .env.example .env
 
       - name: Build
-        run: NITRO_PRESET=cloudflare pnpm run build
+        run: pnpm run build
+        env:
+          NITRO_PRESET: cloudflare
 
       - name: Deploy to Cloudflare
         run: npx wrangler publish
