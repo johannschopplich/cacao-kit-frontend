@@ -1,3 +1,7 @@
+html {
+  overflow-y: scroll;
+}
+
 img {
   max-width: 100%;
   height: auto;
@@ -7,11 +11,8 @@ img {
   --columns: 12;
   --gutter: 1rem;
   display: grid;
-  grid-gap: var(--gutter);
   grid-template-columns: 1fr;
-}
-.grid > .column {
-  margin-bottom: var(--gutter);
+  gap: var(--gutter);
 }
 
 @media (min-width: 768px) {

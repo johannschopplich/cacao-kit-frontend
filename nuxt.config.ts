@@ -6,6 +6,9 @@ export default defineNuxtConfig({
   runtimeConfig: {
     public: {
       siteUrl: '',
+      // Debug mode to print fetch errors in your template,
+      // useful for debugging (optional)
+      debug: false,
     },
   },
 
@@ -34,7 +37,7 @@ export default defineNuxtConfig({
     prerender: {
       // Enable Nitro's crawler to prerender all pages (optional)
       // If Kirby content changes, the frontend will have to be rebuilt
-      // crawlLinks: true,
+      crawlLinks: process.env.NITRO_PRERENDER_CRAWL_LINKS === 'true',
       routes: ['/en'],
     },
   },
