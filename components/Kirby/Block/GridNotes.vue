@@ -1,12 +1,16 @@
 <script setup lang="ts">
+import { notesQuery } from '~/queries'
 import type { KirbyBlock } from '#nuxt-kql'
+import type { KirbyNotesResponse } from '~/queries'
 
 defineProps<{
   block: KirbyBlock<'grid-notes'>
 }>()
 
 const { locale } = useI18n()
-const { data } = await useKirbyNotes()
+const { data } = await useKql<KirbyNotesResponse>(notesQuery, {
+  language: locale.value,
+})
 </script>
 
 <template>
@@ -25,7 +29,7 @@ const { data } = await useKirbyNotes()
               :width="item.cover.width"
               :height="item.cover.height"
               :src="item.cover.url"
-              alt=""
+              :alt="item.cover.alt || undefined"
               style="object-fit: cover; height: 100%"
             />
           </figure>
