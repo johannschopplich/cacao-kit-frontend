@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import { joinURL } from 'ufo'
-
 const { locale, t } = useI18n()
 const route = useRoute()
 const site = useSite()
@@ -10,7 +8,7 @@ const listedChildren = computed(() => [
     title: t('home'),
     uri: '',
   },
-  ...(site.value?.children ?? []).filter((i: any) => i.isListed),
+  ...(site.value?.children ?? []).filter((i) => i.isListed),
 ])
 </script>
 
@@ -21,11 +19,9 @@ const listedChildren = computed(() => [
     <nav>
       <template v-for="(item, index) in listedChildren" :key="index">
         <NuxtLink
-          :to="`/${joinURL(locale, item.uri)}`"
+          :to="`/${locale}/${item.uri}`"
           :aria-current="
-            route.path.startsWith(`/${joinURL(locale, item.uri)}`)
-              ? 'page'
-              : undefined
+            route.path.startsWith(`/${locale}/${item.uri}`) ? 'page' : undefined
           "
         >
           {{ item.title }}
