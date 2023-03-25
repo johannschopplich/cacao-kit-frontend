@@ -13,7 +13,7 @@
 
 # Cacao Kit (Frontend)
 
-> **Info**
+> **Note**
 >
 > If this is your first time building an application with Nuxt, I recommend taking a look into the [💚 Kirby Nuxt Starterkit](https://github.com/johannschopplich/kirby-nuxt-starterkit) first to get a basic understanding of this tech-stack. It is a port of the Kirby starter kit, built with Nuxt and KQL.
 
