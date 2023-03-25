@@ -13,6 +13,10 @@
 
 # Cacao Kit (Frontend)
 
+> **Info**
+>
+> If this is your first time building an application with Nuxt, I recommend taking a look into the [💚 Kirby Nuxt Starterkit](https://github.com/johannschopplich/kirby-nuxt-starterkit) first to get a basic understanding of this tech-stack. It is a port of the Kirby starter kit, built with Nuxt and KQL.
+
 This repository provides a minimal but feature-rich Nuxt 3 starter kit. It fetches content from the [🍫 Cacao Kit Backend](https://github.com/johannschopplich/cacao-kit-backend), a headless Kirby instance. It is the evolved version of the [Kirby Nuxt Starterkit](https://github.com/johannschopplich/kirby-nuxt-starterkit) and my best practice solution to build a Nuxt based frontend on top of Kirby CMS.
 
 Key design decisions is a block-first approach. Meaning, you can use Kirby's page structure as the source of truth and don't have to replicate the page structure in Nuxt. All pages are rendered by the [catch-all route](./pages/[...id].vue).
@@ -31,10 +35,6 @@ Key design decisions is a block-first approach. Meaning, you can use Kirby's pag
 - 🔢 Pre-configured [VSCode settings](./.vscode/settings.json)
 
 ## Context
-
-### Nuxt and Kirby
-
-If this is your first time building an application with Nuxt, while having experience in Kirby, I recommend taking a look into the [💚 Kirby Nuxt Starterkit](https://github.com/johannschopplich/kirby-nuxt-starterkit) first to get a basic understanding how data is fetched from the headless Kirby instance, how pages are set up etc. It is a port of the very own Kirby starter kit, built with Nuxt and KQL.
 
 ### Styling
 
