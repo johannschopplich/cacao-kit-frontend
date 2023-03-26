@@ -1,15 +1,4 @@
-<p align="center">
-  <img src="./public/icon.svg" alt="Cacao Kit Frontend" width="128" height="128">
-</p>
-
-<h3 align="center">Cacao Kit (Frontend)</h3>
-
-<p align="center">
-  Nuxt app with i18n support for your headless Kirby project<br>
-  <a href="https://cacao-kit.netlify.app"><strong>Explore the kit live »</strong></a>
-</p>
-
-<br>
+[![Cacao Kit Frontend](./.github/og-image.png)](https://cacao.jhnn.work)
 
 # Cacao Kit (Frontend)
 

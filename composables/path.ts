@@ -1,3 +1,10 @@
+/**
+ * Returns the ID of the current route
+ *
+ * @remarks
+ * Leading and trailing slashes are removed to ensure the computed hash key
+ * is consistent with the route path
+ */
 export function usePathSegments(route = useRoute()) {
   const locale = useRouteLocale(route)
   const hasLocalePrefix = route.path.startsWith(`/${locale}`)
