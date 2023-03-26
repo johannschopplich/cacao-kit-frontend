@@ -6,6 +6,9 @@
     },
     "listedPages": "Listed Pages"
   },
+  "header": {
+    "title": "Demo & Semi Documentation"
+  },
   "home": "Home",
   "language": {
     "de": "German",

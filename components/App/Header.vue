@@ -15,6 +15,7 @@ const listedChildren = computed(() => [
 <template>
   <header>
     <h1>{{ site.title }}</h1>
+    <p>{{ t('header.title') }}</p>
 
     <nav>
       <template v-for="(item, index) in listedChildren" :key="index">
