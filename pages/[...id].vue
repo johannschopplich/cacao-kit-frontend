@@ -1,11 +1,11 @@
 <script setup lang="ts">
-import { joinURL } from 'ufo'
+// This Nuxt page will render every Kirby page
+
 import { getPageQuery } from '~/queries'
 import type { KirbyPageResponse } from '~/queries'
 
 const { locale } = useI18n()
 const { hasLocalePrefix, id } = usePathSegments()
-const { debug } = useRuntimeConfig().public
 
 // Use current path without locale prefix as Kirby page ID
 let kirbyPath = id
@@ -40,55 +40,11 @@ if (!data.value?.result) {
 
 // Store page data
 const page = data.value?.result
-usePage().value = page ?? {}
-
-// Build the page meta tags
-const { siteUrl } = useRuntimeConfig().public
-const site = useSite()
-const title = page?.title
-  ? `${page.title} – ${site.value.title}`
-  : site.value.title
-const description = page?.description || site.value.description
-const url = joinURL(siteUrl, useRoute().path)
-const image = page?.cover?.url || site.value?.cover?.url
-
-// Set the page meta tags
-useHead({
-  title,
-  bodyAttrs: {
-    'data-template': page?.intendedTemplate,
-  },
-  meta: [
-    { name: 'description', content: description },
-    { property: 'og:title', content: title },
-    { property: 'og:description', content: description },
-    { property: 'og:url', content: url },
-    { property: 'og:type', content: 'website' },
-    { property: 'og:image', content: image },
-    { name: 'twitter:title', content: title },
-    { name: 'twitter:description', content: description },
-    { name: 'twitter:url', content: url },
-    { name: 'twitter:card', content: 'summary_large_image' },
-    { name: 'twitter:image', content: image },
-  ],
-  link: [
-    { rel: 'canonical', href: url },
-    {
-      rel: 'alternate',
-      hreflang: 'x-default',
-      href: url,
-    },
-  ],
-})
+setPage(page)
 </script>
 
 <template>
-  <details v-if="debug && fetchError">
-    <summary>Error fetching page data</summary>
-    <pre style="font-size: 0.875em">{{
-      JSON.stringify(fetchError, undefined, 2)
-    }}</pre>
-  </details>
+  <AppDebugHelper v-if="fetchError" :error="fetchError" />
   <KirbyLayouts v-else-if="page?.layouts?.length" :layouts="page.layouts" />
   <KirbyBlocks v-else-if="page?.blocks" :blocks="page.blocks" />
 </template>
