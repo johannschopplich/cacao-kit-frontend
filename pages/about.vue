@@ -20,7 +20,7 @@ setPage(page)
   <div v-else>
     <KirbyLayouts v-if="page?.layouts?.length" :layouts="page.layouts" />
 
-    <aside>
+    <header>
       <h2>Get in contact</h2>
       <div class="grid" style="--gutter: 1.5rem">
         <section v-router-links class="column text" style="--columns: 4">
@@ -46,6 +46,6 @@ setPage(page)
           </ul>
         </section>
       </div>
-    </aside>
+    </header>
   </div>
 </template>
