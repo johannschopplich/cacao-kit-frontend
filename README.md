@@ -1,4 +1,4 @@
-[![Cacao Kit Frontend](./.github/og-image.png)](https://cacao.jhnn.work)
+[![Cacao Kit Frontend](./.github/og-image.png)](https://cacao-kit.byjohann.dev)
 
 # Cacao Kit (Frontend)
 
