@@ -27,8 +27,13 @@ export default defineNuxtConfig({
     langImports: true,
     lazy: true,
     strategy: 'prefix',
+    pages: {
+      about: {
+        de: '/ueber-uns',
+      },
+    },
     routeOverrides: {
-      // Use `en` catch-all page for all other locales
+      // Use `en` catch-all page as fallback for non-existing pages
       '/en/:id(.*)*': '/:id(.*)*',
     },
   },
