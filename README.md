@@ -6,28 +6,23 @@
 >
 > If this is your first time building an application with Nuxt, I recommend taking a look into the [💚 Kirby Nuxt Starterkit](https://github.com/johannschopplich/kirby-nuxt-starterkit) first to get a basic understanding of this tech-stack. It is a port of the Kirby starter kit, built with Nuxt and KQL.
 
-This repository provides a minimal but feature-rich Nuxt 3 starter kit. It fetches content from the [🍫 Cacao Kit Backend](https://github.com/johannschopplich/cacao-kit-backend), a headless Kirby instance. It is the evolved version of the [Kirby Nuxt Starterkit](https://github.com/johannschopplich/kirby-nuxt-starterkit) and my best practice solution to build a Nuxt based frontend on top of Kirby CMS.
+This repository provides a minimal but feature-rich Nuxt 3 starter kit. It fetches content from the [🍫 Cacao Kit backend](https://github.com/johannschopplich/cacao-kit-backend), a headless Kirby instance. It is the evolved version of the [Kirby Nuxt Starterkit](https://github.com/johannschopplich/kirby-nuxt-starterkit) and my best practice solution to build a Nuxt based frontend on top of Kirby CMS.
 
-Key design decisions is a block-first approach. Meaning, you can use Kirby's page structure as the source of truth and don't have to replicate the page structure in Nuxt. All pages are rendered by the [catch-all route](./pages/[...id].vue).
+Key design decisions is a block-first approach. Meaning, you can use Kirby's page structure as the source of truth and don't have to replicate the page structure in Nuxt. All pages are rendered by the [catch-all route](./pages/[...id].vue). Of course, you don't have to stick with the block-first architecture.
+If it doesn't speak to you or if you need custom Kirby page blueprints with custom fields, you can always create Nuxt pages and query the content using KQL. See the [`pages/about.vue`](./pages/about.vue) page for an example.
 
 ## Key Features
 
 - 🌐 Internationalization with [`@leanera/nuxt-i18n`](https://github.com/leanera/nuxt-i18n)
 - 🏆 Motto: [“Everything is a block”](./components/Kirby/Block/)
-  - No more Nuxt pages – use Kirby's page structure as the source of truth.
-  - All pages are rendered by the [catch-all route](./pages/[...id].vue).
-  - Kirby blocks define what to render for each page.
-- 🫂 Kirby Query Language with [`nuxt-kql`](https://nuxt-kql.jhnn.dev)
+  - Kirby blocks define what to render for each page
+  - All pages are rendered by the [catch-all route](./pages/[...id].vue) by default (you can still create Nuxt pages)
+  - Use Kirby's page structure as the source of truth
+- 🫂 Kirby Query Language with [`nuxt-kql`](https://nuxt-kql.byjohann.dev)
 - 🏛 Global [site data](./plugins/site.ts) similar to Kirby's `$site`
 - 🔎 SSR generated SEO data
 - 📐 Prettier & ESLint
 - 🔢 Pre-configured [VSCode settings](./.vscode/settings.json)
-
-## Context
-
-### Styling
-
-This kit is written in semantic HTML and styled by the class-less CSS framework [new.css](https://newcss.net/). It is only used for the demo content. You can remove the framework by deleting the `link` tag in the [`app.vue`](./app.vue) component and start over with your own styling.
 
 ## Usage
 
@@ -50,7 +45,7 @@ KIRBY_API_TOKEN=
 1. Start the development server using `pnpm run dev`
 2. Visit [localhost:3000](http://localhost:3000/)
 
-> ℹ️ Enable [Take Over Mode](https://vuejs.org/guide/typescript/overview.html#takeover-mode) in Visual Studio Code.
+> ℹ️ Enable [Take Over Mode](https://vuejs.org/guide/typescript/overview.html#volar-takeover-mode) in Visual Studio Code.
 
 ### Production
 
@@ -58,7 +53,37 @@ Build the application for production with `pnpm run build`.
 
 Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment).
 
-### What's Kirby?
+## Cookbook
+
+### How to Add a New Block
+
+Given you have created the block in the Kirby backend, you can add it to the frontend by following these steps:
+
+- Create a new component in the [`components/Kirby/Block/`](./components/Kirby/Block/) directory.
+- Add the new block to the [`components/Kirby/Blocks.vue`](./components/Kirby/Blocks.vue) component to make it available when rendering the block's field JSON data.
+
+For example, let's say you have created a new block called `NoteHeader` and want to render it with the `KirbyBlocks` component:
+
+```diff
+<script setup lang="ts">
+import {
++  LazyKirbyBlockNoteHeader,
+} from '#components'
+
+const blockComponents: Partial<
+  Record<string, new () => ComponentPublicInstance>
+> = {
+  // Custom blocks
++  'note-header': LazyKirbyBlockNoteHeader,
+}
+</script>
+```
+
+### How to Bring Your Own Styling
+
+This kit is written in semantic HTML and styled by the class-less CSS framework [new.css](https://newcss.net/). It is only used for the demo content. You can remove the framework by deleting the `<Link />` tag in the [`app.vue`](./app.vue) component and start over with your own styling.
+
+## What's Kirby?
 
 - **[getkirby.com](https://getkirby.com)** – Get to know the CMS.
 - **[Try it](https://getkirby.com/try)** – Take a test ride with our online demo. Or download one of our kits to get started.
