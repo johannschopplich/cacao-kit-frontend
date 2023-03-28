@@ -29,6 +29,14 @@ const listedChildren = computed(() => [
         </NuxtLink>
         <span v-if="index < listedChildren.length - 1"> / </span>
       </template>
+      /
+      <a
+        href="https://github.com/johannschopplich/cacao-kit-frontend"
+        rel="noopener"
+        target="_blank"
+      >
+        GitHub
+      </a>
     </nav>
   </header>
 </template>
