@@ -16,46 +16,46 @@ export default defineNuxtPlugin((nuxtApp) => {
       // window.removeEventListener('hashchange', navigate)
     },
   })
-
-  function navigate() {
-    if (window.location.hash) {
-      document
-        .querySelector(window.location.hash)
-        ?.scrollIntoView({ behavior: 'smooth' })
-    }
-  }
-
-  function handleAnchors(
-    event: MouseEvent & {
-      target: HTMLElement
-    }
-  ) {
-    const link = event.target.closest('a')
-
-    if (
-      !event.defaultPrevented &&
-      link &&
-      event.button === 0 &&
-      link.target !== '_blank' &&
-      link.rel !== 'external' &&
-      !link.download &&
-      !event.metaKey &&
-      !event.ctrlKey &&
-      !event.shiftKey &&
-      !event.altKey
-    ) {
-      const url = new URL(link.href)
-      const { origin, pathname: path, hash } = url
-
-      if (origin !== window.location.origin) return
-      event.preventDefault()
-
-      if (hash && (!path || path === useRoute().path)) {
-        window.history.replaceState({}, '', link.href)
-        navigate()
-      } else {
-        useRouter().push({ path, hash })
-      }
-    }
-  }
 })
+
+function navigate() {
+  if (window.location.hash) {
+    document
+      .querySelector(window.location.hash)
+      ?.scrollIntoView({ behavior: 'smooth' })
+  }
+}
+
+async function handleAnchors(
+  event: MouseEvent & {
+    target: HTMLElement
+  }
+) {
+  const link = event.target.closest('a')
+
+  if (
+    !event.defaultPrevented &&
+    link &&
+    event.button === 0 &&
+    link.target !== '_blank' &&
+    link.rel !== 'external' &&
+    !link.download &&
+    !event.metaKey &&
+    !event.ctrlKey &&
+    !event.shiftKey &&
+    !event.altKey
+  ) {
+    const url = new URL(link.href)
+    const { origin, pathname: path, hash } = url
+
+    if (origin !== window.location.origin) return
+    event.preventDefault()
+
+    if (hash && (!path || path === useRoute().path)) {
+      window.history.replaceState({}, '', link.href)
+      navigate()
+    } else {
+      await navigateTo({ path, hash })
+    }
+  }
+}
