@@ -2,7 +2,7 @@
 import type { FetchError } from 'ofetch'
 
 defineProps<{
-  error?: FetchError
+  error?: FetchError | null
 }>()
 
 const { debug } = useRuntimeConfig().public

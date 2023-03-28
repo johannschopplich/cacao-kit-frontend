@@ -44,7 +44,9 @@ setPage(page)
 </script>
 
 <template>
-  <AppDebugHelper v-if="fetchError" :error="fetchError" />
-  <KirbyLayouts v-else-if="page?.layouts?.length" :layouts="page.layouts" />
-  <KirbyBlocks v-else-if="page?.blocks" :blocks="page.blocks" />
+  <div>
+    <AppDebugHelper :error="fetchError" />
+    <KirbyLayouts v-if="page?.layouts?.length" :layouts="page.layouts" />
+    <KirbyBlocks v-else-if="page?.blocks" :blocks="page.blocks" />
+  </div>
 </template>

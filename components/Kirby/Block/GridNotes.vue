@@ -14,7 +14,7 @@ const { data } = await useKql<KirbyNotesResponse>(notesQuery, {
 </script>
 
 <template>
-  <div class="grid">
+  <div class="grid" style="--gutter: 1.5rem">
     <div
       v-for="(item, index) in data?.result"
       :key="index"

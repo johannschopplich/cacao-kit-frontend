@@ -16,8 +16,9 @@ setPage(page)
 </script>
 
 <template>
-  <AppDebugHelper v-if="error" :error="error" />
-  <div v-else>
+  <div>
+    <AppDebugHelper :error="error" />
+
     <KirbyLayouts v-if="page?.layouts?.length" :layouts="page.layouts" />
 
     <header>
