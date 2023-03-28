@@ -70,9 +70,7 @@ import {
 +  LazyKirbyBlockNoteHeader,
 } from '#components'
 
-const blockComponents: Partial<
-  Record<string, new () => ComponentPublicInstance>
-> = {
+const blockComponents: Partial<Record<string, new () => ComponentPublicInstance>> = {
   // Custom blocks
 +  'note-header': LazyKirbyBlockNoteHeader,
 }
