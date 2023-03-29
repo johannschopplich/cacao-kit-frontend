@@ -1,33 +1,32 @@
 <script setup lang="ts">
 import {
-  LazyKirbyBlockBuiltInHeading,
-  LazyKirbyBlockBuiltInImage,
-  LazyKirbyBlockBuiltInLine,
-  LazyKirbyBlockBuiltInList,
-  LazyKirbyBlockBuiltInQuote,
-  LazyKirbyBlockBuiltInText,
   LazyKirbyBlockGridNotes,
   LazyKirbyBlockIntro,
   LazyKirbyBlockNoteHeader,
   LazyKirbyBlockProse,
+  LazyKirbyBlockProseHeading,
+  LazyKirbyBlockProseImage,
+  LazyKirbyBlockProseLine,
+  LazyKirbyBlockProseList,
+  LazyKirbyBlockProseQuote,
+  LazyKirbyBlockProseText,
 } from '#components'
-import type { ComponentPublicInstance } from 'vue'
 import type { KirbyBlock } from '#nuxt-kql'
 
 defineProps<{
   blocks: KirbyBlock<string>[]
 }>()
 
-const blockComponents: Partial<
-  Record<string, new () => ComponentPublicInstance>
-> = {
+type Component = abstract new (...args: any) => any
+
+const blockComponents: Partial<Record<string, Component>> = {
   // Built-in Kirby blocks
-  heading: LazyKirbyBlockBuiltInHeading,
-  image: LazyKirbyBlockBuiltInImage,
-  line: LazyKirbyBlockBuiltInLine,
-  list: LazyKirbyBlockBuiltInList,
-  quote: LazyKirbyBlockBuiltInQuote,
-  text: LazyKirbyBlockBuiltInText,
+  heading: LazyKirbyBlockProseHeading,
+  image: LazyKirbyBlockProseImage,
+  line: LazyKirbyBlockProseLine,
+  list: LazyKirbyBlockProseList,
+  quote: LazyKirbyBlockProseQuote,
+  text: LazyKirbyBlockProseText,
   // Custom blocks
   intro: LazyKirbyBlockIntro,
   prose: LazyKirbyBlockProse,
