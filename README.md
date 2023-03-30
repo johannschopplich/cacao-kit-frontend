@@ -86,6 +86,17 @@ const blockComponents: Partial<Record<string, new () => ComponentPublicInstance>
 
 This kit is written in semantic HTML and styled by the class-less CSS framework [new.css](https://newcss.net/). It is only used for the demo content. You can remove the framework by deleting the `<Link />` tag in the [`app.vue`](./app.vue) component and start over with your own styling.
 
+### Deployment
+
+Just like any other Nuxt application, the Cacao Kit can be deployed on a Node.js server, pre-rendered for static hosting, or deployed to serverless or edge (CDN) environments. Follow the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) to learn more.
+
+This repository includes a [`netlify.toml`](./netlify.toml) file to deploy the application to [Netlify](https://www.netlify.com) and a [`wrangler.toml`](./wrangler.toml) file to deploy the application to [Cloudflare Workers](https://workers.cloudflare.com).
+
+#### Deployment Previews
+
+- Netlify 👉 [cacao-kit.netlify.app](https://cacao-kit.netlify.app)
+- Cloudflare Workers 👉 [cacao-kit.byjohann.dev](https://cacao-kit.byjohann.dev)
+
 ## What's Kirby?
 
 - **[getkirby.com](https://getkirby.com)** – Get to know the CMS.
