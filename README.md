@@ -8,16 +8,17 @@
 
 This repository provides a minimal but feature-rich Nuxt 3 starter kit. It fetches content from the [🍫 Cacao Kit backend](https://github.com/johannschopplich/cacao-kit-backend), a headless Kirby instance. It is the evolved version of the [Kirby Nuxt Starterkit](https://github.com/johannschopplich/kirby-nuxt-starterkit) and my best practice solution to build a Nuxt based frontend on top of Kirby CMS.
 
+You can harness every feature Nuxt provides to build a server-side rendered application or even pre-render the content using [Nuxt's static generation](https://nuxt.com/docs/getting-started/deployment#static-hosting).
+
 Key design decisions is a block-first approach. Meaning, you can use Kirby's page structure as the source of truth and don't have to replicate the page structure in Nuxt. All pages are rendered by the [catch-all route](./pages/[...id].vue). Of course, you don't have to stick with the block-first architecture.
 If it doesn't speak to you or if you need custom Kirby page blueprints with custom fields, you can always create Nuxt pages and query the content using KQL. See the [`pages/about.vue`](./pages/about.vue) page for an example.
 
 ## Key Features
 
 - 🌐 Internationalization with [`@leanera/nuxt-i18n`](https://github.com/leanera/nuxt-i18n)
-- 🏆 Motto: [“Everything is a block”](./components/Kirby/Block/)
-  - Kirby blocks define what to render for each page
-  - All pages are rendered by the [catch-all route](./pages/[...id].vue) by default (you can still create Nuxt pages)
-  - Use Kirby's page structure as the source of truth
+- 🏆 Motto: [“Everything is a block”](./components/Kirby/Block/) – Kirby blocks define what to render for each page
+- 🛣️ All pages are rendered by the [catch-all route](./pages/[...id].vue) by default (you can still create Nuxt pages)
+- 🌌 Use Kirby's page structure as the source of truth
 - 🫂 Kirby Query Language with [`nuxt-kql`](https://nuxt-kql.byjohann.dev)
 - 🏛 Global [site data](./plugins/site.ts) similar to Kirby's `$site`
 - 🔎 SSR generated SEO data
@@ -54,6 +55,10 @@ Build the application for production with `pnpm run build`.
 Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment).
 
 ## Cookbook
+
+### Static Hosting
+
+You can use Nuxt's [static generation](https://nuxt.com/docs/getting-started/deployment#static-hosting) to pre-render the content. This is especially useful if you want to host the application on a CDN or a static hosting service like [Netlify](https://www.netlify.com).
 
 ### How to Add a New Block
 
