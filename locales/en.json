@@ -1,4 +1,11 @@
 {
+  "about": {
+    "address": "Address",
+    "email": "Email",
+    "getInContact": "Get in contact",
+    "onTheWeb": "On the Web",
+    "phone": "Phone"
+  },
   "footer": {
     "builtWith": {
       "text": "The source code is <a href=\"https://github.com/johannschopplich/cacao-kit-frontend\" rel=\"noopener\">available on GitHub</a>.",

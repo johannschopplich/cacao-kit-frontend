@@ -4,7 +4,7 @@
 import { aboutQuery } from '~/queries'
 import type { KirbyAboutResponse } from '~/queries'
 
-const { locale } = useI18n()
+const { locale, t } = useI18n()
 
 const { data, error } = await useKql<KirbyAboutResponse>(aboutQuery, {
   language: locale.value,
@@ -21,23 +21,24 @@ setPage(page)
 
     <KirbyLayouts v-if="page?.layouts?.length" :layouts="page.layouts" />
 
+    <hr />
     <header>
-      <h2>Get in contact</h2>
+      <h2>{{ t('about.getInContact') }}</h2>
       <div class="grid" style="--gutter: 1.5rem">
         <section v-router-links class="column text" style="--columns: 4">
-          <h3>Address</h3>
+          <h3>{{ t('about.address') }}</h3>
           <div v-html="page?.address" />
         </section>
 
         <section class="column text" style="--columns: 4">
-          <h3>Email</h3>
+          <h3>{{ t('about.email') }}</h3>
           <p v-html="page?.email" />
-          <h3>Phone</h3>
+          <h3>{{ t('about.phone') }}</h3>
           <p v-html="page?.phone" />
         </section>
 
         <section class="column text" style="--columns: 4">
-          <h3>On the web</h3>
+          <h3>{{ t('about.onTheWeb') }}</h3>
           <ul>
             <li v-for="(item, index) in page?.social" :key="index">
               <a :href="item.url">
