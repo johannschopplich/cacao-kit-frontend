@@ -27,6 +27,7 @@ export interface KirbyAboutData {
     height: number
     alt: string
   }[]
+  i18nMeta?: Record<string, { title: string; uri: string }>
 }
 
 export type KirbyAboutResponse = KirbyQueryResponse<KirbyAboutData>
@@ -53,5 +54,7 @@ export const aboutQuery: KirbyQuerySchema = {
       query: 'page.files.template("image")',
       select: ['uuid', 'srcset', 'width', 'height', 'alt'],
     },
+    // Optional: Get title and URI of the current page in all languages
+    i18nMeta: true,
   },
 }

@@ -2,13 +2,16 @@
 import { NuxtLink } from '#components'
 import type { KirbyPageData } from '~/queries'
 
+// Wait for the page to be loaded before rendering this component,
+// otherwise `usePage()` would return `undefined`
+await usePageLoaded()
+
 const { locale, locales, t } = useI18n()
 const site = useSite()
 const page = usePage<KirbyPageData>()
 
 // Explicitly not computed to avoid reactivity when navigating
 const listedChildren = site.value?.children?.filter((i) => i.isListed)
-const { i18nMeta } = page.value
 </script>
 
 <template>
@@ -22,7 +25,11 @@ const { i18nMeta } = page.value
         <dd v-for="code in locales" :key="code">
           <component
             :is="code === locale ? 'span' : NuxtLink"
-            :to="`/${code}/${i18nMeta?.[code].uri}`"
+            :to="`/${code}${
+              page.i18nMeta?.[code] && page.i18nMeta?.[code]?.uri !== 'home'
+                ? `/${page.i18nMeta?.[code].uri}`
+                : ''
+            }`"
           >
             {{ t(`language.${code}`) }}
           </component>
