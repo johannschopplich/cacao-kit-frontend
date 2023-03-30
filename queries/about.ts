@@ -4,7 +4,7 @@ import type {
   KirbyQuerySchema,
 } from '#nuxt-kql'
 
-export type KirbyAboutResponse = KirbyQueryResponse<{
+export interface KirbyAboutData {
   uri: string
   title: string
   intendedTemplate: string
@@ -27,9 +27,9 @@ export type KirbyAboutResponse = KirbyQueryResponse<{
     height: number
     alt: string
   }[]
-}>
+}
 
-export type KirbyAboutData = NonNullable<KirbyAboutResponse['result']>
+export type KirbyAboutResponse = KirbyQueryResponse<KirbyAboutData>
 
 export const aboutQuery: KirbyQuerySchema = {
   query: 'page("about")',

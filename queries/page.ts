@@ -5,7 +5,7 @@ import type {
   KirbyQuerySchema,
 } from '#nuxt-kql'
 
-export type KirbyPageResponse = KirbyQueryResponse<{
+export interface KirbyPageData {
   uri: string
   title: string
   intendedTemplate: string
@@ -15,9 +15,9 @@ export type KirbyPageResponse = KirbyQueryResponse<{
   cover?: {
     url: string
   }
-}>
+}
 
-export type KirbyPageData = NonNullable<KirbyPageResponse['result']>
+export type KirbyPageResponse = KirbyQueryResponse<KirbyPageData>
 
 export function getPageQuery(pageId: string): KirbyQuerySchema {
   return {
