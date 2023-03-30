@@ -4,7 +4,7 @@ import type { KirbyPageData } from '~/queries'
 
 // Wait for the page to be loaded before rendering this component,
 // otherwise `usePage()` would return `undefined`
-await usePageLoaded()
+await hasPage()
 
 const { locale, locales, t } = useI18n()
 const site = useSite()

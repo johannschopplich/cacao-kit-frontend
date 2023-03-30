@@ -1,9 +1,6 @@
 import { joinURL } from 'ufo'
 import { kirbyStatic } from '#build/kql'
 
-// Helper to check whether `setPage` has been called
-const hasLoadedPage = ref(false)
-
 /**
  * Returns static data prefetched at build time
  */
@@ -15,7 +12,7 @@ export function useKirbyStaticData() {
  * Returns the currently active page
  */
 export function usePage<T extends Record<string, any> = Record<string, any>>() {
-  return useState<T>('kql.page', () => ({} as T))
+  return useState<T>('app.page', () => ({} as T))
 }
 
 /**
@@ -65,14 +62,18 @@ export function setPage<T extends Record<string, any>>(page?: T) {
     ],
   })
 
-  hasLoadedPage.value = true
+  usePageState().value = 'ready'
 }
 
 /**
  * Returns a promise that resolves when the page data has been loaded
  */
-export async function usePageLoaded() {
-  await until(hasLoadedPage).toBe(true)
+export async function hasPage() {
+  await until(usePageState()).toBe('ready')
   await nextTick()
   return true
+}
+
+function usePageState() {
+  return useState('app.state.page', () => 'pending')
 }
