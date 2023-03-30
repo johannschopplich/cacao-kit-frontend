@@ -1,17 +1,17 @@
 import type { KirbyQueryResponse, KirbyQuerySchema } from '#nuxt-kql'
 
-export type KirbyNotesResponse = KirbyQueryResponse<
-  {
-    uri: string
-    title: string
-    cover?: {
-      width: number
-      height: number
-      url: string
-      alt: string
-    }
-  }[]
->
+export type KirbyNoteData = {
+  uri: string
+  title: string
+  cover?: {
+    width: number
+    height: number
+    url: string
+    alt: string
+  }
+}[]
+
+export type KirbyNotesResponse = KirbyQueryResponse<KirbyNoteData>
 
 export const notesQuery: KirbyQuerySchema = {
   query: 'page("notes").children.listed',
