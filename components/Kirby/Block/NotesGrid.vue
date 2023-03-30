@@ -4,7 +4,7 @@ import type { KirbyBlock } from '#nuxt-kql'
 import type { KirbyNotesResponse } from '~/queries'
 
 defineProps<{
-  block: KirbyBlock<'grid-notes'>
+  block: KirbyBlock<'notes-grid'>
 }>()
 
 const { locale } = useI18n()

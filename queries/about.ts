@@ -20,7 +20,16 @@ export type KirbyAboutResponse = KirbyQueryResponse<{
   cover?: {
     url: string
   }
+  images: {
+    uuid: string
+    srcset: string
+    width: number
+    height: number
+    alt: string
+  }[]
 }>
+
+export type KirbyAboutData = NonNullable<KirbyAboutResponse['result']>
 
 export const aboutQuery: KirbyQuerySchema = {
   query: 'page("about")',
@@ -37,6 +46,12 @@ export const aboutQuery: KirbyQuerySchema = {
     cover: {
       query: 'page.cover.toFile?.resize(1200)',
       select: ['url'],
+    },
+    // Retrieve all images from the page to resolve a UUID from
+    // e.g. a structure field to a file object
+    images: {
+      query: 'page.files.template("image")',
+      select: ['uuid', 'srcset', 'width', 'height', 'alt'],
     },
   },
 }

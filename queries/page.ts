@@ -17,6 +17,8 @@ export type KirbyPageResponse = KirbyQueryResponse<{
   }
 }>
 
+export type KirbyPageData = NonNullable<KirbyPageResponse['result']>
+
 export function getPageQuery(pageId: string): KirbyQuerySchema {
   return {
     query: `page("${pageId}")`,

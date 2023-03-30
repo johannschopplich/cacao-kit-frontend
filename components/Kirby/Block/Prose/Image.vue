@@ -23,6 +23,8 @@ defineProps<{
       link: string
       ratio: string
       crop: boolean
+      // File UUUIDs are resolved server-side to the actual image data
+      // See: https://github.com/johannschopplich/kirby-headless#toresolvedblocks
       resolved?: {
         image: ResolvedKirbyImage[]
       }

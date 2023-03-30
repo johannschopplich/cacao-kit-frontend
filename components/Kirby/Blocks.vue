@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import {
-  LazyKirbyBlockGridNotes,
   LazyKirbyBlockIntro,
   LazyKirbyBlockNoteHeader,
+  LazyKirbyBlockNotesGrid,
   LazyKirbyBlockProse,
   LazyKirbyBlockProseHeading,
   LazyKirbyBlockProseImage,
@@ -10,6 +10,7 @@ import {
   LazyKirbyBlockProseList,
   LazyKirbyBlockProseQuote,
   LazyKirbyBlockProseText,
+  LazyKirbyBlockTeamStructure,
 } from '#components'
 import type { KirbyBlock } from '#nuxt-kql'
 
@@ -30,8 +31,9 @@ const blockComponents: Partial<Record<string, Component>> = {
   // Custom blocks
   intro: LazyKirbyBlockIntro,
   prose: LazyKirbyBlockProse,
-  'grid-notes': LazyKirbyBlockGridNotes,
   'note-header': LazyKirbyBlockNoteHeader,
+  'notes-grid': LazyKirbyBlockNotesGrid,
+  'team-structure': LazyKirbyBlockTeamStructure,
 }
 </script>
 
