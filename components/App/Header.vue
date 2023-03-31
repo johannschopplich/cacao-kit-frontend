@@ -8,7 +8,7 @@ const listedChildren = computed(() => [
     title: t('home'),
     uri: '',
   },
-  ...(site.value?.children ?? []).filter((i) => i.isListed),
+  ...(site.value.children ?? []).filter((i) => i.isListed),
 ])
 </script>
 

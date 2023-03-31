@@ -31,7 +31,7 @@ export function setPage<T extends Record<string, any>>(page?: T) {
     : site.value.title
   const description = page.description || site.value.description
   const url = joinURL(siteUrl, useRoute().path)
-  const image = page?.cover?.url || site.value?.cover?.url
+  const image = page?.cover?.url || site.value.cover?.url
 
   // Write the meta tags to the document head
   useHead({

@@ -11,7 +11,16 @@ const site = useSite()
 const page = usePage<KirbyPageData>()
 
 // Explicitly not computed to avoid reactivity when navigating
-const listedChildren = site.value?.children?.filter((i) => i.isListed)
+const listedChildren = site.value.children?.filter((i) => i.isListed)
+
+const translatedUris = computed(() =>
+  Object.fromEntries(
+    Object.entries(page.value?.i18nMeta ?? {}).map(([code, { uri }]) => [
+      code,
+      uri,
+    ])
+  )
+)
 </script>
 
 <template>
@@ -26,8 +35,8 @@ const listedChildren = site.value?.children?.filter((i) => i.isListed)
           <component
             :is="code === locale ? 'span' : NuxtLink"
             :to="`/${code}${
-              page.i18nMeta?.[code] && page.i18nMeta?.[code]?.uri !== 'home'
-                ? `/${page.i18nMeta?.[code].uri}`
+              translatedUris[code] && translatedUris[code] !== 'home'
+                ? `/${translatedUris[code]}`
                 : ''
             }`"
           >
