@@ -15,10 +15,7 @@ const listedChildren = site.value.children?.filter((i) => i.isListed)
 
 const translatedUris = computed(() =>
   Object.fromEntries(
-    Object.entries(page.value?.i18nMeta ?? {}).map(([code, { uri }]) => [
-      code,
-      uri,
-    ])
+    Object.entries(page.value.i18nMeta).map(([code, { uri }]) => [code, uri])
   )
 )
 </script>

@@ -15,7 +15,7 @@ export interface KirbyPageData {
   cover?: {
     url: string
   }
-  i18nMeta?: Record<string, { title: string; uri: string }>
+  i18nMeta: Record<string, { title: string; uri: string }>
 }
 
 export type KirbyPageResponse = KirbyQueryResponse<KirbyPageData>

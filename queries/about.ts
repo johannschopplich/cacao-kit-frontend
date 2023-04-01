@@ -27,7 +27,7 @@ export interface KirbyAboutData {
     height: number
     alt: string
   }[]
-  i18nMeta?: Record<string, { title: string; uri: string }>
+  i18nMeta: Record<string, { title: string; uri: string }>
 }
 
 export type KirbyAboutResponse = KirbyQueryResponse<KirbyAboutData>
