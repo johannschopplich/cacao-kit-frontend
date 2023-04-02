@@ -10,7 +10,6 @@ const { locale, locales, t } = useI18n()
 const site = useSite()
 const page = usePage<KirbyPageData>()
 
-// Explicitly not computed to avoid reactivity when navigating
 const listedChildren = site.value.children?.filter((i) => i.isListed)
 
 const translatedUris = computed(() =>
