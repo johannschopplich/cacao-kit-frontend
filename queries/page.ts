@@ -10,7 +10,7 @@ export interface KirbyPageData {
   title: string
   intendedTemplate: string
   description: string
-  blocks: KirbyBlock[]
+  blocks: KirbyBlock<string>[]
   layouts: KirbyLayout[]
   cover?: {
     url: string
