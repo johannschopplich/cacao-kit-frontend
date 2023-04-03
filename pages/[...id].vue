@@ -16,7 +16,7 @@ if (!id) {
   // If leading locale is missing, load the error page
 } else if (!hasLocalePrefix) {
   kirbyPath = 'error'
-  setResponseStatus(404)
+  setResponseStatus(useRequestEvent(), 404)
 }
 
 const { data: pageData, error: pageError } = await useKql(
@@ -35,7 +35,7 @@ if (!data.value?.result) {
   )
   data.value = pageData.value
   fetchError.value = pageError.value
-  setResponseStatus(404)
+  setResponseStatus(useRequestEvent(), 404)
 }
 
 // Store page data
