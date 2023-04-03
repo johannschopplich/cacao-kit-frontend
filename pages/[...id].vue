@@ -2,7 +2,6 @@
 // This Nuxt page will render every Kirby page
 
 import { getPageQuery } from '~/queries'
-import type { KirbyPageResponse } from '~/queries'
 
 const { locale } = useI18n()
 const { hasLocalePrefix, id } = usePathSegments()
@@ -24,22 +23,22 @@ const { data: pageData, error: pageError } = await useKql(
   { language: locale.value }
 )
 
-const data = ref<KirbyPageResponse | null>(pageData.value)
-const fetchError = ref(pageError.value)
+let data = pageData.value
+let fetchError = pageError.value
 
 // If page content is empty, load the error page
-if (!data.value?.result) {
+if (!data?.result) {
   const { data: pageData, error: pageError } = await useKql(
     getPageQuery('error'),
     { language: locale.value }
   )
-  data.value = pageData.value
-  fetchError.value = pageError.value
+  data = pageData.value
+  fetchError = pageError.value
   setResponseStatus(useRequestEvent(), 404)
 }
 
 // Store page data
-const page = data.value?.result
+const page = data?.result
 setPage(page)
 </script>
 
