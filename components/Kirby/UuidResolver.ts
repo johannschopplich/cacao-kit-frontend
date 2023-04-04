@@ -3,15 +3,13 @@ interface UuidResolverOptions {
   collection: ({ uuid: string } & Record<string, any>)[]
 }
 
+// Resolve a given UUID to an item in a collection, especially useful for
+// files that are not resolved server-side
 export default /* #__PURE__ */ defineComponent<UuidResolverOptions>({
   props: ['uuid', 'collection'] as unknown as undefined,
   setup(props, { slots }) {
-    // Create a resolver function that resolves the file UUIDs to the actual image data,
-    // since images inside structures are not resolved server-side
-    const resolver = createUuidResolver(props.collection)
-
     const data = reactive({
-      item: resolver(props.uuid),
+      item: resolveUuid(props.collection, props.uuid),
     })
 
     return () => {
