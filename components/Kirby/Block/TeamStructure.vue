@@ -16,10 +16,6 @@ defineProps<{
 }>()
 
 const page = usePage<KirbyAboutData>()
-
-// Create a resolver function that resolves the file UUIDs to the actual image data,
-// since images inside structures are not resolved server-side
-const resolver = createUuidResolver(page.value.images)
 </script>
 
 <template>
@@ -30,16 +26,21 @@ const resolver = createUuidResolver(page.value.images)
       class="column"
       style="--columns: 6"
     >
-      <div class="grid">
+      <div v-if="item.image?.length" class="grid">
         <div class="column" style="--columns: 4; aspect-ratio: 1/1">
-          <img
-            v-if="item.image?.length"
-            :srcset="resolver(item.image?.[0])?.srcset"
-            :width="resolver(item.image?.[0])?.width"
-            :height="resolver(item.image?.[0])?.height"
-            alt=""
-            style="object-fit: cover; width: 100%; height: 100%"
-          />
+          <KirbyUuidResolver
+            v-slot="{ item: image }"
+            :uuid="item.image[0]"
+            :collection="page.images"
+          >
+            <img
+              :srcset="image?.srcset"
+              :width="image?.width"
+              :height="image?.height"
+              alt=""
+              style="object-fit: cover; width: 100%; height: 100%"
+            />
+          </KirbyUuidResolver>
         </div>
         <div class="column" style="--columns: 2">
           <strong>{{ item.name }}</strong>
