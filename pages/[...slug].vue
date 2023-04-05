@@ -7,11 +7,11 @@ const { locale } = useI18n()
 const { slug } = useRoute().params
 
 // Use current slug or fall back to the homepage
-const kirbyPath =
+const pageUri =
   (Array.isArray(slug) ? slug.filter(Boolean).join('/') : slug) || 'home'
 
 const { data: pageData, error: pageError } = await useKql(
-  getPageQuery(kirbyPath),
+  getPageQuery(pageUri),
   { language: locale.value }
 )
 
