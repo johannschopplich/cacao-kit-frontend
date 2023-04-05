@@ -4,19 +4,11 @@
 import { getPageQuery } from '~/queries'
 
 const { locale } = useI18n()
-const { hasLocalePrefix, id } = usePathSegments()
+const { slug } = useRoute().params
 
-// Use current path without locale prefix as Kirby page ID
-let kirbyPath = id
-
-// If page ID is empty, query the homepage
-if (!id) {
-  kirbyPath = 'home'
-  // If leading locale is missing, load the error page
-} else if (!hasLocalePrefix) {
-  kirbyPath = 'error'
-  setResponseStatus(useRequestEvent(), 404)
-}
+// Use current slug or fall back to the homepage
+const kirbyPath =
+  (Array.isArray(slug) ? slug.filter(Boolean).join('/') : slug) || 'home'
 
 const { data: pageData, error: pageError } = await useKql(
   getPageQuery(kirbyPath),

@@ -21,7 +21,8 @@ setPage(page)
 
     <KirbyLayouts v-if="page?.layouts?.length" :layouts="page.layouts" />
 
-    <hr />
+    <br />
+
     <header>
       <h2>{{ t('about.getInContact') }}</h2>
       <div class="grid" style="--gutter: 1.5rem">
