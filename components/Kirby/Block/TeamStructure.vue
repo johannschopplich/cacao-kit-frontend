@@ -16,22 +16,25 @@ defineProps<{
 }>()
 
 const page = usePage<KirbyAboutData>()
+
+// Use non-reactive data to avoid reactivity when redirecting to another page
+const images = page.value.images
 </script>
 
 <template>
-  <div class="grid">
+  <div class="grid" style="--gutter: 1.5rem">
     <div
       v-for="(item, index) in block.content.team"
       :key="index"
       class="column"
       style="--columns: 6"
     >
-      <div v-if="item.image?.length" class="grid">
-        <div class="column" style="--columns: 4; aspect-ratio: 1/1">
+      <div v-if="item.image?.length">
+        <figure class="column" style="aspect-ratio: 1/1">
           <KirbyUuidResolver
             v-slot="{ item: image }"
             :uuid="item.image[0]"
-            :collection="page.images"
+            :collection="images"
           >
             <img
               :srcset="image?.srcset"
@@ -41,10 +44,11 @@ const page = usePage<KirbyAboutData>()
               style="object-fit: cover; width: 100%; height: 100%"
             />
           </KirbyUuidResolver>
-        </div>
-        <div class="column" style="--columns: 2">
-          <strong>{{ item.name }}</strong>
-        </div>
+
+          <figcaption>
+            <strong>{{ item.name }}</strong>
+          </figcaption>
+        </figure>
       </div>
     </div>
   </div>
