@@ -17,7 +17,7 @@ defineProps<{
 
 const page = usePage<KirbyAboutData>()
 
-// Use non-reactive data to avoid reactivity when redirecting to another page
+// Use static data to avoid reactivity when redirecting to another page
 const images = page.value.images
 </script>
 
