@@ -8,7 +8,7 @@
     "preview": "nuxi preview",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
-    "format": "prettier \"**/*.{css,html,json,md,ts,tsx,vue,yml}\" --write --ignore-path .gitignore",
+    "format": "prettier \"**/*.{css,html,json,md,mjs,ts,vue,yml}\" --write --ignore-path .gitignore",
     "prepare": "simple-git-hooks && nuxi prepare"
   },
   "lint-staged": {
