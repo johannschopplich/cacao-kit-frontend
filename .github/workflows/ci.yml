@@ -55,6 +55,8 @@ jobs:
 
       - run: corepack enable
 
+      - run: cp .env.example .env
+
       - name: Install
         run: pnpm i
 
