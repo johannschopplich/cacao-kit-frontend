@@ -28,6 +28,7 @@ jobs:
       - name: Build
         run: pnpm run build
         env:
+          NITRO_PRERENDER_CRAWL_LINKS: true
           NITRO_PRESET: cloudflare
 
       - name: Deploy to Cloudflare
