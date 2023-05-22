@@ -23,7 +23,7 @@
     "@leanera/nuxt-i18n": "^0.4.3",
     "@nuxt/eslint-config": "^0.1.1",
     "@sindresorhus/slugify": "^2.2.1",
-    "@types/node": "^18.16.13",
+    "@types/node": "^18.16.14",
     "@vueuse/nuxt": "^10.1.2",
     "eslint": "^8.41.0",
     "eslint-config-prettier": "^8.8.0",
@@ -34,15 +34,5 @@
     "simple-git-hooks": "^2.8.1",
     "typescript": "^5.0.4",
     "vue-tsc": "^1.6.5"
-  },
-  "pnpm": {
-    "overrides": {
-      "consola": "^3.0.2"
-    },
-    "peerDependencyRules": {
-      "ignoreMissing": [
-        "vue"
-      ]
-    }
   }
 }
