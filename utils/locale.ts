@@ -1,13 +1,12 @@
-import { kirbyStatic } from '#build/kql'
-
-export function getNonLocalizedSlug(param: string | string[]) {
-  const { languages } = kirbyStatic
-
+export function getNonLocalizedSlug(
+  param: string | string[],
+  locales: string[] = []
+) {
   if (Array.isArray(param)) {
     param = param.filter(Boolean)
 
     // If the first item is a locale, remove it
-    if (param.length > 0 && languages.includes(param[0])) {
+    if (param.length > 0 && locales.includes(param[0])) {
       param = param.slice(1)
     }
 

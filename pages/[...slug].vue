@@ -7,10 +7,13 @@ const { locale } = useI18n()
 const route = useRoute()
 
 // Use current slug or fall back to the homepage
-const pageUri = getNonLocalizedSlug(route.params.slug) || 'home'
+const pageUri = getNonLocalizedSlug(
+  route.params.slug,
+  useKirbyStaticData().languages
+)
 
 const { data: pageData, error: pageError } = await useKql(
-  getPageQuery(pageUri),
+  getPageQuery(pageUri || 'home'),
   { language: locale.value }
 )
 
