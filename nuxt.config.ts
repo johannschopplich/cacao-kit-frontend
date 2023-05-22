@@ -1,4 +1,8 @@
+import { consola } from 'consola'
 import { prefetchQuery, siteQuery } from './queries'
+
+const crawlLinks = process.env.NITRO_PRERENDER_CRAWL_LINKS === 'true'
+if (crawlLinks) consola.info('Crawling links for prerendering')
 
 export default defineNuxtConfig({
   modules: ['@leanera/nuxt-i18n', '@vueuse/nuxt', 'nuxt-kql'],
@@ -42,9 +46,13 @@ export default defineNuxtConfig({
     prerender: {
       // Enable Nitro's crawler to prerender all pages (optional)
       // If Kirby content changes, the frontend will have to be rebuilt
-      crawlLinks: process.env.NITRO_PRERENDER_CRAWL_LINKS === 'true',
+      crawlLinks,
       routes: ['/en'],
     },
+  },
+
+  experimental: {
+    payloadExtraction: crawlLinks,
   },
 
   typescript: {
