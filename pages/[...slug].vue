@@ -4,10 +4,10 @@
 import { getPageQuery } from '~/queries'
 
 const { locale } = useI18n()
-const { slug } = useRoute().params
+const route = useRoute()
 
 // Use current slug or fall back to the homepage
-const pageUri = getNonLocalizedSlug(slug) || 'home'
+const pageUri = getNonLocalizedSlug(route.params.slug) || 'home'
 
 const { data: pageData, error: pageError } = await useKql(
   getPageQuery(pageUri),
