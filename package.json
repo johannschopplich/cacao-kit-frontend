@@ -24,6 +24,8 @@
     "@nuxt/eslint-config": "^0.1.1",
     "@sindresorhus/slugify": "^2.2.1",
     "@types/node": "^18.16.14",
+    "@unocss/eslint-config": "^0.52.1",
+    "@unocss/nuxt": "^0.52.1",
     "@vueuse/nuxt": "^10.1.2",
     "eslint": "^8.41.0",
     "eslint-config-prettier": "^8.8.0",

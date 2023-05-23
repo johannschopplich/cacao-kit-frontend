@@ -5,7 +5,7 @@ const shouldPrerender = process.env.NITRO_PRERENDER_PAGES === 'true'
 if (shouldPrerender) consola.info('Nitro page prerendering enabled')
 
 export default defineNuxtConfig({
-  modules: ['@leanera/nuxt-i18n', '@vueuse/nuxt', 'nuxt-kql'],
+  modules: ['@leanera/nuxt-i18n', '@unocss/nuxt', '@vueuse/nuxt', 'nuxt-kql'],
 
   runtimeConfig: {
     public: {
