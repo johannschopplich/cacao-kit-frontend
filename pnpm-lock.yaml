@@ -29,8 +29,8 @@ devDependencies:
     specifier: ^3.5.1
     version: 3.5.1(@types/node@18.16.14)(eslint@8.41.0)(typescript@5.0.4)(vue-tsc@1.6.5)
   nuxt-kql:
-    specifier: ^0.26.3
-    version: 0.26.3(vue@3.3.4)
+    specifier: ^0.27.0
+    version: 0.27.0(vue@3.3.4)
   prettier:
     specifier: ^2.8.8
     version: 2.8.8
@@ -1078,10 +1078,6 @@ packages:
     resolution: {integrity: sha512-G8hZ6XJiHnuhQKR7ZmysCeJWE08o8T0AXtk5darsCaTVsYZhhgUrq53jizaR2FvsoeCwJhlmwTjkXBY5Pn/ZHw==}
     dev: true
 
-  /@types/web-bluetooth@0.0.16:
-    resolution: {integrity: sha512-oh8q2Zc32S6gd/j50GowEjKLoOVOwHP/bWVjKJInBwQqdOYMdPrf1oVlelTlyfFK3CKxL1uahMDAr+vy8T7yMQ==}
-    dev: true
-
   /@types/web-bluetooth@0.0.17:
     resolution: {integrity: sha512-4p9vcSmxAayx72yn70joFoL44c9MO/0+iVEBIQXe3v2h2SiAsEIo/G5v6ObFWvNKRFjbrVadNf9LqEEZeQPzdA==}
     dev: true
@@ -1508,24 +1504,8 @@ packages:
       - vue
     dev: true
 
-  /@vueuse/core@9.13.0(vue@3.3.4):
-    resolution: {integrity: sha512-pujnclbeHWxxPRqXWmdkKV5OX4Wk4YeK7wusHqRwU0Q7EFusHoqNA/aPhB6KCh9hEqJkLAJo7bb0Lh9b+OIVzw==}
-    dependencies:
-      '@types/web-bluetooth': 0.0.16
-      '@vueuse/metadata': 9.13.0
-      '@vueuse/shared': 9.13.0(vue@3.3.4)
-      vue-demi: 0.14.5(vue@3.3.4)
-    transitivePeerDependencies:
-      - '@vue/composition-api'
-      - vue
-    dev: true
-
   /@vueuse/metadata@10.1.2:
     resolution: {integrity: sha512-3mc5BqN9aU2SqBeBuWE7ne4OtXHoHKggNgxZR2K+zIW4YLsy6xoZ4/9vErQs6tvoKDX6QAqm3lvsrv0mczAwIQ==}
-    dev: true
-
-  /@vueuse/metadata@9.13.0:
-    resolution: {integrity: sha512-gdU7TKNAUVlXXLbaF+ZCfte8BjRJQWPCa2J55+7/h+yDtzw3vOoGQDRXzI6pyKyo6bXFT5/QoPE4hAknExjRLQ==}
     dev: true
 
   /@vueuse/nuxt@10.1.2(nuxt@3.5.1)(vue@3.3.4):
@@ -1548,15 +1528,6 @@ packages:
 
   /@vueuse/shared@10.1.2(vue@3.3.4):
     resolution: {integrity: sha512-1uoUTPBlgyscK9v6ScGeVYDDzlPSFXBlxuK7SfrDGyUTBiznb3mNceqhwvZHjtDRELZEN79V5uWPTF1VDV8svA==}
-    dependencies:
-      vue-demi: 0.14.5(vue@3.3.4)
-    transitivePeerDependencies:
-      - '@vue/composition-api'
-      - vue
-    dev: true
-
-  /@vueuse/shared@9.13.0(vue@3.3.4):
-    resolution: {integrity: sha512-UrnhU+Cnufu4S6JLCPZnkWh0WwZGUp72ktOF2DFptMlOs3TOdVv8xJN53zhHGARmVOsz5KqOls09+J1NR6sBKw==}
     dependencies:
       vue-demi: 0.14.5(vue@3.3.4)
     transitivePeerDependencies:
@@ -3974,13 +3945,12 @@ packages:
       fsevents: 2.3.2
     dev: true
 
-  /nuxt-kql@0.26.3(vue@3.3.4):
-    resolution: {integrity: sha512-G92eB8qcpYOjXcvu9zo0+LVT/lUC1SD9lfeJ12CjoG5U2mY4P5X79LKt6GjSUh8Ls+v++PANf1NEPA/c1IwYcw==}
+  /nuxt-kql@0.27.0(vue@3.3.4):
+    resolution: {integrity: sha512-FDahbxp7UFKLYscrux7hw2iul/70mfQU9LYaOZKgeoK5V6uPz0SKKzU1t74WJEqIDaqdl5fDouvA4hReWbku1A==}
     dependencies:
       '@nuxt/kit': 3.5.1
-      '@vueuse/core': 9.13.0(vue@3.3.4)
+      '@vueuse/core': 10.1.2(vue@3.3.4)
       defu: 6.1.2
-      destr: 1.2.2
       kirby-fest: 0.3.3
       ofetch: 1.0.1
       ohash: 1.1.2
