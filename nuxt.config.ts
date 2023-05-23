@@ -10,9 +10,6 @@ export default defineNuxtConfig({
   runtimeConfig: {
     public: {
       siteUrl: '',
-      // Debug mode to print fetch errors in your template,
-      // useful for debugging (optional)
-      debug: false,
     },
   },
 

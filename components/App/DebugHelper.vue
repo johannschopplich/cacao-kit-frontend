@@ -5,11 +5,11 @@ defineProps<{
   error?: FetchError | null
 }>()
 
-const { debug } = useRuntimeConfig().public
+const isDevelopment = process.dev
 </script>
 
 <template>
-  <details v-if="debug && error">
+  <details v-if="isDevelopment && error">
     <summary>Error fetching page data</summary>
     <pre style="font-size: 0.875em">{{
       JSON.stringify(error, undefined, 2)
