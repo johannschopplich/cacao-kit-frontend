@@ -10,7 +10,9 @@ const { locale, locales, t } = useI18n()
 const site = useSite()
 const page = usePage<KirbyPageData>()
 
-const listedChildren = site.value.children?.filter((i) => i.isListed)
+const listedChildren = computed(() =>
+  (site.value.children ?? []).filter((i) => i.isListed)
+)
 
 const translatedUris = computed(() =>
   Object.fromEntries(
