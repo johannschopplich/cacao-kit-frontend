@@ -22,7 +22,7 @@ export function setPage<T extends Record<string, any>>(page?: T) {
   const pageState = usePageState()
 
   if (!page) {
-    pageState.value = 'error'
+    pageState.value = 'rejected'
     return
   }
 
@@ -67,7 +67,7 @@ export function setPage<T extends Record<string, any>>(page?: T) {
     ],
   })
 
-  pageState.value = 'ready'
+  pageState.value = 'resolved'
 }
 
 /**
@@ -79,11 +79,11 @@ export async function hasPage() {
   await until(state).not.toBe('pending')
   await nextTick()
 
-  return state.value === 'ready'
+  return state.value === 'resolved'
 }
 
 function usePageState() {
-  return useState<'pending' | 'ready' | 'error'>(
+  return useState<'pending' | 'resolved' | 'rejected'>(
     'app.state.page',
     () => 'pending'
   )
