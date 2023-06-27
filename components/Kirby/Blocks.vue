@@ -24,7 +24,7 @@ type ComponentConstructor<
   Props = any
 > = new (...args: any[]) => T
 
-const blockComponents: Partial<Record<string, ComponentConstructor>> = {
+const blockComponents: Record<string, ComponentConstructor> = {
   // Built-in Kirby blocks
   heading: LazyKirbyBlockProseHeading,
   image: LazyKirbyBlockProseImage,
@@ -44,7 +44,7 @@ const blockComponents: Partial<Record<string, ComponentConstructor>> = {
 <template>
   <div v-router-links>
     <template v-for="(block, index) in blocks" :key="index">
-      <component :is="(blockComponents[block.type] as any)" :block="block" />
+      <component :is="blockComponents[block.type]" :block="block" />
     </template>
   </div>
 </template>
