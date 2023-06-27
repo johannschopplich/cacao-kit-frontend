@@ -12,15 +12,18 @@ import {
   LazyKirbyBlockProseText,
   LazyKirbyBlockTeamStructure,
 } from '#components'
-import type { KirbyBlock } from '#nuxt-kql'
+import type { KirbyBlock } from 'kirby-fest'
 
 defineProps<{
   blocks: KirbyBlock<string>[]
 }>()
 
-type Component = abstract new (...args: any) => any
+type ComponentConstructor<
+  T extends ComponentPublicInstance<Props> = ComponentPublicInstance<any>,
+  Props = any
+> = new (...args: any[]) => T
 
-const blockComponents: Partial<Record<string, Component>> = {
+const blockComponents: Partial<Record<string, ComponentConstructor>> = {
   // Built-in Kirby blocks
   heading: LazyKirbyBlockProseHeading,
   image: LazyKirbyBlockProseImage,

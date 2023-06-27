@@ -3,7 +3,7 @@ import type {
   KirbyLayout,
   KirbyQueryResponse,
   KirbyQuerySchema,
-} from '#nuxt-kql'
+} from 'kirby-fest'
 
 export interface KirbyPageData {
   uri: string
