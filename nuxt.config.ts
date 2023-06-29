@@ -51,6 +51,7 @@ export default defineNuxtConfig({
   },
 
   experimental: {
+    inlineSSRStyles: false,
     payloadExtraction: shouldPrerender,
   },
 
