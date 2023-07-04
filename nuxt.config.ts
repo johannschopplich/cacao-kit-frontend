@@ -56,8 +56,7 @@ export default defineNuxtConfig({
   },
 
   typescript: {
-    // Recommended: type check in dev and on build
-    // typeCheck: true,
+    typeCheck: 'build',
     shim: false,
     tsConfig: {
       compilerOptions: {
