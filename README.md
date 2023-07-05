@@ -15,6 +15,10 @@ If it doesn't speak to you or if you need custom Kirby page blueprints with cust
 
 ## Key Features
 
+> **Note**
+>
+> If i18n is **not** a requirement for your project, you can check out the [🧱 branch without i18n](https://github.com/johannschopplich/cacao-kit-frontend/compare/main...chore/without-i18n).
+
 - 🌐 Internationalization with [`@leanera/nuxt-i18n`](https://github.com/leanera/nuxt-i18n)
 - 🏆 Motto: [“Everything is a block”](./components/Kirby/Block/) – Kirby blocks define what to render for each page
 - 🛣️ All pages are rendered by the [catch-all route](./pages/[...id].vue) by default (you can still create Nuxt pages)
