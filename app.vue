@@ -1,11 +1,9 @@
 <script setup lang="ts">
 import '~/assets/css/main.css'
 
-const { locale } = useI18n()
-
 useServerHead({
   htmlAttrs: {
-    lang: locale.value,
+    lang: 'en',
   },
   link: [
     {

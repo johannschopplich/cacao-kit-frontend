@@ -13,7 +13,6 @@ export interface KirbySharedPageData {
   cover?: {
     url: string
   }
-  i18nMeta: Record<string, { title: string; uri: string }>
 }
 
 export interface KirbyPageData extends KirbySharedPageData {
