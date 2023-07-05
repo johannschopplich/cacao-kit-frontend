@@ -4,10 +4,13 @@
 import { getPageQuery } from '~/queries'
 
 const route = useRoute()
+const pageUri = Array.isArray(route.params.slug)
+  ? route.params.slug.join('/')
+  : route.params.slug
 
 const { data: pageData, error: pageError } = await useKql(
   // Use current slug or fall back to the homepage
-  getPageQuery(`${route.params.slug}` || 'home')
+  getPageQuery(pageUri || 'home')
 )
 
 let data = pageData.value
