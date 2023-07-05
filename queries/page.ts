@@ -15,7 +15,6 @@ export interface KirbyPageData {
   cover?: {
     url: string
   }
-  i18nMeta: Record<string, { title: string; uri: string }>
 }
 
 export type KirbyPageResponse = KirbyQueryResponse<KirbyPageData>
@@ -36,8 +35,6 @@ export function getPageQuery(pageId: string): KirbyQuerySchema {
         query: 'page.cover.toFile?.resize(1200)',
         select: ['url'],
       },
-      // Optional: Get title and URI of the current page in all languages
-      i18nMeta: true,
     },
   }
 }

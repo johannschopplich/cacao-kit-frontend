@@ -1,41 +1,16 @@
 import type { FetchError } from 'ofetch'
 import { siteQuery } from '~/queries'
-import type { NuxtApp } from '#app'
 
-export default defineNuxtPlugin(async (nuxtApp) => {
+export default defineNuxtPlugin(async () => {
   const site = useSite()
-  const i18n = nuxtApp.$i18n as NuxtApp['$i18n']
-  const { locale } = i18n
 
-  // Initially load the site data
-  if (import.meta.server) {
-    await updateSite()
-  }
+  try {
+    // Response will be cached in payload by default, no need to
+    // handle server/client side differently
+    const data = await $kql(siteQuery)
 
-  // Update the site data on locale change
-  if (import.meta.client) {
-    i18n.onBeforeLanguageSwitch = async (
-      oldLocale: string,
-      newLocale: string,
-    ) => {
-      if (oldLocale !== newLocale) {
-        if (import.meta.dev)
-          // eslint-disable-next-line no-console
-          console.log('Locale changed:', oldLocale, '->', newLocale)
-
-        await updateSite(newLocale)
-      }
-    }
-  }
-
-  async function updateSite(newLocale?: string) {
-    try {
-      const data = await $kql(siteQuery, {
-        language: newLocale || locale.value,
-      })
-      site.value = data?.result || {}
-    } catch (e) {
-      console.error('Error loading site data:', (e as FetchError).message)
-    }
+    site.value = data?.result || {}
+  } catch (e) {
+    console.error('Error loading site data:', (e as FetchError).message)
   }
 })
