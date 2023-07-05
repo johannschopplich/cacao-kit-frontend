@@ -1,11 +1,9 @@
 <script setup lang="ts">
 import '~/assets/css/main.css'
-
-const { locale } = useI18n()
 </script>
 
 <template>
-  <Html :lang="locale">
+  <Html lang="en">
     <Head>
       <Link rel="icon" type="image/svg+xml" href="/icon.svg" />
       <Link
