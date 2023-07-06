@@ -10,7 +10,7 @@ const pageUri = Array.isArray(route.params.slug)
 
 const { data: pageData, error: pageError } = await useKql(
   // Use current slug or fall back to the homepage
-  getPageQuery(pageUri || 'home')
+  getPageQuery(pageUri || 'home'),
 )
 
 let data = pageData.value
@@ -19,7 +19,7 @@ let fetchError = pageError.value
 // If page content is empty, load the error page
 if (!data?.result) {
   const { data: pageData, error: pageError } = await useKql(
-    getPageQuery('error')
+    getPageQuery('error'),
   )
   data = pageData.value
   fetchError = pageError.value
