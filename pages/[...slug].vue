@@ -5,7 +5,7 @@ import { getPageQuery } from '~/queries'
 
 const route = useRoute()
 const pageUri = Array.isArray(route.params.slug)
-  ? route.params.slug.join('/')
+  ? route.params.slug.filter(Boolean).join('/')
   : route.params.slug
 
 const { data: pageData, error: pageError } = await useKql(
