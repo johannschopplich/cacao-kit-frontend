@@ -1,6 +1,6 @@
 export function getNonLocalizedSlug(
   param: string | string[],
-  locales: string[] = []
+  locales: string[] = [],
 ) {
   if (Array.isArray(param)) {
     param = param.filter(Boolean)

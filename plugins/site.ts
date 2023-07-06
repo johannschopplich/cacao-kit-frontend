@@ -23,7 +23,7 @@ export default defineNuxtPlugin(async () => {
           await updateSite()
         }
       },
-      { global: true }
+      { global: true },
     )
   }
 

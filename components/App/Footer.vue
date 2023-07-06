@@ -11,13 +11,13 @@ const site = useSite()
 const page = usePage<KirbyPageData>()
 
 const listedChildren = computed(() =>
-  (site.value.children ?? []).filter((i) => i.isListed)
+  (site.value.children ?? []).filter((i) => i.isListed),
 )
 
 const translatedUris = computed(() =>
   Object.fromEntries(
-    Object.entries(page.value.i18nMeta).map(([code, { uri }]) => [code, uri])
-  )
+    Object.entries(page.value.i18nMeta).map(([code, { uri }]) => [code, uri]),
+  ),
 )
 </script>
 
