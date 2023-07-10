@@ -5,6 +5,8 @@ const shouldPrerender = process.env.NITRO_PRERENDER_PAGES === 'true'
 if (shouldPrerender) consola.info('Nitro page prerendering enabled')
 
 export default defineNuxtConfig({
+  // If you project doesn't require i18n, use the `without-i18n` branch instead:
+  // https://github.com/johannschopplich/cacao-kit-frontend/tree/chore/without-i18n
   modules: ['@leanera/nuxt-i18n', '@unocss/nuxt', '@vueuse/nuxt', 'nuxt-kql'],
 
   runtimeConfig: {
