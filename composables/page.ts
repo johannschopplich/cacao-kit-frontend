@@ -42,14 +42,7 @@ export function setPage<T extends Record<string, any>>(page?: T) {
     bodyAttrs: {
       'data-template': page.intendedTemplate || 'default',
     },
-    link: [
-      { rel: 'canonical', href: url },
-      {
-        rel: 'alternate',
-        hreflang: 'x-default',
-        href: url,
-      },
-    ],
+    link: [{ rel: 'canonical', href: url }],
   })
 
   useSeoMeta({
