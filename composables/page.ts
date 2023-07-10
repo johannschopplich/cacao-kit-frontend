@@ -38,25 +38,10 @@ export function setPage<T extends Record<string, any>>(page?: T) {
   const url = joinURL(siteUrl, useRoute().path)
   const image = page?.cover?.url || site.value.cover?.url
 
-  // Write the meta tags to the document head
   useHead({
-    title,
     bodyAttrs: {
       'data-template': page.intendedTemplate || 'default',
     },
-    meta: [
-      { name: 'description', content: description },
-      { property: 'og:title', content: title },
-      { property: 'og:description', content: description },
-      { property: 'og:url', content: url },
-      { property: 'og:type', content: 'website' },
-      { property: 'og:image', content: image },
-      { name: 'twitter:title', content: title },
-      { name: 'twitter:description', content: description },
-      { name: 'twitter:url', content: url },
-      { name: 'twitter:card', content: 'summary_large_image' },
-      { name: 'twitter:image', content: image },
-    ],
     link: [
       { rel: 'canonical', href: url },
       {
@@ -65,6 +50,20 @@ export function setPage<T extends Record<string, any>>(page?: T) {
         href: url,
       },
     ],
+  })
+
+  useSeoMeta({
+    title,
+    ogTitle: title,
+    ogDescription: description,
+    ogUrl: url,
+    ogType: 'website',
+    ...(image && { ogImage: image }),
+    twitterTitle: title,
+    twitterDescription: description,
+    twitterUrl: url,
+    twitterCard: image ? 'summary_large_image' : 'summary',
+    ...(image && { twitterImage: image }),
   })
 
   pageState.value = 'resolved'
