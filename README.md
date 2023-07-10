@@ -5,6 +5,7 @@
 > **Note**
 >
 > If this is your first time building an application with Nuxt, I recommend taking a look into the [💚 Kirby Nuxt Starterkit](https://github.com/johannschopplich/kirby-nuxt-starterkit) first to get a basic understanding of this tech-stack. It is a port of the Kirby starter kit, built with Nuxt and KQL.
+>
 > If i18n is **not** a requirement for your project, you can check out the [🧱 branch without i18n](https://github.com/johannschopplich/cacao-kit-frontend/compare/main...chore/without-i18n).
 
 This repository provides a minimal but feature-rich Nuxt 3 starter kit. It fetches content from the [🍫 Cacao Kit backend](https://github.com/johannschopplich/cacao-kit-backend), a headless Kirby instance. It is the evolved version of the [Kirby Nuxt Starterkit](https://github.com/johannschopplich/kirby-nuxt-starterkit) and my best practice solution to build a Nuxt based frontend on top of Kirby CMS.
