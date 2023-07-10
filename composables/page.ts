@@ -61,7 +61,6 @@ export function setPage<T extends Record<string, any>>(page?: T) {
     ...(image && { ogImage: image }),
     twitterTitle: title,
     twitterDescription: description,
-    twitterUrl: url,
     twitterCard: image ? 'summary_large_image' : 'summary',
     ...(image && { twitterImage: image }),
   })
