@@ -25,8 +25,6 @@ export function setPage<T extends Record<string, any>>(page: T) {
 
   // Build the page meta tags
   const { siteUrl } = useRuntimeConfig().public
-  const { $i18n: i18n } = useNuxtApp()
-  const { defaultLocale, locale } = i18n
   const site = useSite()
   const title = page.title
     ? `${page.title} – ${site.value.title}`
@@ -35,25 +33,6 @@ export function setPage<T extends Record<string, any>>(page: T) {
   const url = joinURL(siteUrl, useRoute().path)
   const image = page?.cover?.url || site.value.cover?.url
 
-  // Build alternate URL
-  const i18nMeta = page.i18nMeta as KirbyPageData['i18nMeta']
-  const alternateUrls = Object.entries(i18nMeta).map(([lang, meta]) => {
-    // Remove homepage slug and add leading language prefix
-    const uri = getLocalizedPath(meta.uri.replace(/^home/, '/'), lang)
-
-    return {
-      rel: 'alternate',
-      hreflang: lang,
-      href: joinURL(siteUrl, uri),
-    }
-  })
-
-  // Add English link as `x-default` language
-  alternateUrls.push({
-    ...alternateUrls.find((i) => i.hreflang === defaultLocale)!,
-    hreflang: 'x-default',
-  })
-
   useHead({
     bodyAttrs: {
       'data-template': page.intendedTemplate || 'default',
@@ -61,10 +40,7 @@ export function setPage<T extends Record<string, any>>(page: T) {
   })
 
   useServerHead({
-    link: [
-      { rel: 'canonical', href: url },
-      ...alternateUrls.filter(({ hreflang }) => hreflang !== locale.value),
-    ],
+    link: [{ rel: 'canonical', href: url }],
   })
 
   useSeoMeta({
