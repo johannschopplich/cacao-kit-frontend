@@ -1,5 +1,5 @@
 import { joinURL } from 'ufo'
-import { kirbyStatic } from '#build/kql'
+import { kirbyStatic } from '#nuxt-kql'
 
 /**
  * Returns static data prefetched at build time
