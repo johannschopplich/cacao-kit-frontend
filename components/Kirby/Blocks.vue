@@ -13,7 +13,7 @@ import {
   LazyKirbyBlockTeamStructure,
 } from '#components'
 import type { ComponentPublicInstance } from 'vue'
-import type { KirbyBlock } from 'kirby-fest'
+import type { KirbyBlock } from '#nuxt-kql'
 
 defineProps<{
   blocks: KirbyBlock<string>[]
