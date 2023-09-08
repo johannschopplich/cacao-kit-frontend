@@ -10,6 +10,10 @@ const { locale, locales, t } = useI18n()
 const site = useSite()
 const page = usePage<KirbyPageData>()
 
+const localeCodes = computed(() =>
+  locales.value.map((i) => (typeof i === 'string' ? i : i.code)),
+)
+
 const listedChildren = computed(() =>
   (site.value.children ?? []).filter((i) => i.isListed),
 )
@@ -29,7 +33,7 @@ const translatedUris = computed(() =>
     <div class="column" style="--columns: 2">
       <h5>{{ t('languages') }}</h5>
       <dl>
-        <dd v-for="code in locales" :key="code">
+        <dd v-for="code in localeCodes" :key="code">
           <component
             :is="code === locale ? 'span' : NuxtLink"
             :to="`/${code}${

@@ -7,7 +7,7 @@ if (shouldPrerender) consola.info('Nitro page prerendering enabled')
 export default defineNuxtConfig({
   // If you project doesn't require i18n, use the `without-i18n` branch instead:
   // https://github.com/johannschopplich/cacao-kit-frontend/tree/chore/without-i18n
-  modules: ['@leanera/nuxt-i18n', '@unocss/nuxt', '@vueuse/nuxt', 'nuxt-kql'],
+  modules: ['@nuxtjs/i18n', '@unocss/nuxt', '@vueuse/nuxt', 'nuxt-kql'],
 
   runtimeConfig: {
     public: {
@@ -25,19 +25,26 @@ export default defineNuxtConfig({
   },
 
   i18n: {
-    defaultLocale: 'en',
-    locales: ['en', 'de'],
-    langImports: true,
-    lazy: true,
-    strategy: 'prefix',
-    pages: {
-      about: {
-        de: '/ueber-uns',
+    locales: [
+      {
+        code: 'en',
+        file: 'en.json',
       },
+      {
+        code: 'de',
+        file: 'de.json',
+      },
+    ],
+    defaultLocale: 'en',
+    lazy: true,
+    langDir: 'locales',
+    strategy: 'prefix',
+    compilation: {
+      strictMessage: false,
     },
-    routeOverrides: {
-      // Use `en` catch-all page as fallback for non-existing pages
-      '/en/:slug(.*)*': '/:slug(.*)*',
+    bundle: {
+      fullInstall: false,
+      dropMessageCompiler: true,
     },
   },
 

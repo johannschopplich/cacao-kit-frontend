@@ -1,6 +1,13 @@
 <script setup lang="ts">
 // This Nuxt page will render the about page
 
+defineI18nRoute({
+  paths: {
+    en: '/about',
+    de: '/ueber-uns',
+  },
+})
+
 import { aboutQuery } from '~/queries'
 import type { KirbyAboutResponse } from '~/queries'
 
