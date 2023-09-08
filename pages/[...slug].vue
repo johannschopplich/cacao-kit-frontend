@@ -1,6 +1,14 @@
 <script setup lang="ts">
 // This Nuxt page will render every Kirby page
 
+// Us localized catch-all pages as fallback for all non-existing pages
+defineI18nRoute({
+  paths: {
+    en: '/:slug(.*)*',
+    de: '/:slug(.*)*',
+  },
+})
+
 import { getPageQuery } from '~/queries'
 
 const { locale } = useI18n()
