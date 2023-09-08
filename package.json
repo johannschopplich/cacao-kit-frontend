@@ -16,8 +16,7 @@
     "prepare": "nuxi prepare"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^2.24.1",
-    "@nuxtjs/i18n": "^8.3.3",
+    "@antfu/eslint-config": "^2.18.0",
     "@sindresorhus/slugify": "^2.2.1",
     "@types/node": "^20.14.14",
     "@unocss/eslint-config": "^0.61.9",
