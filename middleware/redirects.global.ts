@@ -1,5 +1,6 @@
 export default defineNuxtRouteMiddleware((to) => {
-  const { defaultLocale } = useI18n()
+  const { $i18n } = useNuxtApp()
+  const { defaultLocale } = $i18n
 
   if (to.path === '/') {
     const { languageCode } = getLocalePreference()

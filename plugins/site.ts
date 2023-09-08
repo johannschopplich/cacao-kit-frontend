@@ -1,9 +1,10 @@
 import { siteQuery } from '~/queries'
 import type { FetchError } from 'ofetch'
 
-export default defineNuxtPlugin(async () => {
-  const { locale } = useI18n()
+export default defineNuxtPlugin(async (nuxtApp) => {
   const site = useSite()
+  const i18n = nuxtApp.$i18n as ReturnType<typeof useI18n>
+  const { locale } = i18n
 
   // Initially load the site data
   if (process.server) {
@@ -12,19 +13,17 @@ export default defineNuxtPlugin(async () => {
 
   // Update the site data on locale change
   if (process.client) {
-    addRouteMiddleware(
-      'site-update',
-      async (to, from) => {
-        const fromLocale = useRouteLocale(from)
-        if (fromLocale !== locale.value) {
-          if (process.dev)
-            console.log('Locale changed:', fromLocale, '->', locale.value)
+    i18n.onBeforeLanguageSwitch = async (
+      oldLocale: string,
+      newLocale: string,
+    ) => {
+      if (oldLocale !== newLocale) {
+        if (process.dev)
+          console.log('Locale changed:', oldLocale, '->', newLocale)
 
-          await updateSite()
-        }
-      },
-      { global: true },
-    )
+        await updateSite()
+      }
+    }
   }
 
   async function updateSite() {

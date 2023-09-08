@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { NuxtLink } from '#components'
 import type { KirbyPageData } from '~/queries'
+import type { LocaleObject } from '#i18n'
 
 // Wait for the page to be loaded before rendering this component,
 // otherwise `usePage()` would return `undefined`
@@ -29,16 +30,16 @@ const translatedUris = computed(() =>
     <div class="column" style="--columns: 2">
       <h5>{{ t('languages') }}</h5>
       <dl>
-        <dd v-for="code in locales" :key="code">
+        <dd v-for="loc in locales as LocaleObject[]" :key="loc.code">
           <component
-            :is="code === locale ? 'span' : NuxtLink"
-            :to="`/${code}${
-              translatedUris[code] && translatedUris[code] !== 'home'
-                ? `/${translatedUris[code]}`
+            :is="loc.code === locale ? 'span' : NuxtLink"
+            :to="`/${loc.code}${
+              translatedUris[loc.code] && translatedUris[loc.code] !== 'home'
+                ? `/${translatedUris[loc.code]}`
                 : ''
             }`"
           >
-            {{ t(`language.${code}`) }}
+            {{ t(`language.${loc.code}`) }}
           </component>
         </dd>
       </dl>
