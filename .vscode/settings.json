@@ -24,8 +24,5 @@
     "json",
     "jsonc",
     "yaml"
-  ],
-
-  // Translations
-  "i18n-ally.localesPaths": ["locales"]
+  ]
 }
