@@ -1,9 +1,10 @@
 import { siteQuery } from '~/queries'
 import type { FetchError } from 'ofetch'
+import type { Composer } from '#i18n'
 
 export default defineNuxtPlugin(async (nuxtApp) => {
   const site = useSite()
-  const i18n = nuxtApp.$i18n as ReturnType<typeof useI18n>
+  const i18n = nuxtApp.$i18n as Composer
   const { locale } = i18n
 
   // Initially load the site data

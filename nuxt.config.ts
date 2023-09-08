@@ -42,9 +42,6 @@ export default defineNuxtConfig({
     compilation: {
       strictMessage: false,
     },
-    bundle: {
-      fullInstall: false,
-    },
   },
 
   nitro: {

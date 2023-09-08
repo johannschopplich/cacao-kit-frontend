@@ -1,14 +1,6 @@
 <script setup lang="ts">
 // This Nuxt page will render every Kirby page
 
-defineI18nRoute({
-  // Use `en` catch-all page as fallback for non-existing pages
-  paths: {
-    en: '/:slug(.*)*',
-    de: '/:slug(.*)*',
-  },
-})
-
 import { getPageQuery } from '~/queries'
 
 const { locale } = useI18n()
@@ -24,7 +16,6 @@ const { data: pageData, error: pageError } = await useKql(
   getPageQuery(pageUri || 'home'),
   { language: locale.value },
 )
-console.log('pageUri', locale.value)
 
 let data = pageData.value
 let fetchError = pageError.value
