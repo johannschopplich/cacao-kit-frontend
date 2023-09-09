@@ -22,15 +22,16 @@ export default defineNuxtPlugin(async (nuxtApp) => {
         if (import.meta.dev)
           console.log('Locale changed:', oldLocale, '->', newLocale)
 
-        await updateSite()
+        await updateSite(newLocale)
       }
     }
   }
 
-  async function updateSite() {
+  async function updateSite(newLocale?: string) {
     try {
-      const data = await $kql(siteQuery, { language: locale.value })
-
+      const data = await $kql(siteQuery, {
+        language: newLocale || locale.value,
+      })
       site.value = data?.result || {}
     } catch (e) {
       console.error('Error loading site data:', (e as FetchError).message)
