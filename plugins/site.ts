@@ -1,5 +1,5 @@
-import { siteQuery } from '~/queries'
 import type { FetchError } from 'ofetch'
+import { siteQuery } from '~/queries'
 import type { Composer } from '#i18n'
 
 export default defineNuxtPlugin(async (nuxtApp) => {
