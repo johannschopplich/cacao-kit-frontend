@@ -36,8 +36,8 @@ devDependencies:
     specifier: ^3.7.4
     version: 3.7.4(@types/node@20.8.2)(eslint@8.50.0)(typescript@5.2.2)(vue-tsc@1.8.15)
   nuxt-kql:
-    specifier: ^1.0.2
-    version: 1.0.2(vue@3.3.4)
+    specifier: ^1.0.3
+    version: 1.0.3(vue@3.3.4)
   prettier:
     specifier: ^3.0.3
     version: 3.0.3
@@ -5483,8 +5483,8 @@ packages:
       fsevents: 2.3.3
     dev: true
 
-  /nuxt-kql@1.0.2(vue@3.3.4):
-    resolution: {integrity: sha512-6myzYug65OrhL8wTQRMQ4AuD0rD/AVolf0XFBd9zydFo6FGW08GJC3LiX56O3SAhV1srw+Jn3HtNV7O3ra80+Q==}
+  /nuxt-kql@1.0.3(vue@3.3.4):
+    resolution: {integrity: sha512-dbI66gRraInubFHKNWSsBziczFo9860JWuz5Hs5mOM6Mnibrtn/uA2K/xJbADlGz34IFemeL7xQrd7czwXKcMw==}
     dependencies:
       '@nuxt/kit': 3.7.4
       '@vueuse/core': 10.4.1(vue@3.3.4)
