@@ -61,10 +61,25 @@ export default defineNuxtConfig({
     },
   },
 
+  vite: {
+    server: {
+      // This is only required for the `pnpm dev:tunnel` command
+      // to proxy Kirby requests, especially images
+      proxy: {
+        '/__kirby': {
+          target: process.env.KIRBY_BASE_URL,
+          changeOrigin: true,
+          rewrite: (path) => path.replace(/^\/__kirby/, ''),
+        },
+      },
+    },
+  },
+
   experimental: {
     typescriptBundlerResolution: true,
     inlineSSRStyles: false,
     payloadExtraction: shouldPrerender,
+    headNext: true,
   },
 
   typescript: {
