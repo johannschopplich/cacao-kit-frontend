@@ -20,6 +20,7 @@ export default defineNuxtPlugin(async (nuxtApp) => {
     ) => {
       if (oldLocale !== newLocale) {
         if (import.meta.dev)
+          // eslint-disable-next-line no-console
           console.log('Locale changed:', oldLocale, '->', newLocale)
 
         await updateSite(newLocale)
