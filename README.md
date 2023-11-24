@@ -2,7 +2,7 @@
 
 # Cacao Kit (Frontend)
 
-> [!NOTE]
+> [!TIP]
 > If i18n is **not** a requirement for your project, you can check out the [🧱 branch without i18n](https://github.com/johannschopplich/cacao-kit-frontend/compare/main...chore/without-i18n).
 >
 > If this is your first time building an application with Nuxt, I recommend taking a look into the [💚 Kirby Nuxt Starterkit](https://github.com/johannschopplich/kirby-nuxt-starterkit) first to get a basic understanding of this tech-stack. It is a port of the Kirby starter kit, built with Nuxt and KQL.
