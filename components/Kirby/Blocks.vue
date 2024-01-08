@@ -1,17 +1,16 @@
 <script setup lang="ts">
 import type { ComponentPublicInstance } from 'vue'
 import {
+  LazyKirbyBlockHeading,
+  LazyKirbyBlockImage,
   LazyKirbyBlockIntro,
+  LazyKirbyBlockLine,
+  LazyKirbyBlockList,
   LazyKirbyBlockNoteHeader,
   LazyKirbyBlockNotesGrid,
-  LazyKirbyBlockProse,
-  LazyKirbyBlockProseHeading,
-  LazyKirbyBlockProseImage,
-  LazyKirbyBlockProseLine,
-  LazyKirbyBlockProseList,
-  LazyKirbyBlockProseQuote,
-  LazyKirbyBlockProseText,
+  LazyKirbyBlockQuote,
   LazyKirbyBlockTeamStructure,
+  LazyKirbyBlockText,
 } from '#components'
 import type { KirbyBlock } from '#nuxt-kql'
 
@@ -23,15 +22,14 @@ type ComponentConstructor = new (...args: any[]) => ComponentPublicInstance
 
 const blockComponents: Record<string, ComponentConstructor> = {
   // Built-in Kirby blocks
-  heading: LazyKirbyBlockProseHeading,
-  image: LazyKirbyBlockProseImage,
-  line: LazyKirbyBlockProseLine,
-  list: LazyKirbyBlockProseList,
-  quote: LazyKirbyBlockProseQuote,
-  text: LazyKirbyBlockProseText,
+  heading: LazyKirbyBlockHeading,
+  image: LazyKirbyBlockImage,
+  line: LazyKirbyBlockLine,
+  list: LazyKirbyBlockList,
+  quote: LazyKirbyBlockQuote,
+  text: LazyKirbyBlockText,
   // Custom blocks
   intro: LazyKirbyBlockIntro,
-  prose: LazyKirbyBlockProse,
   'note-header': LazyKirbyBlockNoteHeader,
   'notes-grid': LazyKirbyBlockNotesGrid,
   'team-structure': LazyKirbyBlockTeamStructure,
