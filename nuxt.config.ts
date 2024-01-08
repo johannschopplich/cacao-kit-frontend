@@ -79,10 +79,6 @@ export default defineNuxtConfig({
     typescriptBundlerResolution: true,
   },
 
-  experimental: {
-    payloadExtraction: shouldPrerender,
-  },
-
   typescript: {
     typeCheck: 'build',
     shim: false,
