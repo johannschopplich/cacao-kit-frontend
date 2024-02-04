@@ -28,7 +28,8 @@ if (!data?.result) {
   )
   data = pageData.value
   fetchError = pageError.value
-  setResponseStatus(useRequestEvent(), 404)
+  const event = useRequestEvent()
+  if (event) setResponseStatus(event, 404)
 }
 
 // Store page data
