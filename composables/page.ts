@@ -64,6 +64,9 @@ export function setPage<T extends Record<string, any>>(page?: T) {
     bodyAttrs: {
       'data-template': page.intendedTemplate || 'default',
     },
+  })
+
+  useServerHead({
     link: [
       { rel: 'canonical', href: url },
       ...alternateUrls.filter(({ hreflang }) => hreflang !== locale.value),
@@ -71,6 +74,10 @@ export function setPage<T extends Record<string, any>>(page?: T) {
   })
 
   useSeoMeta({
+    title,
+  })
+
+  useServerSeoMeta({
     title,
     description,
     ogTitle: title,
