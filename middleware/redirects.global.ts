@@ -1,7 +1,5 @@
-import type { Composer } from '#i18n'
-
 export default defineNuxtRouteMiddleware((to) => {
-  const i18n = useNuxtApp().$i18n as Composer
+  const { $i18n: i18n } = useNuxtApp()
   const { defaultLocale } = i18n
 
   if (to.path === '/') {

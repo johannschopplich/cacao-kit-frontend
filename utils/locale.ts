@@ -1,3 +1,14 @@
+import { joinURL, withLeadingSlash } from 'ufo'
+
+export function getLocalizedPath(
+  slug: string,
+  locale: string,
+  { ignorePrefix = false }: { ignorePrefix?: boolean } = {},
+) {
+  const prefix = ignorePrefix ? '' : locale
+  return withLeadingSlash(joinURL(prefix, slug))
+}
+
 export function getNonLocalizedSlug(
   param: string | string[],
   locales: string[] = [],
