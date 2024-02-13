@@ -2,7 +2,7 @@ import { consola } from 'consola'
 import { prefetchQuery, siteQuery } from './queries'
 
 const shouldPrerender = process.env.NITRO_PRERENDER_PAGES === 'true'
-if (shouldPrerender) consola.info('Nitro page prerendering enabled')
+if (shouldPrerender) consola.info('Prerendering enabled')
 
 export default defineNuxtConfig({
   // If you project doesn't require i18n, use the `without-i18n` branch instead:

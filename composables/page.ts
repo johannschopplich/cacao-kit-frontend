@@ -101,7 +101,6 @@ export async function hasPage() {
   const state = usePageState()
 
   await until(state).not.toBe('pending')
-  await nextTick()
 
   return state.value === 'resolved'
 }
