@@ -1,4 +1,4 @@
-import { joinURL } from 'ufo'
+import { joinURL, withoutTrailingSlash } from 'ufo'
 import { SitemapStream, streamToPromise } from 'sitemap'
 import type { KirbyApiResponse } from 'kirby-types'
 
@@ -32,11 +32,11 @@ export default defineEventHandler(async () => {
 
       const alternateLinks = links.map((link) => ({
         lang: link.lang,
-        url: joinURL(siteUrl, link.url),
+        url: withoutTrailingSlash(joinURL(siteUrl, link.url)),
       }))
 
       sitemap.write({
-        url,
+        url: withoutTrailingSlash(url),
         lastmod,
         links: alternateLinks,
       })
