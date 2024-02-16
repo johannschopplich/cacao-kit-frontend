@@ -42,6 +42,10 @@ export default defineNuxtConfig({
     compilation: {
       strictMessage: false,
     },
+    detectBrowserLanguage: {
+      useCookie: true,
+      redirectOn: 'root',
+    },
     bundle: {
       fullInstall: false,
       dropMessageCompiler: true,
