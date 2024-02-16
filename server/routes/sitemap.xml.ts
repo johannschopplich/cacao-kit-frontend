@@ -2,14 +2,7 @@ import type { KirbyApiResponse } from 'kirby-types'
 import { SitemapStream, streamToPromise } from 'sitemap'
 import { joinURL, withoutTrailingSlash } from 'ufo'
 
-interface KirbySitemapItem {
-  url: string
-  modified: string
-  links: {
-    lang: string
-    url: string
-  }[]
-}
+type KirbySitemapItem = string
 
 export default defineEventHandler(async (event) => {
   const { siteUrl } = useRuntimeConfig(event).public
@@ -26,21 +19,10 @@ export default defineEventHandler(async (event) => {
 
   const sitemap = new SitemapStream({ hostname: siteUrl })
 
-  for (const { links, modified: lastmod } of data.result) {
-    for (const { lang, url } of links) {
-      if (lang === 'x-default') continue
-
-      const alternateLinks = links.map((link) => ({
-        lang: link.lang,
-        url: withoutTrailingSlash(joinURL(siteUrl, link.url)),
-      }))
-
-      sitemap.write({
-        url: withoutTrailingSlash(url),
-        lastmod,
-        links: alternateLinks,
-      })
-    }
+  for (const url of data.result) {
+    sitemap.write({
+      url: withoutTrailingSlash(url),
+    })
   }
 
   sitemap.end()
