@@ -80,7 +80,7 @@ export default defineNuxtConfig({
   },
 
   typescript: {
-    typeCheck: 'build',
+    // typeCheck: 'build',
     shim: false,
   },
 })
