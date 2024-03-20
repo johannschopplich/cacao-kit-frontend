@@ -78,7 +78,6 @@ export function setPage<T extends Record<string, any>>(page?: T) {
   })
 
   useServerSeoMeta({
-    title,
     description,
     ogTitle: title,
     ogDescription: description,
