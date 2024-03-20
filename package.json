@@ -1,7 +1,7 @@
 {
   "type": "module",
   "private": true,
-  "packageManager": "pnpm@8.15.4",
+  "packageManager": "pnpm@8.15.5",
   "scripts": {
     "dev": "nuxi dev",
     "dev:tunnel": "nuxi dev --tunnel",
@@ -16,19 +16,19 @@
     "prepare": "simple-git-hooks && nuxi prepare"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^2.8.2",
+    "@antfu/eslint-config": "^2.8.3",
     "@nuxtjs/i18n": "^8.2.0",
     "@sindresorhus/slugify": "^2.2.1",
-    "@types/node": "^20.11.28",
+    "@types/node": "^20.11.30",
     "@unocss/eslint-config": "^0.58.6",
     "@unocss/nuxt": "^0.58.6",
     "@vueuse/nuxt": "^10.9.0",
     "eslint": "^8.57.0",
     "lint-staged": "^15.2.2",
-    "nuxt": "^3.10.3",
-    "nuxt-kql": "^1.4.1",
+    "nuxt": "^3.11.1",
+    "nuxt-kql": "^1.4.11",
     "prettier": "^3.2.5",
-    "simple-git-hooks": "^2.10.0",
+    "simple-git-hooks": "^2.11.0",
     "sitemap": "^7.1.1",
     "typescript": "^5.4.2",
     "vue-tsc": "^2.0.6"
