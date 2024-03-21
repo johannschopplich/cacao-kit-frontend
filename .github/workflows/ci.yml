@@ -43,6 +43,8 @@ jobs:
         with:
           node-version: 20
           cache: pnpm
-      - run: cp .env.example .env
       - run: pnpm install
+        env:
+          KIRBY_BASE_URL: ${{ secrets.KIRBY_BASE_URL }}
+          KIRBY_API_TOKEN: ${{ secrets.KIRBY_API_TOKEN }}
       - run: pnpm run test:types

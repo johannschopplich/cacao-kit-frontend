@@ -59,8 +59,6 @@ export default defineNuxtConfig({
       ...(shouldPrerender && {
         crawlLinks: shouldPrerender,
         routes: ['/en'],
-        // Ignore homepage, which redirects to the user's locale
-        ignore: ['/'],
       }),
     },
   },
