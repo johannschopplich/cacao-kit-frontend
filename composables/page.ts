@@ -100,23 +100,25 @@ export async function hasPage() {
 
     // Defer rendering the component until the page component has rendered
     return new Promise<void>((resolve) => {
+      const resolver = () => {
+        resolve()
+      }
+
       // If Nuxt has an error, immediately render the component
       if (error.value) {
-        return resolve()
+        return resolver()
       }
 
       if (nuxtApp._nuxtPageDependenciesRendered) {
-        return resolve()
+        return resolver()
       }
 
       // Called manually by using the `setPage` composable
-      nuxtApp.hooks.hookOnce('nuxt-page-dependencies:rendered', resolve)
+      nuxtApp.hooks.hookOnce('nuxt-page-dependencies:rendered', resolver)
 
       // When any error happens, resolve
-      nuxtApp.hooks.hookOnce('app:error', resolve)
-      nuxtApp.hooks.hookOnce('vue:error', () => {
-        resolve()
-      })
+      nuxtApp.hooks.hookOnce('app:error', resolver)
+      nuxtApp.hooks.hookOnce('vue:error', resolver)
     })
   }
 
