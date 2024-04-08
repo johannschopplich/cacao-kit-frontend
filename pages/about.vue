@@ -19,7 +19,7 @@ const { data, error } = await useKql<KirbyAboutResponse>(aboutQuery, {
 
 // Store page data
 const page = data.value?.result
-setPage(page)
+setPage(page!)
 </script>
 
 <template>

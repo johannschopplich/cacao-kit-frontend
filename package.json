@@ -1,7 +1,7 @@
 {
   "type": "module",
   "private": true,
-  "packageManager": "pnpm@8.15.5",
+  "packageManager": "pnpm@8.15.6",
   "scripts": {
     "dev": "nuxi dev",
     "dev:tunnel": "nuxi dev --tunnel",
@@ -16,22 +16,22 @@
     "prepare": "simple-git-hooks && nuxi prepare"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^2.11.4",
-    "@nuxtjs/i18n": "^8.2.0",
+    "@antfu/eslint-config": "^2.12.2",
+    "@nuxtjs/i18n": "^8.3.0",
     "@sindresorhus/slugify": "^2.2.1",
-    "@types/node": "^20.11.30",
-    "@unocss/eslint-config": "^0.58.8",
-    "@unocss/nuxt": "^0.58.8",
+    "@types/node": "^20.12.5",
+    "@unocss/eslint-config": "^0.59.0",
+    "@unocss/nuxt": "^0.59.0",
     "@vueuse/nuxt": "^10.9.0",
     "eslint": "^8.57.0",
     "lint-staged": "^15.2.2",
-    "nuxt": "^3.11.1",
-    "nuxt-kql": "^1.4.13",
+    "nuxt": "^3.11.2",
+    "nuxt-kql": "^1.4.14",
     "prettier": "^3.2.5",
     "simple-git-hooks": "^2.11.1",
     "sitemap": "^7.1.1",
-    "typescript": "^5.4.3",
-    "vue-tsc": "^2.0.7"
+    "typescript": "^5.4.4",
+    "vue-tsc": "^2.0.11"
   },
   "simple-git-hooks": {
     "pre-commit": "npx lint-staged"
