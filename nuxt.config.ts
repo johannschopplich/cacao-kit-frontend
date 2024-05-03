@@ -9,6 +9,10 @@ export default defineNuxtConfig({
   // https://github.com/johannschopplich/cacao-kit-frontend/tree/chore/without-i18n
   modules: ['@nuxtjs/i18n', '@unocss/nuxt', '@vueuse/nuxt', 'nuxt-kql'],
 
+  devtools: {
+    enabled: true,
+  },
+
   runtimeConfig: {
     public: {
       siteUrl: '',
