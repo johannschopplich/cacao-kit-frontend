@@ -1,3 +1,4 @@
+import process from 'node:process'
 import { consola } from 'consola'
 import { prefetchQuery, siteQuery } from './queries'
 

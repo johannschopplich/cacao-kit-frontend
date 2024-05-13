@@ -7,8 +7,6 @@ export default await antfu(
   },
   {
     rules: {
-      'node/prefer-global/buffer': 'off',
-      'node/prefer-global/process': 'off',
       // Ignore rules clashing with Prettier
       'vue/html-closing-bracket-newline': 'off',
       'vue/html-indent': 'off',
