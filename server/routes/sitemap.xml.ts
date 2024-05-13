@@ -11,8 +11,8 @@ interface KirbySitemapItem {
   }[]
 }
 
-export default defineEventHandler(async () => {
-  const { siteUrl } = useRuntimeConfig().public
+export default defineEventHandler(async (event) => {
+  const { siteUrl } = useRuntimeConfig(event).public
 
   const data =
     await $kirby<KirbyApiResponse<KirbySitemapItem[]>>('api/__sitemap__')
