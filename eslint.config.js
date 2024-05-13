@@ -4,7 +4,6 @@ export default await antfu(
   {
     stylistic: false,
     unocss: true,
-    ignores: ['tsconfig.json'],
   },
   {
     rules: {
