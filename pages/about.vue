@@ -4,6 +4,9 @@
 import { aboutQuery } from '~/queries'
 import type { KirbyAboutResponse } from '~/queries'
 
+const content = ref<HTMLElement | undefined>()
+useInternalLinks(content)
+
 const { data, error } = await useKql<KirbyAboutResponse>(aboutQuery)
 
 // Store page data
@@ -23,8 +26,8 @@ setPage(page!)
 
     <header>
       <h2>Get in contact</h2>
-      <div class="grid" style="--gutter: 1.5rem">
-        <section v-router-links class="column text" style="--columns: 4">
+      <div ref="content" class="grid" style="--gutter: 1.5rem">
+        <section class="column text" style="--columns: 4">
           <h3>Address</h3>
           <div v-html="page?.address" />
         </section>
