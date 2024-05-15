@@ -12,6 +12,8 @@ defineI18nRoute({
 })
 
 const { locale, t } = useI18n()
+const content = ref<HTMLElement | undefined>()
+useInternalLinks(content)
 
 const { data, error } = await useKql<KirbyAboutResponse>(aboutQuery, {
   language: locale.value,
@@ -34,8 +36,8 @@ setPage(page!)
 
     <header>
       <h2>{{ t('about.getInContact') }}</h2>
-      <div class="grid" style="--gutter: 1.5rem">
-        <section v-router-links class="column text" style="--columns: 4">
+      <div ref="content" class="grid" style="--gutter: 1.5rem">
+        <section class="column text" style="--columns: 4">
           <h3>{{ t('about.address') }}</h3>
           <div v-html="page?.address" />
         </section>
