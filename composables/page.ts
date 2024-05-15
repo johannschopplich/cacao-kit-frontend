@@ -86,7 +86,7 @@ export function setPage<T extends Record<string, any>>(page: T) {
 
   // Resolve components that depend on the full page data
   const nuxtApp = useNuxtApp()
-  nuxtApp._nuxtPageDependenciesRendered = true
+  nuxtApp._pageDependenciesRendered = true
   return nuxtApp.callHook('page-dependencies:rendered')
 }
 
@@ -109,7 +109,7 @@ export async function hasPage() {
         return resolver()
       }
 
-      if (nuxtApp._nuxtPageDependenciesRendered) {
+      if (nuxtApp._pageDependenciesRendered) {
         return resolver()
       }
 
