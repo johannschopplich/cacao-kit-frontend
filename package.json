@@ -1,7 +1,7 @@
 {
   "type": "module",
   "private": true,
-  "packageManager": "pnpm@9.0.6",
+  "packageManager": "pnpm@9.1.1",
   "scripts": {
     "dev": "nuxi dev",
     "dev:tunnel": "nuxi dev --tunnel",
@@ -13,30 +13,22 @@
     "format": "prettier \"**/*.{css,html,json,md,mjs,ts,vue,yml}\" --write",
     "format:check": "prettier \"**/*.{css,html,json,md,mjs,ts,vue,yml}\" --check",
     "test:types": "vue-tsc --noEmit",
-    "prepare": "simple-git-hooks && nuxi prepare"
+    "prepare": "nuxi prepare"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^2.16.1",
+    "@antfu/eslint-config": "^2.18.0",
     "@nuxtjs/i18n": "^8.3.1",
     "@sindresorhus/slugify": "^2.2.1",
-    "@types/node": "^20.12.8",
-    "@unocss/eslint-config": "^0.59.4",
-    "@unocss/nuxt": "^0.59.4",
+    "@types/node": "^20.12.12",
+    "@unocss/eslint-config": "^0.60.2",
+    "@unocss/nuxt": "^0.60.2",
     "@vueuse/nuxt": "^10.9.0",
-    "eslint": "^9.1.1",
-    "lint-staged": "^15.2.2",
+    "eslint": "^9.2.0",
     "nuxt": "^3.11.2",
-    "nuxt-kql": "^1.4.15",
+    "nuxt-kql": "^1.4.17",
     "prettier": "^3.2.5",
-    "simple-git-hooks": "^2.11.1",
     "sitemap": "^7.1.1",
     "typescript": "^5.4.5",
-    "vue-tsc": "^2.0.16"
-  },
-  "simple-git-hooks": {
-    "pre-commit": "npx lint-staged"
-  },
-  "lint-staged": {
-    "**/*.{ts,vue}": "eslint --cache"
+    "vue-tsc": "^2.0.17"
   }
 }
