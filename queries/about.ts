@@ -50,10 +50,10 @@ export const aboutQuery: KirbyQuerySchema = {
     },
     // Retrieve all images from the page to resolve a UUID from
     // e.g. a structure field to a file object
-    images: {
-      query: 'page.files.template("image")',
-      select: ['uuid', 'srcset', 'width', 'height', 'alt'],
-    },
+    // images: {
+    //   query: 'page.files.template("image")',
+    //   select: ['uuid', 'srcset', 'width', 'height', 'alt'],
+    // },
     // Optional: Get title and URI of the current page in all languages
     i18nMeta: true,
   },

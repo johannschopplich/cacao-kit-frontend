@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type { KirbyBlock } from '#nuxt-kql'
-import type { KirbyAboutData } from '~/queries'
+import type { ResolvedKirbyImage } from '~/types/kirby'
 
 defineProps<{
   block: KirbyBlock<
@@ -10,41 +10,42 @@ defineProps<{
         name: string
         // Contains an array of file UUIDs
         image: string[]
+        // Contains an array of page UUIDs
+        link: string[]
       }[]
+      // Structure data is resolved server-side in a `blocksResolver` function
+      // See: https://github.com/johannschopplich/kirby-headless#custom-files-or-pages-resolver
+      resolved?: {
+        team: {
+          name: string
+          // Contains the resolved image data
+          image: ResolvedKirbyImage | null
+          // Contains the resolved page URI
+          link: string | null
+        }[]
+      }
     }
   >
 }>()
-
-const page = usePage<KirbyAboutData>()
-
-// Use static data to avoid reactivity when redirecting to another page
-// Note: See `queries/about` for the `images` query
-const images = page.value.images
 </script>
 
 <template>
   <div class="grid" style="--gutter: 1.5rem">
     <div
-      v-for="(item, index) in block.content.team"
+      v-for="(item, index) in block.content.resolved?.team"
       :key="index"
       class="column"
       style="--columns: 6"
     >
-      <div v-if="item.image?.length">
+      <div v-if="item.image">
         <figure class="column" style="aspect-ratio: 1/1">
-          <KirbyUuidResolver
-            v-slot="{ item: image }"
-            :uuid="item.image[0]"
-            :collection="images"
-          >
-            <img
-              :srcset="image?.srcset"
-              :width="image?.width"
-              :height="image?.height"
-              alt=""
-              style="object-fit: cover; width: 100%; height: 100%"
-            />
-          </KirbyUuidResolver>
+          <img
+            :srcset="item.image.srcset"
+            :width="item.image.width"
+            :height="item.image.height"
+            :alt="item.image.alt || undefined"
+            style="object-fit: cover; width: 100%; height: 100%"
+          />
 
           <figcaption>
             <strong>{{ item.name }}</strong>
