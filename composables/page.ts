@@ -1,7 +1,7 @@
 import { joinURL } from 'ufo'
 import type { HookResult } from '@nuxt/schema'
 import { kirbyStatic } from '#nuxt-kql'
-import type { KirbyPageData } from '~/queries'
+import type { KirbySharedPageData } from '~/queries'
 
 /**
  * Returns static data prefetched at build time
@@ -20,7 +20,9 @@ export function usePage<T extends Record<string, any> = Record<string, any>>() {
 /**
  * Sets the currently active page and updates the document head
  */
-export function setPage<T extends Record<string, any>>(page: T) {
+export function setPage<T extends KirbySharedPageData & Record<string, any>>(
+  page: T,
+) {
   usePage().value = page
 
   // Build the page meta tags
@@ -36,8 +38,7 @@ export function setPage<T extends Record<string, any>>(page: T) {
   const image = page?.cover?.url || site.value.cover?.url
 
   // Build alternate URL
-  const i18nMeta = page.i18nMeta as KirbyPageData['i18nMeta']
-  const alternateUrls = Object.entries(i18nMeta).map(([lang, meta]) => {
+  const alternateUrls = Object.entries(page.i18nMeta).map(([lang, meta]) => {
     // Remove homepage slug and add leading language prefix
     const uri = getLocalizedPath(meta.uri.replace(/^home/, '/'), lang)
 
