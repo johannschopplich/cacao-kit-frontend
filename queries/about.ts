@@ -1,14 +1,12 @@
+import { sharedQuerySelects } from './page'
+import type { KirbySharedPageData } from './page'
 import type {
   KirbyLayout,
   KirbyQueryResponse,
   KirbyQuerySchema,
 } from '#nuxt-kql'
 
-export interface KirbyAboutData {
-  uri: string
-  title: string
-  intendedTemplate: string
-  description: string
+export interface KirbyAboutData extends KirbySharedPageData {
   layouts: KirbyLayout[]
   address: string
   email: string
@@ -17,9 +15,6 @@ export interface KirbyAboutData {
     platform: string
     url: string
   }[]
-  cover?: {
-    url: string
-  }
   images: {
     uuid: string
     srcset: string
@@ -34,24 +29,17 @@ export type KirbyAboutResponse = KirbyQueryResponse<KirbyAboutData>
 export const aboutQuery: KirbyQuerySchema = {
   query: 'page("about")',
   select: {
-    uri: true,
-    title: true,
-    intendedTemplate: true,
-    description: true,
     layouts: 'page.layouts.toResolvedLayouts',
     address: 'page.address.kirbytext',
     email: true,
     phone: true,
     social: 'page.social.toStructure',
-    cover: {
-      query: 'page.cover.toFile?.resize(1200)',
-      select: ['url'],
-    },
     // Retrieve all images from the page to resolve a UUID from
     // e.g. a structure field to a file object
-    images: {
-      query: 'page.files.template("image")',
-      select: ['uuid', 'srcset', 'width', 'height', 'alt'],
-    },
+    // images: {
+    //   query: 'page.files.template("image")',
+    //   select: ['uuid', 'srcset', 'width', 'height', 'alt'],
+    // },
+    ...sharedQuerySelects,
   },
 }

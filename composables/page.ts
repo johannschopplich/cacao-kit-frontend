@@ -1,7 +1,7 @@
 import { joinURL } from 'ufo'
 import type { HookResult } from '@nuxt/schema'
 import { kirbyStatic } from '#nuxt-kql'
-import type { KirbyPageData } from '~/queries'
+import type { KirbySharedPageData } from '~/queries'
 
 /**
  * Returns static data prefetched at build time
@@ -20,7 +20,9 @@ export function usePage<T extends Record<string, any> = Record<string, any>>() {
 /**
  * Sets the currently active page and updates the document head
  */
-export function setPage<T extends Record<string, any>>(page: T) {
+export function setPage<T extends KirbySharedPageData & Record<string, any>>(
+  page: T,
+) {
   usePage().value = page
 
   // Build the page meta tags
@@ -62,7 +64,7 @@ export function setPage<T extends Record<string, any>>(page: T) {
 
   // Resolve components that depend on the full page data
   const nuxtApp = useNuxtApp()
-  nuxtApp._nuxtPageDependenciesRendered = true
+  nuxtApp._pageDependenciesRendered = true
   return nuxtApp.callHook('page-dependencies:rendered')
 }
 
@@ -85,7 +87,7 @@ export async function hasPage() {
         return resolver()
       }
 
-      if (nuxtApp._nuxtPageDependenciesRendered) {
+      if (nuxtApp._pageDependenciesRendered) {
         return resolver()
       }
 

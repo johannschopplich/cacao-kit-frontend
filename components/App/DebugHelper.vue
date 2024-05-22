@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import type { FetchError } from 'ofetch'
+import type { NuxtError } from '#app'
 
 defineProps<{
-  error?: FetchError | null
+  error?: NuxtError<any> | null
 }>()
 </script>
 
