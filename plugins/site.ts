@@ -31,7 +31,7 @@ export default defineNuxtPlugin(async (nuxtApp) => {
       })
       site.value = data?.result || {}
     } catch (e) {
-      console.error('Error loading site data:', (e as NuxtError).message)
+      console.error('Failed to fetch site data:', (e as NuxtError).message)
     }
   }
 })
