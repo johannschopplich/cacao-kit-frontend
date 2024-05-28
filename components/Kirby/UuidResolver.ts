@@ -24,8 +24,6 @@ export default defineComponent({
       item: props.collection.find((item) => item.uuid === props.uuid),
     })
 
-    return () => {
-      if (slots.default) return slots.default(data)
-    }
+    return () => slots.default?.(data)
   },
 })
