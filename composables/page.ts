@@ -49,7 +49,7 @@ export function setPage<T extends KirbySharedPageData & Record<string, any>>(
     }
   })
 
-  // Add English link as `x-default` language
+  // Add primary locale as `x-default` for SEO
   alternateUrls.push({
     ...alternateUrls.find((i) => i.hreflang === defaultLocale)!,
     hreflang: 'x-default',
@@ -62,10 +62,7 @@ export function setPage<T extends KirbySharedPageData & Record<string, any>>(
   })
 
   useServerHead({
-    link: [
-      { rel: 'canonical', href: url },
-      ...alternateUrls.filter(({ hreflang }) => hreflang !== locale.value),
-    ],
+    link: [{ rel: 'canonical', href: url }, ...alternateUrls],
   })
 
   useSeoMeta({
