@@ -28,7 +28,7 @@ export function setPage<T extends KirbySharedPageData & Record<string, any>>(
   // Build the page meta tags
   const { siteUrl } = useRuntimeConfig().public
   const { $i18n: i18n } = useNuxtApp()
-  const { defaultLocale, locale } = i18n
+  const { defaultLocale } = i18n
   const site = useSite()
   const title = page.title
     ? `${page.title} – ${site.value.title}`
