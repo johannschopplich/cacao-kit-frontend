@@ -10,6 +10,7 @@ importers:
     devDependencies:
       '@antfu/eslint-config':
 <<<<<<< HEAD
+<<<<<<< HEAD
         specifier: ^3.7.3
         version: 3.7.3(@typescript-eslint/utils@8.8.0(eslint@9.11.1(jiti@2.1.1))(typescript@5.5.4))(@unocss/eslint-plugin@0.63.2(eslint@9.11.1(jiti@2.1.1))(typescript@5.5.4))(@vue/compiler-sfc@3.5.10)(eslint@9.11.1(jiti@2.1.1))(typescript@5.5.4)(vitest@2.1.2(@types/node@20.16.10)(terser@5.34.1))
       '@nuxtjs/i18n':
@@ -27,6 +28,10 @@ importers:
         version: 2.18.0(@unocss/eslint-plugin@0.60.2(eslint@9.2.0)(typescript@5.4.5))(@vue/compiler-sfc@3.4.27)(eslint@9.2.0)(typescript@5.4.5)
 >>>>>>> 9918c55 (chore: refresh lockfile)
 >>>>>>> 2dc9485 (chore: refresh lockfile)
+=======
+        specifier: ^2.24.1
+        version: 2.24.1(@unocss/eslint-plugin@0.61.9(eslint@9.8.0)(typescript@5.5.4))(@vue/compiler-sfc@3.4.36)(eslint@9.8.0)(typescript@5.5.4)
+>>>>>>> 82c46bd (chore: upgrade dependencies)
       '@sindresorhus/slugify':
         specifier: ^2.2.1
         version: 2.2.1
@@ -61,6 +66,7 @@ importers:
         specifier: ^5.5.4
         version: 5.5.4
       vue-tsc:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
         specifier: ^2.1.6
@@ -203,6 +209,10 @@ devDependencies:
         version: 2.0.17(typescript@5.4.5)
 >>>>>>> 9918c55 (chore: refresh lockfile)
 >>>>>>> 2dc9485 (chore: refresh lockfile)
+=======
+        specifier: ^2.0.29
+        version: 2.0.29(typescript@5.5.4)
+>>>>>>> 82c46bd (chore: upgrade dependencies)
 
 packages:
 
@@ -1027,6 +1037,7 @@ packages:
     resolution: {integrity: sha512-Yhlar6v9WQgUp/He7BdgzOz8lqMQ8sU+jkCq7Wx8Myc5YFJLbEe7lgui/V7G1qB1DJykHSGwreceSaD60Y0PUQ==}
     hasBin: true
 
+<<<<<<< HEAD
   '@mswjs/interceptors@0.27.2':
     resolution: {integrity: sha512-mE6PhwcoW70EX8+h+Y/4dLfHk33GFt/y5PzDJz56ktMyaVGFXMJ5BYLbUjdmGEABfE0x5GgAGyKbrbkYww2s3A==}
     engines: {node: '>=18'}
@@ -1094,6 +1105,10 @@ packages:
     resolution: {integrity: sha512-7Z9gWyAuPI2NnBOvpYPD66KIWOgNznLz9BkyZ0c7qeRE6p23UCMVZ2VsrJpjPDgoJtKplGSBzASl6fQD7iEeWw==}
 >>>>>>> 9918c55 (chore: refresh lockfile)
 >>>>>>> 2dc9485 (chore: refresh lockfile)
+=======
+  '@netlify/functions@2.8.1':
+    resolution: {integrity: sha512-+6wtYdoz0yE06dSa9XkP47tw5zm6g13QMeCwM3MmHx1vn8hzwFa51JtmfraprdkL7amvb7gaNM+OOhQU1h6T8A==}
+>>>>>>> 82c46bd (chore: upgrade dependencies)
     engines: {node: '>=14.0.0'}
 
   '@netlify/node-cookies@0.1.0':
@@ -1119,6 +1134,7 @@ packages:
   '@nuxt/devalue@2.0.2':
     resolution: {integrity: sha512-GBzP8zOc7CGWyFQS6dv1lQz8VVpz5C2yRszbXufwG/9zhStTIH50EtD87NmWbTMwXDvZLNg8GIpb1UFdH93JCA==}
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1154,6 +1170,10 @@ packages:
     resolution: {integrity: sha512-YckEiiTef3dMckwLLUb+feKV0O8pS9s8ujw/FQ600oQbOCbq6hpWY5HQYxVYc3E41wu87lFiIZ1rnHjO3nM9sw==}
 >>>>>>> 9918c55 (chore: refresh lockfile)
 >>>>>>> 2dc9485 (chore: refresh lockfile)
+=======
+  '@nuxt/devtools-kit@1.3.9':
+    resolution: {integrity: sha512-tgr/F+4BbI53/JxgaXl3cuV9dMuCXMsd4GEXN+JqtCdAkDbH3wL79GGWx0/6I9acGzRsB6UZ1H6U96nfgcIrAw==}
+>>>>>>> 82c46bd (chore: upgrade dependencies)
     peerDependencies:
       vite: '*'
 
@@ -1161,6 +1181,7 @@ packages:
     resolution: {integrity: sha512-wZhouI3drb7HL7KYezYb9ksK0EeSVbHDPPKdLQePVrr+7SphThqiHoWmovBB3e/D4jtO3VC07+ILZcXUnat6HQ==}
     hasBin: true
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1225,6 +1246,10 @@ packages:
     resolution: {integrity: sha512-SuiuqtlN6OMPn7hYqbydcJmRF/L86yxi8ApcjNVnMURYBPaAAN9egkEFpQ6AjzjX+UnaG1hU8FE0w6pWKSRp3A==}
 >>>>>>> 9918c55 (chore: refresh lockfile)
 >>>>>>> 2dc9485 (chore: refresh lockfile)
+=======
+  '@nuxt/devtools@1.3.9':
+    resolution: {integrity: sha512-tFKlbUPgSXw4tyD8xpztQtJeVn3egdKbFCV0xc92FbfGbclAyaa3XhKA2tMWXEGZQpykAWMRNrGWN24FtXFA6Q==}
+>>>>>>> 82c46bd (chore: upgrade dependencies)
     hasBin: true
     peerDependencies:
       vite: '*'
@@ -1234,6 +1259,7 @@ packages:
     engines: {node: ^14.18.0 || >=16.10.0}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   '@nuxt/schema@3.13.2':
     resolution: {integrity: sha512-CCZgpm+MkqtOMDEgF9SWgGPBXlQ01hV/6+2reDEpJuqFPGzV8HYKPBcIFvn7/z5ahtgutHLzjP71Na+hYcqSpw==}
     engines: {node: ^14.18.0 || >=16.10.0}
@@ -1242,184 +1268,10 @@ packages:
     resolution: {integrity: sha512-h4YJ1d32cU7tDKjjhjtIIEck4WF/w3DTQBT348E9Pz85YLttnLqktLM0Ez9Xc2LzCeUgBDQv1el7Ob/zT3KUqg==}
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> 82c46bd (chore: upgrade dependencies)
   '@nuxt/schema@3.12.4':
     resolution: {integrity: sha512-H7FwBV4ChssMaeiLyPdVLOLUa0326ebp3pNbJfGgFt7rSoKh1MmgjorecA8JMxOQZziy3w6EELf4+5cgLh/F1w==}
-=======
-  '@nuxt/schema@3.11.2':
-    resolution: {integrity: sha512-Z0bx7N08itD5edtpkstImLctWMNvxTArsKXzS35ZuqyAyKBPcRjO1CU01slH0ahO30Gg9kbck3/RKNZPwfOjJg==}
-<<<<<<< HEAD
-=======
-    dependencies:
-      '@antfu/utils': 0.7.7
-<<<<<<< HEAD
-<<<<<<< HEAD
-      '@nuxt/devtools-kit': 1.0.8(nuxt@3.11.1)(rollup@4.13.0)(vite@5.1.6)
-      '@nuxt/devtools-wizard': 1.0.8
-      '@nuxt/kit': 3.11.1(rollup@4.13.0)
-      birpc: 0.2.17
-=======
-<<<<<<< HEAD
-      '@nuxt/devtools-kit': 1.0.8(nuxt@3.10.0)(rollup@4.9.6)(vite@5.0.12)
-=======
-      '@nuxt/devtools-kit': 1.0.8(nuxt@3.10.0)(vite@5.0.12)
->>>>>>> 19e4a05 (chore: rebase on `main`)
-      '@nuxt/devtools-wizard': 1.0.8
-      '@nuxt/kit': 3.10.0
-      birpc: 0.2.15
-<<<<<<< HEAD
-=======
-      '@nuxt/devtools-kit': 1.0.6(nuxt@3.9.1)(vite@5.0.11)
-      '@nuxt/devtools-wizard': 1.0.6
-      '@nuxt/kit': 3.9.1
-      birpc: 0.2.14
->>>>>>> 440ba8c (chore: update lockfile)
->>>>>>> 52119a4 (chore: update lockfile)
-=======
->>>>>>> 19e4a05 (chore: rebase on `main`)
-      consola: 3.2.3
-      destr: 2.0.3
-      error-stack-parser-es: 0.1.1
-      execa: 7.2.0
-      fast-glob: 3.3.2
-      flatted: 3.3.1
-      get-port-please: 3.1.2
-      hookable: 5.5.3
-      image-meta: 0.2.0
-      is-installed-globally: 1.0.0
-      launch-editor: 2.6.1
-      local-pkg: 0.5.0
-      magicast: 0.3.3
-<<<<<<< HEAD
-<<<<<<< HEAD
-      nuxt: 3.11.1(@types/node@20.11.30)(eslint@8.57.0)(rollup@4.13.0)(typescript@5.4.2)(vite@5.1.6)(vue-tsc@2.0.6)
-      nypm: 0.3.8
-=======
-      nuxt: 3.10.0(@types/node@20.11.16)(eslint@8.56.0)(rollup@4.9.6)(typescript@5.3.3)(vite@5.0.12)(vue-tsc@1.8.27)
-      nypm: 0.3.6
-=======
-      magicast: 0.3.2
-      nitropack: 2.8.1
-      nuxt: 3.9.1(@types/node@20.10.7)(eslint@8.56.0)(typescript@5.3.3)(vite@5.0.11)(vue-tsc@1.8.27)
-      nypm: 0.3.4
-      ofetch: 1.3.3
->>>>>>> 440ba8c (chore: update lockfile)
->>>>>>> 52119a4 (chore: update lockfile)
-=======
-      nuxt: 3.10.0(@types/node@20.11.16)(eslint@8.56.0)(typescript@5.3.3)(vite@5.0.12)(vue-tsc@1.8.27)
-      nypm: 0.3.6
->>>>>>> 19e4a05 (chore: rebase on `main`)
-      ohash: 1.1.3
-      pacote: 17.0.6
-      pathe: 1.1.2
-      perfect-debounce: 1.0.0
-      pkg-types: 1.0.3
-      rc9: 2.1.1
-      scule: 1.3.0
-      semver: 7.6.0
-      simple-git: 3.23.0
-      sirv: 2.0.4
-<<<<<<< HEAD
-<<<<<<< HEAD
-      unimport: 3.7.1(rollup@4.13.0)
-      vite: 5.1.6(@types/node@20.11.30)
-      vite-plugin-inspect: 0.8.3(@nuxt/kit@3.11.1)(rollup@4.13.0)(vite@5.1.6)
-      vite-plugin-vue-inspector: 4.0.2(vite@5.1.6)
-=======
-<<<<<<< HEAD
-=======
->>>>>>> 19e4a05 (chore: rebase on `main`)
-      unimport: 3.7.1(rollup@4.9.6)
-      vite: 5.0.12(@types/node@20.11.16)
-      vite-plugin-inspect: 0.8.3(@nuxt/kit@3.10.0)(vite@5.0.12)
-      vite-plugin-vue-inspector: 4.0.2(vite@5.0.12)
-<<<<<<< HEAD
-=======
-      unimport: 3.7.1(rollup@4.9.4)
-      vite: 5.0.11(@types/node@20.10.7)
-      vite-plugin-inspect: 0.8.1(@nuxt/kit@3.9.1)(vite@5.0.11)
-      vite-plugin-vue-inspector: 4.0.2(vite@5.0.11)
->>>>>>> 440ba8c (chore: update lockfile)
->>>>>>> 52119a4 (chore: update lockfile)
-=======
->>>>>>> 19e4a05 (chore: rebase on `main`)
-      which: 3.0.1
-      ws: 8.16.0
-    transitivePeerDependencies:
-      - bluebird
-      - bufferutil
-      - rollup
-      - supports-color
-      - utf-8-validate
-    dev: true
-
-<<<<<<< HEAD
-<<<<<<< HEAD
-  /@nuxt/kit@3.11.1(rollup@4.13.0):
-    resolution: {integrity: sha512-8VVlhaY4N+wipgHmSXP+gLM+esms9TEBz13I/J++PbOUJuf2cJlUUTyqMoRVL0xudVKK/8fJgSndRkyidy1m2w==}
-    engines: {node: ^14.18.0 || >=16.10.0}
-    dependencies:
-      '@nuxt/schema': 3.11.1(rollup@4.13.0)
-      c12: 1.10.0
-=======
-<<<<<<< HEAD
-  /@nuxt/kit@3.10.0(rollup@4.9.6):
-=======
-  /@nuxt/kit@3.10.0:
->>>>>>> 19e4a05 (chore: rebase on `main`)
-    resolution: {integrity: sha512-SNyZqk57kyEvTdFSYhQCYFCwT/EQO13O9SWtY2ULscdhXd2C5D0SQW9E7OM7O/31Fa+KQ9RnSTA8DnwaOFne2g==}
-    engines: {node: ^14.18.0 || >=16.10.0}
-    dependencies:
-      '@nuxt/schema': 3.10.0
-      c12: 1.6.1
->>>>>>> 52119a4 (chore: update lockfile)
-      consola: 3.2.3
-      defu: 6.1.4
-      globby: 14.0.1
-      hash-sum: 2.0.0
-      ignore: 5.3.1
-      jiti: 1.21.0
-      knitwork: 1.0.0
-      mlly: 1.6.1
-      pathe: 1.1.2
-      pkg-types: 1.0.3
-      scule: 1.3.0
-      semver: 7.6.0
-      ufo: 1.5.2
-      unctx: 2.3.1
-      unimport: 3.7.1(rollup@4.13.0)
-      untyped: 1.4.2
-    transitivePeerDependencies:
-      - rollup
-      - supports-color
-    dev: true
-
-<<<<<<< HEAD
-<<<<<<< HEAD
-  /@nuxt/schema@3.11.1(rollup@4.13.0):
-    resolution: {integrity: sha512-XyGlJsf3DtkouBCvBHlvjz+xvN4vza3W7pY3YBNMnktxlMQtfFiF3aB3A2NGLmBnJPqD3oY0j7lljraELb5hkg==}
-=======
-<<<<<<< HEAD
-  /@nuxt/schema@3.10.0(rollup@4.9.6):
-    resolution: {integrity: sha512-XwxyoW1DFMpHsoF3LHvwd2e2JFy9bTBfTo2/gH2RH9tU2W3I56A9uPRBftFXTNEDBrO2whYOFsRgjVOmM0ZZHg==}
-=======
-  /@nuxt/schema@3.9.1:
-    resolution: {integrity: sha512-GmALRLYo2vPMS1lMpUkUrUuEgTMCL1ZWyqA+zPKJ9/Rh2rrQgIvFyClqUl4txQoCZl038njP5cW0nOe2Oe0HKg==}
->>>>>>> 440ba8c (chore: update lockfile)
->>>>>>> 52119a4 (chore: update lockfile)
-<<<<<<< HEAD
->>>>>>> 0fb8dad (chore: update lockfile)
-<<<<<<< HEAD
->>>>>>> b31bd17 (chore: update lockfile)
-=======
-=======
-=======
-  /@nuxt/schema@3.10.0:
-    resolution: {integrity: sha512-XwxyoW1DFMpHsoF3LHvwd2e2JFy9bTBfTo2/gH2RH9tU2W3I56A9uPRBftFXTNEDBrO2whYOFsRgjVOmM0ZZHg==}
->>>>>>> 19e4a05 (chore: rebase on `main`)
->>>>>>> c85cef0 (chore: rebase on `main`)
->>>>>>> 77bf332 (chore: rebase on `main`)
-=======
->>>>>>> 9918c55 (chore: refresh lockfile)
     engines: {node: ^14.18.0 || >=16.10.0}
 
   '@nuxt/telemetry@2.5.4':
@@ -1427,6 +1279,7 @@ packages:
 >>>>>>> fc93198 (chore: update lockfile)
     hasBin: true
 
+<<<<<<< HEAD
 <<<<<<< HEAD
   '@nuxt/vite-builder@3.13.2':
     resolution: {integrity: sha512-3dzc3YH3UeTmzGtCevW1jTq0Q8/cm+yXqo/VS/EFM3aIO/tuNPS88is8ZF2YeBButFnLFllq/QenziPbq0YD6Q==}
@@ -1442,10 +1295,15 @@ packages:
     resolution: {integrity: sha512-eXTZsAAN4dPz4eA2UD5YU2kD/DqgfyQp1UYsIdCe6+PAVe1ifkUboBjbc0piR5+3qI/S/eqk3nzxRGbiYF7Ccg==}
 >>>>>>> b31bd17 (chore: update lockfile)
 >>>>>>> fc93198 (chore: update lockfile)
+=======
+  '@nuxt/vite-builder@3.12.4':
+    resolution: {integrity: sha512-5v3y6SkshJurZYJWHtc7+NGeCgptsreCSguBCZVzJxYdsPFdMicLoxjTt8IGAHWjkGVONrX+K8NBSFFgnx40jQ==}
+>>>>>>> 82c46bd (chore: upgrade dependencies)
     engines: {node: ^14.18.0 || >=16.10.0}
     peerDependencies:
       vue: ^3.3.4
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   '@nuxtjs/i18n@8.5.5':
@@ -1571,6 +1429,8 @@ packages:
 >>>>>>> 06f0a6f (chore: update lockfile)
 =======
 >>>>>>> 9918c55 (chore: refresh lockfile)
+=======
+>>>>>>> 82c46bd (chore: upgrade dependencies)
   '@parcel/watcher-android-arm64@2.4.1':
     resolution: {integrity: sha512-LOi/WTbbh3aTn2RYddrO8pnapixAziFl6SMxHM69r3tvdSm94JtCenaKgk1GRg5FJ5wpMCpHeW+7yqPlvZv7kg==}
     engines: {node: '>= 10.0.0'}
@@ -1958,6 +1818,7 @@ packages:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   '@unocss/astro@0.63.2':
     resolution: {integrity: sha512-paK2+DSTF4+uM/R/DrOspYeuNSoIHLGSJf7OeA/kbs+wSRT13MNoreT3Yp2qa7Ia67YylMZ50+gA0ED8NHEALQ==}
 =======
@@ -2022,12 +1883,17 @@ packages:
     resolution: {integrity: sha512-H8kJHj8aCQXksr0o7OpHqNkzm0RmpOm+qCt8vRcJJVFrdzQyaIQ/vyq3BUTV0Ex6OSzPirTe8fOaWoZdKtKf2Q==}
 >>>>>>> 9918c55 (chore: refresh lockfile)
 >>>>>>> 2dc9485 (chore: refresh lockfile)
+=======
+  '@unocss/astro@0.61.9':
+    resolution: {integrity: sha512-adOXz4itYHxqhvQgJHlEU58EHDTtY2qrcEPVmQVk4qI1W+ezQV6nQMQvti8mS/HbFw3MOJhIY1MlJoZK36/cyw==}
+>>>>>>> 82c46bd (chore: upgrade dependencies)
     peerDependencies:
       vite: ^2.9.0 || ^3.0.0-0 || ^4.0.0 || ^5.0.0-0
     peerDependenciesMeta:
       vite:
         optional: true
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   '@unocss/cli@0.63.2':
@@ -2115,6 +1981,10 @@ packages:
     resolution: {integrity: sha512-zX7eM95UI6LpKRfHTr8T2gSlFFXemPUswBxR5H4vPVlLeeCOhJWfc04vGdtSwoix5qFdnhQWIwzXGXAaB+kwoA==}
 >>>>>>> 9918c55 (chore: refresh lockfile)
 >>>>>>> 2dc9485 (chore: refresh lockfile)
+=======
+  '@unocss/cli@0.61.9':
+    resolution: {integrity: sha512-W5pN2cOKAOkeKKXMqsGD/J7dpEAmxODtOH2Afjk41qsjqUlzGlUbmgG9PjAz7TDHrAmvuf3nvmMeeT3fii2UFg==}
+>>>>>>> 82c46bd (chore: upgrade dependencies)
     engines: {node: '>=14'}
     hasBin: true
 
@@ -2139,6 +2009,7 @@ packages:
   '@unocss/inspector@0.63.2':
     resolution: {integrity: sha512-IVKbZmqg6fZIUz5OnA7l4BR8b81oiknOPWn4CPxZUZb9ZwOWznKnLxUJSv+NtPRn1YsaL14AOxDLOouSduzCmA==}
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2251,6 +2122,10 @@ packages:
     resolution: {integrity: sha512-iUMyjhlDke++D8VN20jIbGpANbjfVKJ4KKS+1+as66Kp+7jdjlZMvBITSjSrN0wf6o+s3jlqhP1vGVfgE0dE9Q==}
 >>>>>>> 9918c55 (chore: refresh lockfile)
 >>>>>>> 2dc9485 (chore: refresh lockfile)
+=======
+  '@unocss/nuxt@0.61.9':
+    resolution: {integrity: sha512-OEVufhr48jV+oitArbz9GTBcYfP8D/Cu4V4Pt0Ukmhog4o/UPFI3kiIyx25JB/LSctnR6QYnS+ry3w999vl4zQ==}
+>>>>>>> 82c46bd (chore: upgrade dependencies)
 
   '@unocss/postcss@0.63.2':
     resolution: {integrity: sha512-CnIgooarFM3AKODXnUg+T9uqwxLsyD3R2eHEuCX/lik0mbY14Cd3V25dOJc42AYdvmungfPNBe7dDjaC3frQ+Q==}
@@ -2316,9 +2191,6 @@ packages:
   '@unocss/transformer-variant-group@0.61.9':
     resolution: {integrity: sha512-iewADYlY0LoeCb80E/4feHVSCKHl+QzGH4xUvW0zU85evMqNOa0/t0dCIoEG22wr/9piyEsg6OdHprZ2QliYqg==}
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
   '@unocss/vite@0.61.9':
     resolution: {integrity: sha512-hP/sL9rq1DvVCbSSx05m+bwYqen1nHm9tW6elKFkfV7X5jBUywu24WRq551NZI33KmgHA525ApX++DSWye+0uw==}
     peerDependencies:
@@ -2326,6 +2198,7 @@ packages:
 
   '@unocss/webpack@0.61.9':
     resolution: {integrity: sha512-60YjNV3Aitqke/G25a4iMHrbZWyPfIpJniT8EXz/C/6Sb983rTxWr4Po7KbZGmzkywTy9O5n5H4MpfMLCtBhuw==}
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> 77bf332 (chore: rebase on `main`)
@@ -2416,6 +2289,8 @@ packages:
 =======
 >>>>>>> 9918c55 (chore: refresh lockfile)
 >>>>>>> 2dc9485 (chore: refresh lockfile)
+=======
+>>>>>>> 82c46bd (chore: upgrade dependencies)
     peerDependencies:
       webpack: ^4 || ^5
 
@@ -2464,6 +2339,7 @@ packages:
       vite:
         optional: true
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2552,6 +2428,10 @@ packages:
     resolution: {integrity: sha512-YSgzcbXrRo8a/TF/YIguqEmTld1KA60VETKJG8iFuaAfj7j+Tbdin3cj7/cYbcCHORSq1v9IThgq7r8keH7LXQ==}
 >>>>>>> 9918c55 (chore: refresh lockfile)
 >>>>>>> 2dc9485 (chore: refresh lockfile)
+=======
+  '@vue-macros/common@1.12.2':
+    resolution: {integrity: sha512-+NGfhrPvPNOb3Wg9PNPEXPe0HTXmVe6XJawL1gi3cIjOSGIhpOdvmMT2cRuWb265IpA/PeL5Sqo0+DQnEDxLvw==}
+>>>>>>> 82c46bd (chore: upgrade dependencies)
     engines: {node: '>=16.14.0'}
     peerDependencies:
       vue: ^2.7.0 || ^3.2.25
@@ -2636,6 +2516,7 @@ packages:
     resolution: {integrity: sha512-l9Q502TBTaPYGanl1G+hPgd3QX5s4CGnpXriVBR5fEZ/goI6fvDaVmIl3Td8oKFurOxTmbXvBPSsgrd6eu6HYg==}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   '@vueuse/nuxt@11.1.0':
     resolution: {integrity: sha512-ZPYigcqgPPe9vk9nBHLF8p0zshX8qvWV/ox1Y4GdV4k2flPiw7+2THNTpU2NZDBXSOXlhB2sao+paGCsvJm/Qw==}
 =======
@@ -2705,6 +2586,10 @@ packages:
 =======
 >>>>>>> 9918c55 (chore: refresh lockfile)
 >>>>>>> 2dc9485 (chore: refresh lockfile)
+=======
+  '@vueuse/nuxt@10.11.0':
+    resolution: {integrity: sha512-PV15CU28qzr/+4IleyahobwU9kfTwfbsl8f+wkv6TWjboFVdt4WLMP2TNfPj7QgssyDdCRdl3gLZ4DC884wnDw==}
+>>>>>>> 82c46bd (chore: upgrade dependencies)
     peerDependencies:
       nuxt: ^3.0.0
 
@@ -2861,6 +2746,7 @@ packages:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   ast-kit@1.2.1:
     resolution: {integrity: sha512-h31wotR7rkFLrlmGPn0kGqOZ/n5EQFvp7dBs400chpHDhHc8BK3gpvyHDluRujuGgeoTAv3dSIMz9BI3JxAWyQ==}
     engines: {node: '>=16.14.0'}
@@ -2873,6 +2759,8 @@ packages:
 =======
 >>>>>>> 2dc9485 (chore: refresh lockfile)
 <<<<<<< HEAD
+=======
+>>>>>>> 82c46bd (chore: upgrade dependencies)
   ast-kit@0.12.2:
     resolution: {integrity: sha512-es1zHFsnZ4Y4efz412nnrU3KvVAhgqy90a7Yt9Wpi5vQ3l4aYMOX0Qx4FD0elKr5ITEhiUGCSFcgGYf4YTuACg==}
     engines: {node: '>=16.14.0'}
@@ -2883,6 +2771,7 @@ packages:
 
   ast-walker-scope@0.6.1:
     resolution: {integrity: sha512-0ZdQEsSfH3mX4BFbRCc3xOBjx5bDbm73+aAdQOHerPQNf8K0XFMAv79ucd2BpnSc4UMyvBDixiroT8yjm2Y6bw==}
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> 77bf332 (chore: rebase on `main`)
@@ -2921,6 +2810,8 @@ packages:
   ast-walker-scope@0.5.0:
     resolution: {integrity: sha512-NsyHMxBh4dmdEHjBo1/TBZvCKxffmZxRYhmclfu0PP6Aftre47jOHYaYaNqJcV0bxihxFXhDkzLHUwHc0ocd0Q==}
 >>>>>>> b31bd17 (chore: update lockfile)
+=======
+>>>>>>> 82c46bd (chore: upgrade dependencies)
     engines: {node: '>=16.14.0'}
 
   async-sema@3.1.1:
@@ -3474,30 +3365,8 @@ packages:
     resolution: {integrity: sha512-/veY75JbMK4j1yjvuUxuVsiS/hr/4iHs9FTT6cgTexxdE0Ly/glccBAkloH/DofkjRbZU3bnoj38mOmhkZ0lHw==}
     engines: {node: '>=12'}
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-  escodegen@2.1.0:
-=======
-=======
->>>>>>> 0fb8dad (chore: update lockfile)
-<<<<<<< HEAD
-  /escodegen@2.1.0:
->>>>>>> b4f2c91 (chore: update lockfile)
-    resolution: {integrity: sha512-2NlIDTwUWJN0mRPQOdtQBzbUHvdGY2P1VXSyU83Q3xKxM7WHX2Ql8dKq782Q9TgQUNOLEzEYu9bzLNj1q88I5w==}
-    engines: {node: '>=6.0'}
-    hasBin: true
-
-<<<<<<< HEAD
   eslint-compat-utils@0.5.1:
     resolution: {integrity: sha512-3z3vFexKIEnjHE3zCMRo6fn/e44U7T1khUjg+Hp0ZQMCigh28rALD0nPFBcGZuiLC5rLZa2ubQHDRln09JfU2Q==}
-=======
-<<<<<<< HEAD
-=======
->>>>>>> 9918c55 (chore: refresh lockfile)
-  eslint-compat-utils@0.5.0:
-    resolution: {integrity: sha512-dc6Y8tzEcSYZMHa+CMPLi/hyo1FzNeonbhJL7Ol0ccuKQkwopJcJBA9YL/xmMTLU1eKigXo9vj9nALElWYSowg==}
->>>>>>> 06f0a6f (chore: update lockfile)
     engines: {node: '>=12'}
     peerDependencies:
       eslint: '>=6.0.0'
@@ -3664,22 +3533,8 @@ packages:
     resolution: {integrity: sha512-oruZaFkjorTpF32kDSI5/75ViwGeZginGGy2NoOSg3Q9bnwlnmDm4HLnkl0RE3n+njDXR037aY1+x58Z/zFdwQ==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-  esprima@4.0.1:
-    resolution: {integrity: sha512-eGuFFw7Upda+g4p+QHvnW0RyTX/SVeJBDM/gCtMARO0cLuT2HcEKnTPvhjV6aGeqrCB/sbNop0Kszm0jsaWU4A==}
-    engines: {node: '>=4'}
-    hasBin: true
-
-<<<<<<< HEAD
   esquery@1.6.0:
     resolution: {integrity: sha512-ca9pw9fomFcKPvFLXhBKUK90ZvGibiGOvRJNbjljY7s7uq/5YO4BOzcYtJqExdx99rF6aAcnRxHmcUHcz6sQsg==}
-=======
-=======
->>>>>>> 9918c55 (chore: refresh lockfile)
-  esquery@1.5.0:
-    resolution: {integrity: sha512-YQLXUplAwJgCydQ78IMJywZCceoqk1oH01OERdSAJc/7U2AylwjhSCLDEtqwg811idIS/9fIU5GjG73IgjKMVg==}
->>>>>>> 06f0a6f (chore: update lockfile)
     engines: {node: '>=0.10'}
 
   esrecurse@4.3.0:
@@ -4635,6 +4490,7 @@ packages:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   nuxt-kql@1.5.3:
     resolution: {integrity: sha512-fTZ6hgAH2Nc+iMYmKEcr1onAxeuSGeRopiJ4PsJxvqs/L8GrXSOvt8EigAGNGEMkyWsF4Id7W23rts8jWZM2/Q==}
 
@@ -4646,11 +4502,14 @@ packages:
 =======
 >>>>>>> 2dc9485 (chore: refresh lockfile)
 <<<<<<< HEAD
+=======
+>>>>>>> 82c46bd (chore: upgrade dependencies)
   nuxt-kql@1.5.0:
     resolution: {integrity: sha512-hLCA2nlL+tX1SOQn1/eGxT2nq9Y7U3i8YIgDnLt+DGxn7pwwAId0bxfaOGLoPO/FlC6BOG6C3cYLeODaJo8H0w==}
 
   nuxt@3.12.4:
     resolution: {integrity: sha512-/ddvyc2kgYYIN2UEjP8QIz48O/W3L0lZm7wChIDbOCj0vF/yLLeZHBaTb3aNvS9Hwp269nfjrm8j/mVxQK4RhA==}
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> 77bf332 (chore: rebase on `main`)
@@ -4742,6 +4601,8 @@ packages:
 =======
 >>>>>>> 9918c55 (chore: refresh lockfile)
 >>>>>>> 2dc9485 (chore: refresh lockfile)
+=======
+>>>>>>> 82c46bd (chore: upgrade dependencies)
     engines: {node: ^14.18.0 || >=16.10.0}
     hasBin: true
     peerDependencies:
@@ -4904,6 +4765,7 @@ packages:
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
   pidtree@0.6.0:
     resolution: {integrity: sha512-eG2dWTVw5bzqGRztnHExczNxt5VGsE6OwTeCG3fdUf9KBsZzO3R5OIIIzWR+iZA0NtZ+RDVdaoE2dK1cn6jH4g==}
@@ -4949,6 +4811,10 @@ packages:
     resolution: {integrity: sha512-ko14TjmDuQJ14zsotODv7dBlwxKhUKQEhuhmbqo1uCi9BB0Z2alo/wAXg6q1dTR5TyuqYyWhjtfe/Tsh+X28jQ==}
 >>>>>>> 9918c55 (chore: refresh lockfile)
 >>>>>>> 2dc9485 (chore: refresh lockfile)
+=======
+  pkg-types@1.1.3:
+    resolution: {integrity: sha512-+JrgthZG6m3ckicaOB74TwQ+tBWsFl3qVQg7mN8ulwSOElJ7gBhKzj2VkCPnZ4NlF6kEquYU+RIYNVAvzd54UA==}
+>>>>>>> 82c46bd (chore: upgrade dependencies)
 
   pluralize@8.0.0:
     resolution: {integrity: sha512-Nc3IT5yHzflTfbjgqWcCPpo7DaKy4FnpB0l/zCAW0Tc7jxAiuqSxHasntB3D7887LSrA93kDJ9IXovxJYxyLCA==}
@@ -5475,27 +5341,10 @@ packages:
     peerDependencies:
       postcss: ^8.4.31
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-  sucrase@3.35.0:
-=======
-<<<<<<< HEAD
-  /sucrase@3.35.0:
->>>>>>> 0fb8dad (chore: update lockfile)
-    resolution: {integrity: sha512-8EbVDiu9iN/nESwxeSxDKe0dunta1GOlHufmSSXxMD2z2/tMZpDMpvXQGsc+ajGo8y2uYUmixaSRUc/QPoQ0GA==}
-    engines: {node: '>=16 || 14 >=14.17'}
-    hasBin: true
-
-<<<<<<< HEAD
   superjson@2.2.1:
     resolution: {integrity: sha512-8iGv75BYOa0xRJHK5vRLEjE2H/i4lulTjzpUXic3Eg8akftYjkmQDa8JARQ42rlczXyFR3IeRoeFCc7RxHsYZA==}
     engines: {node: '>=16'}
 
-=======
-<<<<<<< HEAD
->>>>>>> b31bd17 (chore: update lockfile)
-=======
->>>>>>> 9918c55 (chore: refresh lockfile)
   supports-color@5.5.0:
     resolution: {integrity: sha512-QjVjwdXIt408MIiAqCX4oUKsgU2EqAGzs2Ppkm4aQYbjm+ZEWEcW4SfFNTr4uMNZma0ey4f5lgLrkB0aX0QMow==}
     engines: {node: '>=4'}
@@ -5634,6 +5483,7 @@ packages:
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   ts-interface-checker@0.1.13:
     resolution: {integrity: sha512-Y/arvbn+rrz3JCKl9C4kVNfTfSm2/mEp5FSz5EsZSANGPSlQrpRI5M4PKF+mJnE52jOO90PnPSc3Ur3bTQw0gA==}
 
@@ -5651,6 +5501,10 @@ packages:
     resolution: {integrity: sha512-AEYxH93jGFPn/a2iVAwW87VuUIkR1FVUKB77NwMF7nBTDkDrrT/Hpt/IrCJ0QXhW27jTBDcf5ZY7w6RiqTMw2Q==}
 >>>>>>> b31bd17 (chore: update lockfile)
 >>>>>>> fc93198 (chore: update lockfile)
+=======
+  tslib@2.6.3:
+    resolution: {integrity: sha512-xNvxJEOUiWPGhUuUdQgAJPKOOJfGnIyKySOc09XkKsgdUV/3E2zvwZYdejjmRgPCgcym1juLH3226yA7sEFJKQ==}
+>>>>>>> 82c46bd (chore: upgrade dependencies)
 
   tsx@4.19.1:
     resolution: {integrity: sha512-0flMz1lh74BR4wOvBjuh9olbnwqCPc35OOlfyzHba0Dc+QNUeWX/Gq2YTbnwcWPO3BMd8fkzRVrHcsR+a7z7rA==}
@@ -5744,6 +5598,7 @@ packages:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   unocss@0.63.2:
     resolution: {integrity: sha512-ldQ4rDjvzZts5LEWXbbr49kDCqeVtwXfZ9eU04zRYYjqVn7qU4jLGOQEhsdZyMHcQ58V+GKI5pgFvw2uDclROg==}
 =======
@@ -5808,6 +5663,10 @@ packages:
     resolution: {integrity: sha512-Cj1IXS+VZuiZtQxHn/ffAAN422gUusUEgF1RS83WyNB0kMsJyIxb9KK9N425QAvQvsKpL5GrZs5KoNtU3zGMog==}
 >>>>>>> 9918c55 (chore: refresh lockfile)
 >>>>>>> 2dc9485 (chore: refresh lockfile)
+=======
+  unocss@0.61.9:
+    resolution: {integrity: sha512-D7nEObT1lhCUwXU5MoQ2Msh5S5g1EHVVSqDNM2ODs6dqWSboDCsRTPZQiyQmV9vCobrjYcvAFno9ZAgO7pvurw==}
+>>>>>>> 82c46bd (chore: upgrade dependencies)
     engines: {node: '>=14'}
     peerDependencies:
       '@unocss/webpack': 0.63.2
@@ -5818,6 +5677,7 @@ packages:
       vite:
         optional: true
 
+<<<<<<< HEAD
 <<<<<<< HEAD
   unplugin-vue-router@0.10.8:
     resolution: {integrity: sha512-xi+eLweYAqolIoTRSmumbi6Yx0z5M0PLvl+NFNVWHJgmE2ByJG1SZbrn+TqyuDtIyln20KKgq8tqmL7aLoiFjw==}
@@ -5830,6 +5690,10 @@ packages:
     resolution: {integrity: sha512-ddRreGq0t5vlSB7OMy4e4cfU1w2AwBQCwmvW3oP/0IHQiokzbx4hd3TpwBu3eIAFVuhX2cwNQwp1U32UybTVCw==}
 >>>>>>> b31bd17 (chore: update lockfile)
 >>>>>>> fc93198 (chore: update lockfile)
+=======
+  unplugin-vue-router@0.10.2:
+    resolution: {integrity: sha512-aG1UzB96cu4Lu+EdQxl22NIKFrde5b+k568JdsaJ2gzPqnQufPk2j1gCA5DxFfGz9zg4tYTqy2A2JHForVbyXg==}
+>>>>>>> 82c46bd (chore: upgrade dependencies)
     peerDependencies:
       vue-router: ^4.4.0
     peerDependenciesMeta:
@@ -5968,6 +5832,7 @@ packages:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   vite-plugin-inspect@0.8.7:
     resolution: {integrity: sha512-/XXou3MVc13A5O9/2Nd6xczjrUwt7ZyI9h8pTnUMkr5SshLcb0PJUOVq2V+XVkdeU4njsqAtmK87THZuO2coGA==}
 =======
@@ -6019,6 +5884,10 @@ packages:
     resolution: {integrity: sha512-G0N3rjfw+AiiwnGw50KlObIHYWfulVwaCBUBLh2xTW9G1eM9ocE5olXkEYUbwyTmX+azM8duubi+9w5awdCz+g==}
 >>>>>>> 9918c55 (chore: refresh lockfile)
 >>>>>>> 2dc9485 (chore: refresh lockfile)
+=======
+  vite-plugin-inspect@0.8.5:
+    resolution: {integrity: sha512-JvTUqsP1JNDw0lMZ5Z/r5cSj81VK2B7884LO1DC3GMBhdcjcsAnJjdWq7bzQL01Xbh+v60d3lju3g+z7eAtNew==}
+>>>>>>> 82c46bd (chore: upgrade dependencies)
     engines: {node: '>=14'}
     peerDependencies:
       '@nuxt/kit': '*'
@@ -6115,33 +5984,8 @@ packages:
   vue-bundle-renderer@2.1.1:
     resolution: {integrity: sha512-+qALLI5cQncuetYOXp4yScwYvqh8c6SMXee3B+M7oTZxOgtESP0l4j/fXdEJoZ+EdMxkGWIj+aSEyjXkOdmd7g==}
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
   vue-demi@0.14.10:
     resolution: {integrity: sha512-nMZBOwuzabUO0nLgIcc6rycZEebF6eeUfaiQx9+WSk8e29IbLvPU9feI6tqW4kTo3hvoYAJkMh8n8D0fuISphg==}
-=======
-=======
->>>>>>> b31bd17 (chore: update lockfile)
-=======
->>>>>>> 77bf332 (chore: rebase on `main`)
-<<<<<<< HEAD
-=======
->>>>>>> 9918c55 (chore: refresh lockfile)
-  vue-demi@0.14.7:
-    resolution: {integrity: sha512-EOG8KXDQNwkJILkx/gPcoL/7vH+hORoBaKgGe+6W7VFMvCYJfmF2dGbvgDroVnI8LU7/kTu8mbjRZGBU1z9NTA==}
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
->>>>>>> 440ba8c (chore: update lockfile)
-  /vue-demi@0.14.6(vue@3.4.5):
-    resolution: {integrity: sha512-8QA7wrYSHKaYgUxDA5ZC24w+eHm3sYCbp0EzcDwKqN3p6HqtTCGR/GVsPyZW92unff4UlcSh++lmqDWN3ZIq4w==}
->>>>>>> 8dbeae7 (chore: update lockfile)
->>>>>>> 06f0a6f (chore: update lockfile)
-=======
->>>>>>> 77bf332 (chore: rebase on `main`)
     engines: {node: '>=12'}
     hasBin: true
     peerDependencies:
@@ -6160,6 +6004,7 @@ packages:
     peerDependencies:
       eslint: '>=6.0.0'
 
+<<<<<<< HEAD
 <<<<<<< HEAD
   vue-i18n@9.14.1:
     resolution: {integrity: sha512-xjxV0LYc1xQ8TbAVfIyZiOSS8qoU1R0YwV7V5I8I6Fd64+zvsTsdPgtylPsie3Vdt9wekeYhr+smKDeaK6RBuA==}
@@ -6193,6 +6038,10 @@ packages:
     resolution: {integrity: sha512-hKQJ1vDAZ5LVkKEnHhmm1f9pMiWIBNGF5AwU67PdH7TyXCj/a4hTccuUuYCAMgJK6rO/NVYtQIEN3yL8CECa7Q==}
 >>>>>>> 9918c55 (chore: refresh lockfile)
 >>>>>>> 2dc9485 (chore: refresh lockfile)
+=======
+  vue-router@4.4.2:
+    resolution: {integrity: sha512-1qNybkn2L7QsLzaXs8nvlQmRKp8XF8DCxZys/Jr1JpQcHsKUxTKzTxCVA1G7NfBfwRIBgCJPoujOG5lHCCNUxw==}
+>>>>>>> 82c46bd (chore: upgrade dependencies)
     peerDependencies:
       vue: ^3.2.0
 
@@ -6902,6 +6751,7 @@ snapshots:
       - supports-color
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   '@intlify/bundle-utils@7.5.1(vue-i18n@9.14.1(vue@3.5.10(typescript@5.5.4)))':
 =======
 <<<<<<< HEAD
@@ -6968,6 +6818,8 @@ snapshots:
 
 =======
 >>>>>>> 9918c55 (chore: refresh lockfile)
+=======
+>>>>>>> 82c46bd (chore: upgrade dependencies)
   '@ioredis/commands@1.2.0': {}
 
   '@isaacs/cliui@8.0.2':
@@ -7025,6 +6877,7 @@ snapshots:
       - supports-color
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   '@miyaneee/rollup-plugin-json5@1.2.0(rollup@4.24.0)':
 =======
 <<<<<<< HEAD
@@ -7043,6 +6896,9 @@ snapshots:
   '@mswjs/interceptors@0.27.2':
 >>>>>>> 9918c55 (chore: refresh lockfile)
 >>>>>>> 2dc9485 (chore: refresh lockfile)
+=======
+  '@netlify/functions@2.8.1':
+>>>>>>> 82c46bd (chore: upgrade dependencies)
     dependencies:
       '@netlify/serverless-functions-api': 1.26.1
 
@@ -7274,6 +7130,7 @@ snapshots:
       - webpack-sources
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   '@nuxtjs/i18n@8.5.5(magicast@0.3.5)(rollup@4.24.0)(vue@3.5.10(typescript@5.5.4))(webpack-sources@3.2.3)':
 =======
 <<<<<<< HEAD
@@ -7394,6 +7251,8 @@ snapshots:
 >>>>>>> 9918c55 (chore: refresh lockfile)
 >>>>>>> 2dc9485 (chore: refresh lockfile)
 
+=======
+>>>>>>> 82c46bd (chore: upgrade dependencies)
   '@parcel/watcher-android-arm64@2.4.1':
     optional: true
 
@@ -7517,6 +7376,7 @@ snapshots:
       rollup: 4.24.0
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   '@rollup/plugin-yaml@4.1.2(rollup@4.24.0)':
 =======
 <<<<<<< HEAD
@@ -7531,6 +7391,8 @@ snapshots:
 
 =======
 >>>>>>> 9918c55 (chore: refresh lockfile)
+=======
+>>>>>>> 82c46bd (chore: upgrade dependencies)
   '@rollup/pluginutils@4.2.1':
     dependencies:
       estree-walker: 2.0.2
@@ -8973,6 +8835,7 @@ snapshots:
   escape-string-regexp@5.0.0: {}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   escodegen@2.1.0:
     dependencies:
       esprima: 4.0.1
@@ -8989,6 +8852,9 @@ snapshots:
   eslint-compat-utils@0.5.0(eslint@9.2.0):
 >>>>>>> 9918c55 (chore: refresh lockfile)
 >>>>>>> 2dc9485 (chore: refresh lockfile)
+=======
+  eslint-compat-utils@0.5.1(eslint@9.8.0):
+>>>>>>> 82c46bd (chore: upgrade dependencies)
     dependencies:
       eslint: 9.11.1(jiti@2.1.1)
       semver: 7.6.3
@@ -9256,13 +9122,7 @@ snapshots:
       acorn-jsx: 5.3.2(acorn@8.12.1)
       eslint-visitor-keys: 3.4.3
 
-<<<<<<< HEAD
-  esprima@4.0.1: {}
-
   esquery@1.6.0:
-=======
-  esquery@1.5.0:
->>>>>>> 9918c55 (chore: refresh lockfile)
     dependencies:
       estraverse: 5.3.0
 
@@ -10697,6 +10557,7 @@ snapshots:
   picomatch@4.0.2: {}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   pirates@4.0.6: {}
 
 <<<<<<< HEAD
@@ -10707,6 +10568,9 @@ snapshots:
   pkg-types@1.1.1:
 >>>>>>> 9918c55 (chore: refresh lockfile)
 >>>>>>> 2dc9485 (chore: refresh lockfile)
+=======
+  pkg-types@1.1.3:
+>>>>>>> 82c46bd (chore: upgrade dependencies)
     dependencies:
       confbox: 0.1.7
       mlly: 1.7.1
@@ -11241,23 +11105,10 @@ snapshots:
       postcss: 8.4.47
       postcss-selector-parser: 6.1.2
 
-<<<<<<< HEAD
-  sucrase@3.35.0:
-    dependencies:
-      '@jridgewell/gen-mapping': 0.3.5
-      commander: 4.1.1
-      glob: 10.4.5
-      lines-and-columns: 1.2.4
-      mz: 2.7.0
-      pirates: 4.0.6
-      ts-interface-checker: 0.1.13
-
   superjson@2.2.1:
     dependencies:
       copy-anything: 3.0.5
 
-=======
->>>>>>> 9918c55 (chore: refresh lockfile)
   supports-color@5.5.0:
     dependencies:
       has-flag: 3.0.0
@@ -11381,6 +11232,7 @@ snapshots:
       typescript: 5.5.4
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   ts-interface-checker@0.1.13: {}
 
 <<<<<<< HEAD
@@ -11391,6 +11243,9 @@ snapshots:
   tslib@2.6.2: {}
 >>>>>>> 9918c55 (chore: refresh lockfile)
 >>>>>>> 2dc9485 (chore: refresh lockfile)
+=======
+  tslib@2.6.3: {}
+>>>>>>> 82c46bd (chore: upgrade dependencies)
 
   tsx@4.19.1:
     dependencies:
@@ -11798,6 +11653,7 @@ snapshots:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   vue-i18n@9.14.1(vue@3.5.10(typescript@5.5.4)):
 =======
 =======
@@ -11893,6 +11749,9 @@ snapshots:
   vue-observe-visibility@2.0.0-alpha.1(vue@3.4.27(typescript@5.4.5)):
 >>>>>>> 9918c55 (chore: refresh lockfile)
 >>>>>>> 2dc9485 (chore: refresh lockfile)
+=======
+  vue-router@4.4.2(vue@3.4.36(typescript@5.5.4)):
+>>>>>>> 82c46bd (chore: upgrade dependencies)
     dependencies:
       '@vue/devtools-api': 6.6.4
       vue: 3.5.10(typescript@5.5.4)
@@ -11904,6 +11763,7 @@ snapshots:
       semver: 7.6.3
       typescript: 5.5.4
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   vue@3.5.10(typescript@5.5.4):
@@ -11936,6 +11796,9 @@ snapshots:
   vue-router@4.3.2(vue@3.4.27(typescript@5.4.5)):
 >>>>>>> 9918c55 (chore: refresh lockfile)
 >>>>>>> 2dc9485 (chore: refresh lockfile)
+=======
+  vue@3.4.36(typescript@5.5.4):
+>>>>>>> 82c46bd (chore: upgrade dependencies)
     dependencies:
       '@vue/compiler-dom': 3.5.10
       '@vue/compiler-sfc': 3.5.10
