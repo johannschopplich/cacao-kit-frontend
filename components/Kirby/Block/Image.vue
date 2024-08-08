@@ -4,21 +4,18 @@ import type { ResolvedKirbyImage } from '~/types/kirby'
 
 defineProps<{
   block: KirbyBlock<
-    'resolved-image',
+    'image-resolved',
     {
       location: string
-      image: string[]
+      // File UUIDs are resolved server-side to the actual image data
+      // See: https://kirby.tools/docs/headless/field-methods
+      image: ResolvedKirbyImage[]
       src: string
       alt: string
       caption: string
       link: string
       ratio: string
       crop: boolean
-      // File UUUIDs are resolved server-side to the actual image data
-      // See: https://github.com/johannschopplich/kirby-headless#toresolvedblocks
-      resolved?: {
-        image: ResolvedKirbyImage[]
-      }
     }
   >
 }>()
@@ -41,13 +38,13 @@ const { width } = useElementSize(figure)
         :src="block.content.location === 'web' ? block.content.src : undefined"
         :srcset="
           block.content.location !== 'web'
-            ? block.content.resolved?.image?.[0].srcset
+            ? block.content.image?.[0]?.srcset
             : undefined
         "
-        :width="block.content.resolved?.image?.[0].width"
-        :height="block.content.resolved?.image?.[0].height"
+        :width="block.content.image?.[0]?.width"
+        :height="block.content.image?.[0]?.height"
         :sizes="`${width}px`"
-        :alt="block.content.alt || block.content.resolved?.image?.[0].alt || ''"
+        :alt="block.content.alt || block.content.image?.[0]?.alt || ''"
       />
     </component>
 

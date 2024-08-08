@@ -6,24 +6,15 @@ defineProps<{
   block: KirbyBlock<
     'team-structure',
     {
+      // Structure data is resolved server-side in a `blocksResolver` function
+      // See: https://kirby.tools/docs/headless/field-methods#custom-resolvers
       team: {
         name: string
-        // Contains an array of file UUIDs
-        image: string[]
-        // Contains an array of page UUIDs
-        link: string[]
+        // Contains the resolved image data
+        image: ResolvedKirbyImage | null
+        // Contains the resolved page URI
+        link: string | null
       }[]
-      // Structure data is resolved server-side in a `blocksResolver` function
-      // See: https://github.com/johannschopplich/kirby-headless#custom-files-or-pages-resolver
-      resolved?: {
-        team: {
-          name: string
-          // Contains the resolved image data
-          image: ResolvedKirbyImage | null
-          // Contains the resolved page URI
-          link: string | null
-        }[]
-      }
     }
   >
 }>()
@@ -32,7 +23,7 @@ defineProps<{
 <template>
   <div class="grid" style="--gutter: 1.5rem">
     <div
-      v-for="(item, index) in block.content.resolved?.team"
+      v-for="(item, index) in block.content.team"
       :key="index"
       class="column"
       style="--columns: 6"
