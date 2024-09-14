@@ -7,6 +7,7 @@ import type { KirbyPageData } from '~/queries'
 await hasPage()
 
 const site = useSite()
+// eslint-disable-next-line unused-imports/no-unused-vars
 const page = usePage<KirbyPageData>()
 
 const listedChildren = computed(() =>
