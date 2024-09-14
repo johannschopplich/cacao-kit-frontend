@@ -1,6 +1,6 @@
-import { joinURL, withoutTrailingSlash } from 'ufo'
-import { SitemapStream, streamToPromise } from 'sitemap'
 import type { KirbyApiResponse } from 'kirby-types'
+import { SitemapStream, streamToPromise } from 'sitemap'
+import { joinURL, withoutTrailingSlash } from 'ufo'
 
 interface KirbySitemapItem {
   url: string

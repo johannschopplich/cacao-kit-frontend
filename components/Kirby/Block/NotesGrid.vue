@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { notesQuery } from '~/queries'
 import type { KirbyBlock } from '#nuxt-kql'
+import { notesQuery } from '~/queries'
 import type { KirbyNotesResponse } from '~/queries'
 
 defineProps<{

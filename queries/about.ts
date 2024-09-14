@@ -1,10 +1,10 @@
-import { sharedQuerySelects } from './page'
-import type { KirbySharedPageData } from './page'
 import type {
   KirbyLayout,
   KirbyQueryResponse,
   KirbyQuerySchema,
 } from '#nuxt-kql'
+import type { KirbySharedPageData } from './page'
+import { sharedQuerySelects } from './page'
 
 export interface KirbyAboutData extends KirbySharedPageData {
   layouts: KirbyLayout[]
