@@ -2,7 +2,7 @@
   // Enable ESLint flat config support
   "eslint.useFlatConfig": true,
 
-  // Use Pretter as the default formatter
+  // Use Prettier as the default formatter
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.formatOnSave": true,
 
