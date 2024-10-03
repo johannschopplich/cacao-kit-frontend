@@ -1,6 +1,6 @@
 import type { HookResult } from '@nuxt/schema'
-import { joinURL } from 'ufo'
 import { kirbyStatic } from '#nuxt-kql'
+import { joinURL } from 'ufo'
 import type { KirbySharedPageData } from '~/queries'
 
 /**

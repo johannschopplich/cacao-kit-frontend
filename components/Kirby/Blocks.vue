@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import type { ComponentPublicInstance } from 'vue'
 import type { KirbyBlock } from '#nuxt-kql'
+import type { ComponentPublicInstance } from 'vue'
 import {
   LazyKirbyBlockHeading,
   LazyKirbyBlockImage,
