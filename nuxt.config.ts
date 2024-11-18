@@ -6,9 +6,9 @@ const shouldPrerender = process.env.NITRO_PRERENDER_PAGES === 'true'
 if (shouldPrerender) consola.info('Prerendering enabled')
 
 export default defineNuxtConfig({
-  compatibilityDate: '2024-04-03',
-
   modules: ['@unocss/nuxt', '@vueuse/nuxt', 'nuxt-kql'],
+
+  compatibilityDate: '2024-04-03',
 
   devtools: {
     enabled: true,
