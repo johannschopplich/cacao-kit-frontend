@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type { KirbyBlock } from '#nuxt-kql'
-import type { ComponentPublicInstance } from 'vue'
+import type { Component } from 'vue'
 import {
   LazyKirbyBlockHeading,
   LazyKirbyBlockImage,
@@ -18,9 +18,7 @@ defineProps<{
   blocks: KirbyBlock<string>[]
 }>()
 
-type ComponentConstructor = new (...args: any[]) => ComponentPublicInstance
-
-const blockComponents: Record<string, ComponentConstructor> = {
+const blockComponents: Record<string, Component> = {
   // Built-in Kirby blocks
   heading: LazyKirbyBlockHeading,
   image: LazyKirbyBlockImage,

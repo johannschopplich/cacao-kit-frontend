@@ -77,7 +77,7 @@ import {
 +  LazyKirbyBlockNoteHeader,
 } from '#components'
 
-const blockComponents: Partial<Record<string, new () => ComponentPublicInstance>> = {
+const blockComponents: Partial<Record<string, Component> = {
   // Custom blocks
 +  'note-header': LazyKirbyBlockNoteHeader,
 }
@@ -97,7 +97,6 @@ This repository includes a [`netlify.toml`](./netlify.toml) file to deploy the a
 #### Deployment Previews
 
 - Cloudflare Pages 👉 [cacao-kit.byjohann.dev](https://cacao-kit.byjohann.dev) (recommended)
-- Netlify 👉 [cacao-kit.netlify.app](https://cacao-kit.netlify.app)
 
 ## What's Kirby?
 

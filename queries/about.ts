@@ -34,12 +34,6 @@ export const aboutQuery: KirbyQuerySchema = {
     email: true,
     phone: true,
     social: 'page.social.toStructure',
-    // Retrieve all images from the page to resolve a UUID from
-    // e.g. a structure field to a file object
-    // images: {
-    //   query: 'page.files.template("image")',
-    //   select: ['uuid', 'srcset', 'width', 'height', 'alt'],
-    // },
     ...sharedQuerySelects,
   },
 }
