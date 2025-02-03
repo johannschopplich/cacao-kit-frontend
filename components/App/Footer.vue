@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { NuxtLink } from '#components'
 import type { KirbyPageData } from '~/queries'
+import { NuxtLink } from '#components'
 
 // Wait for the page to be loaded before rendering this component,
 // otherwise `usePage()` would return `undefined`
