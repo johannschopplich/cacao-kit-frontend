@@ -16,7 +16,7 @@ export function getNonLocalizedSlug(
   if (Array.isArray(param)) {
     param = param.filter(Boolean)
 
-    // If the first item is a locale, remove it
+    // Remove locale prefix if present
     if (param.length > 0 && locales.includes(param[0])) {
       param = param.slice(1)
     }
