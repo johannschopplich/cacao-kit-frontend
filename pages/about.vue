@@ -1,8 +1,8 @@
 <script setup lang="ts">
 // This Nuxt page will render the about page
 
-import { aboutQuery } from '~/queries'
 import type { KirbyAboutResponse } from '~/queries'
+import { aboutQuery } from '~/queries'
 
 defineI18nRoute({
   paths: {

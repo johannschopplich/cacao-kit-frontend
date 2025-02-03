@@ -10,7 +10,7 @@ export default defineNuxtConfig({
   // https://github.com/johannschopplich/cacao-kit-frontend/tree/chore/without-i18n
   modules: ['@nuxtjs/i18n', '@unocss/nuxt', '@vueuse/nuxt', 'nuxt-kql'],
 
-  compatibilityDate: '2024-04-03',
+  compatibilityDate: '2024-09-23',
 
   devtools: {
     enabled: true,
