@@ -1,7 +1,7 @@
 {
   "type": "module",
   "private": true,
-  "packageManager": "pnpm@9.15.4",
+  "packageManager": "pnpm@10.5.2",
   "scripts": {
     "dev": "nuxi dev",
     "dev:tunnel": "nuxi dev --tunnel",
@@ -16,19 +16,26 @@
     "prepare": "nuxi prepare"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^4.1.1",
-    "@nuxtjs/i18n": "^9.1.5",
+    "@antfu/eslint-config": "^4.3.0",
+    "@nuxtjs/i18n": "^9.2.1",
     "@sindresorhus/slugify": "^2.2.1",
-    "@types/node": "^22.13.0",
-    "@unocss/eslint-config": "^65.4.3",
-    "@unocss/nuxt": "^65.4.3",
-    "@vueuse/nuxt": "^12.5.0",
-    "eslint": "^9.19.0",
+    "@types/node": "^22.13.5",
+    "@unocss/eslint-config": "^65.5.0",
+    "@unocss/nuxt": "^65.5.0",
+    "@vueuse/nuxt": "^12.7.0",
+    "eslint": "^9.21.0",
     "nuxt": "^3.15.4",
     "nuxt-kql": "^1.5.4",
-    "prettier": "^3.4.2",
+    "prettier": "^3.5.2",
     "sitemap": "^8.0.0",
     "typescript": "^5.7.3",
-    "vue-tsc": "^2.2.0"
+    "vue-tsc": "^2.2.4"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "@parcel/watcher",
+      "esbuild",
+      "vue-demi"
+    ]
   }
 }
