@@ -8,7 +8,7 @@ if (shouldPrerender) consola.info('Prerendering enabled')
 export default defineNuxtConfig({
   modules: ['@unocss/nuxt', '@vueuse/nuxt', 'nuxt-kql'],
 
-  compatibilityDate: '2024-09-23',
+  compatibilityDate: '2025-01-01',
 
   devtools: {
     enabled: true,
