@@ -7,7 +7,7 @@ const { locale, localeCodes } = useI18n()
 const route = useRoute()
 
 // Extract the non-localized slug
-const pageUri = getNonLocalizedSlug(route.params.slug, localeCodes.value)
+const pageUri = getNonLocalizedSlug(route.params.slug!, localeCodes.value)
 
 const { data: pageData, error: pageError } = await useKql(
   getPageQuery(pageUri || 'home'),

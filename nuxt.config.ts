@@ -1,5 +1,5 @@
 import process from 'node:process'
-import { prefetchQuery, siteQuery } from './queries'
+import { prefetchQuery, siteQuery } from './app/queries'
 
 export default defineNuxtConfig({
   // If you project doesn't require i18n, use the `without-i18n` branch instead:
@@ -7,6 +7,10 @@ export default defineNuxtConfig({
   modules: ['@nuxtjs/i18n', '@unocss/nuxt', '@vueuse/nuxt', 'nuxt-kql'],
 
   compatibilityDate: '2025-01-01',
+
+  future: {
+    compatibilityVersion: 4,
+  },
 
   devtools: {
     enabled: true,
