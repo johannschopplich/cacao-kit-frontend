@@ -15,7 +15,7 @@ jobs:
       - uses: pnpm/action-setup@v3
       - uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 22
           registry-url: https://registry.npmjs.org/
           cache: pnpm
 
@@ -28,7 +28,6 @@ jobs:
       - name: Build
         run: pnpm run build
         env:
-          NITRO_PRERENDER_PAGES: true
           NITRO_PRESET: cloudflare_pages
           KIRBY_BASE_URL: ${{ secrets.KIRBY_BASE_URL }}
           KIRBY_API_TOKEN: ${{ secrets.KIRBY_API_TOKEN }}

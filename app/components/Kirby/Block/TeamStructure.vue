@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type { KirbyBlock } from '#nuxt-kql'
-import type { ResolvedKirbyImage } from '~/types/kirby'
+import type { ResolvedKirbyImage } from '#shared/types/kirby'
 
 defineProps<{
   block: KirbyBlock<
