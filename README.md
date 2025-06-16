@@ -92,11 +92,11 @@ This kit is written in semantic HTML and styled by the class-less CSS framework 
 
 Just like any other Nuxt application, the Cacao Kit can be deployed on a Node.js server, pre-rendered for static hosting, or deployed to serverless or edge (CDN) environments. Follow the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) to learn more.
 
-This repository includes a [`netlify.toml`](./netlify.toml) file to deploy the application to [Netlify](https://www.netlify.com). The recommended deployment provider is [Cloudflare Pages](https://pages.cloudflare.com), which doesn't require any additional configuration.
+This repository includes a [`netlify.toml`](./netlify.toml) file to deploy the application to [Netlify](https://www.netlify.com). The recommended deployment provider is [Cloudflare Workers](https://workers.cloudflare.com), which doesn't require any additional configuration.
 
 #### Deployment Previews
 
-- Cloudflare Pages 👉 [cacao-kit.byjohann.dev](https://cacao-kit.byjohann.dev) (recommended)
+- Cloudflare 👉 [cacao-kit.byjohann.dev](https://cacao-kit.byjohann.dev) (recommended)
 
 ## What's Kirby?
 

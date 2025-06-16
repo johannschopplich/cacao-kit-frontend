@@ -1,3 +1,16 @@
 name = "cacao-kit"
-pages_build_output_dir = "./dist"
-compatibility_date = "2025-01-01"
+main = "./.output/server/index.mjs"
+workers_dev = false
+
+compatibility_date = "2025-06-01"
+compatibility_flags = ["nodejs_compat", "no_nodejs_compat_v2"]
+
+routes = [
+  { pattern = "cacao-kit.byjohann.dev", custom_domain = true }
+]
+
+[assets]
+directory = "./.output/public"
+not_found_handling = "single-page-application"
+binding = "ASSETS"
+
