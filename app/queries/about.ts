@@ -2,7 +2,7 @@ import type {
   KirbyLayout,
   KirbyQueryResponse,
   KirbyQuerySchema,
-} from '#nuxt-kql'
+} from 'kirby-types'
 import type { KirbySharedPageData } from './page'
 import { sharedQuerySelects } from './page'
 

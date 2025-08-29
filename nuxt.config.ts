@@ -6,11 +6,7 @@ export default defineNuxtConfig({
   // https://github.com/johannschopplich/cacao-kit-frontend/tree/chore/without-i18n
   modules: ['@nuxtjs/i18n', '@unocss/nuxt', '@vueuse/nuxt', 'nuxt-kql'],
 
-  compatibilityDate: '2025-06-01',
-
-  future: {
-    compatibilityVersion: 4,
-  },
+  compatibilityDate: '2025-08-01',
 
   devtools: {
     enabled: true,
@@ -33,17 +29,10 @@ export default defineNuxtConfig({
 
   i18n: {
     locales: [
-      {
-        code: 'en',
-        file: 'en.json',
-      },
-      {
-        code: 'de',
-        file: 'de.json',
-      },
+      { code: 'en', file: 'en.json' },
+      { code: 'de', file: 'de.json' },
     ],
     defaultLocale: 'en',
-    lazy: true,
     strategy: 'prefix',
     compilation: {
       strictMessage: false,
