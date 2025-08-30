@@ -1,34 +1,34 @@
 {
   "type": "module",
   "private": true,
-  "packageManager": "pnpm@10.11.0",
+  "packageManager": "pnpm@10.15.0",
   "scripts": {
-    "dev": "nuxi dev",
-    "dev:tunnel": "nuxi dev --tunnel",
-    "build": "nuxi build",
-    "generate": "nuxi generate",
-    "preview": "nuxi preview",
+    "dev": "nuxt dev",
+    "dev:tunnel": "nuxt dev --tunnel",
+    "build": "nuxt build",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "format": "prettier \"**/*.{css,html,json,md,mjs,ts,vue,yml}\" --write",
     "format:check": "prettier \"**/*.{css,html,json,md,mjs,ts,vue,yml}\" --check",
-    "test:types": "vue-tsc --noEmit",
-    "prepare": "nuxi prepare"
+    "test:types": "vue-tsc -b --noEmit",
+    "prepare": "nuxt prepare"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^4.13.2",
+    "@antfu/eslint-config": "^5.2.1",
     "@sindresorhus/slugify": "^2.2.1",
-    "@types/node": "^22.15.21",
-    "@unocss/eslint-config": "^66.1.2",
-    "@unocss/nuxt": "^66.1.2",
-    "@vueuse/nuxt": "^13.3.0",
-    "eslint": "^9.27.0",
-    "nuxt": "^3.17.4",
-    "nuxt-kql": "^1.5.4",
-    "prettier": "^3.5.3",
+    "@types/node": "^24.3.0",
+    "@unocss/eslint-config": "^66.4.2",
+    "@unocss/nuxt": "^66.4.2",
+    "@vueuse/nuxt": "^13.8.0",
+    "eslint": "^9.34.0",
+    "nuxt": "^4.0.3",
+    "nuxt-kql": "^2.0.0",
+    "prettier": "^3.6.2",
     "sitemap": "^8.0.0",
-    "typescript": "^5.8.3",
-    "vue-tsc": "^2.2.10"
+    "typescript": "^5.9.2",
+    "vue-tsc": "^3.0.6"
   },
   "pnpm": {
     "onlyBuiltDependencies": [

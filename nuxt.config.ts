@@ -4,7 +4,7 @@ import { prefetchQuery, siteQuery } from './app/queries'
 export default defineNuxtConfig({
   modules: ['@unocss/nuxt', '@vueuse/nuxt', 'nuxt-kql'],
 
-  compatibilityDate: '2025-01-01',
+  compatibilityDate: '2025-08-01',
 
   devtools: {
     enabled: true,
