@@ -1,7 +1,7 @@
 {
   "type": "module",
   "private": true,
-  "packageManager": "pnpm@10.15.0",
+  "packageManager": "pnpm@10.16.1",
   "scripts": {
     "dev": "nuxt dev",
     "dev:tunnel": "nuxt dev --tunnel",
@@ -16,19 +16,19 @@
     "prepare": "nuxt prepare"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^5.2.1",
-    "@sindresorhus/slugify": "^2.2.1",
-    "@types/node": "^24.3.0",
-    "@unocss/eslint-config": "^66.4.2",
-    "@unocss/nuxt": "^66.4.2",
-    "@vueuse/nuxt": "^13.8.0",
-    "eslint": "^9.34.0",
-    "nuxt": "^4.0.3",
-    "nuxt-kql": "^2.0.0",
+    "@antfu/eslint-config": "^5.3.0",
+    "@sindresorhus/slugify": "^3.0.0",
+    "@types/node": "^24.5.1",
+    "@unocss/eslint-config": "^66.5.1",
+    "@unocss/nuxt": "^66.5.1",
+    "@vueuse/nuxt": "^13.9.0",
+    "eslint": "^9.35.0",
+    "nuxt": "^4.1.2",
+    "nuxt-kql": "^2.1.1",
     "prettier": "^3.6.2",
     "sitemap": "^8.0.0",
     "typescript": "^5.9.2",
-    "vue-tsc": "^3.0.6"
+    "vue-tsc": "^3.0.7"
   },
   "pnpm": {
     "onlyBuiltDependencies": [

@@ -20,7 +20,7 @@ defineProps<{
   >
 }>()
 
-const figure = ref<HTMLElement | undefined>()
+const figure = useTemplateRef('figure')
 const { width } = useElementSize(figure)
 </script>
 

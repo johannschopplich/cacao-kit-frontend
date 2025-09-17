@@ -5,12 +5,9 @@ export default defineNuxtPlugin(async () => {
   const site = useSite()
 
   try {
-    // Response will be cached in payload by default, no need to
-    // handle server/client side differently
     const data = await $kql(siteQuery)
-
     site.value = data?.result || {}
   } catch (e) {
-    console.error('Error loading site data:', (e as NuxtError).message)
+    console.error('Failed to fetch site data:', (e as NuxtError).message)
   }
 })
