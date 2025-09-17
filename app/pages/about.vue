@@ -12,7 +12,7 @@ defineI18nRoute({
 })
 
 const { locale, t } = useI18n()
-const content = ref<HTMLElement | undefined>()
+const content = useTemplateRef('content')
 useInternalLinks(content)
 
 const { data, error } = await useKql<KirbyAboutResponse>(aboutQuery, {

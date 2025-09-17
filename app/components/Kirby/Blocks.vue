@@ -33,7 +33,7 @@ const blockComponents: Record<string, Component> = {
   'team-structure': LazyKirbyBlockTeamStructure,
 }
 
-const content = ref<HTMLElement | undefined>()
+const content = useTemplateRef('content')
 useInternalLinks(content)
 </script>
 
