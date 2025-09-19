@@ -1,4 +1,5 @@
-import type { NuxtApp, NuxtError } from '#app'
+import type { NuxtApp } from '#app'
+import type { FetchError } from 'ofetch'
 import { siteQuery } from '~/queries'
 
 export default defineNuxtPlugin(async (nuxtApp) => {
@@ -31,7 +32,7 @@ export default defineNuxtPlugin(async (nuxtApp) => {
       })
       site.value = data?.result || {}
     } catch (e) {
-      console.error('Failed to fetch site data:', (e as NuxtError).message)
+      console.error('Failed to fetch site data:', (e as FetchError).message)
     }
   }
 })

@@ -23,7 +23,7 @@ If it doesn't speak to you or if you need custom Kirby page blueprints with cust
 - 🏆 Motto: [“Everything is a block”](./components/Kirby/Block/) – Kirby blocks define what to render for each page
 - 🛣️ All pages are rendered by the [catch-all route](./pages/[...slug].vue) by default (you can still create Nuxt pages)
 - 🌌 Use Kirby's page structure as the source of truth
-- 🫂 Kirby Query Language with [`nuxt-kql`](https://nuxt-kql.byjohann.dev)
+- 🫂 Kirby Query Language with [`nuxt-kirby`](https://nuxt-kirby.byjohann.dev)
 - 🏛 Global [site data](./plugins/site.ts) similar to Kirby's `$site`
 - 🔎 SSR generated SEO data
 - 📐 Prettier & ESLint

@@ -4,7 +4,7 @@ import { prefetchQuery, siteQuery } from './app/queries'
 export default defineNuxtConfig({
   // If you project doesn't require i18n, use the `without-i18n` branch instead:
   // https://github.com/johannschopplich/cacao-kit-frontend/tree/chore/without-i18n
-  modules: ['@nuxtjs/i18n', '@unocss/nuxt', '@vueuse/nuxt', 'nuxt-kql'],
+  modules: ['@nuxtjs/i18n', '@unocss/nuxt', '@vueuse/nuxt', 'nuxt-kirby'],
 
   compatibilityDate: '2025-08-01',
 
@@ -18,7 +18,7 @@ export default defineNuxtConfig({
     },
   },
 
-  kql: {
+  kirby: {
     auth: 'bearer',
     prefetch: {
       kirbyStatic: prefetchQuery,
