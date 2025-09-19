@@ -3,16 +3,11 @@
 # Cacao Kit (Frontend)
 
 > [!TIP]
-> If internationalization is **not** a requirement for your project, you can check out the [🧱 branch without i18n](https://github.com/johannschopplich/cacao-kit-frontend/compare/main...chore/without-i18n).
+> If internationalization is **not** a requirement for your project, you can check out the [🧱 branch without Nuxt i18n](https://github.com/johannschopplich/cacao-kit-frontend/compare/main...chore/without-i18n).
 >
-> If this is your first time building an application with Nuxt, I recommend taking a look into the [💚 Kirby Nuxt Starterkit](https://github.com/johannschopplich/kirby-nuxt-starterkit) first to get a basic understanding of this tech-stack. It is a port of the Kirby starter kit, built with Nuxt and KQL.
+> If this is your first time building an application with Nuxt, I recommend taking a look at the [💚 Kirby Nuxt Starterkit](https://github.com/johannschopplich/kirby-nuxt-starterkit) first to get a basic understanding of this tech stack. It is a Nuxt and KQL port of the Kirby starter kit.
 
-This repository provides a minimal but feature-rich Nuxt 3 starter kit. It fetches content from the [🍫 Cacao Kit backend](https://github.com/johannschopplich/cacao-kit-backend), a headless Kirby instance. It is the evolved version of the [Kirby Nuxt Starterkit](https://github.com/johannschopplich/kirby-nuxt-starterkit) and my best practice solution to build a Nuxt based frontend on top of Kirby CMS.
-
-You can harness every feature Nuxt provides to build a server-side rendered application or even pre-render the content using [Nuxt's static generation](https://nuxt.com/docs/getting-started/deployment#static-hosting).
-
-Key design decisions is a block-first approach. Meaning, you can use Kirby's page structure as the source of truth and don't have to replicate the page structure in Nuxt. All pages are rendered by the [catch-all route](./pages/[...slug].vue). Of course, you don't have to stick with the block-first architecture.
-If it doesn't speak to you or if you need custom Kirby page blueprints with custom fields, you can always create Nuxt pages and query the content using KQL. See the [`pages/about.vue`](./pages/about.vue) page for an example.
+This repository is a minimal but feature-rich Nuxt starter kit. It is the evolved version of the [Kirby Nuxt Starterkit](https://github.com/johannschopplich/kirby-nuxt-starterkit) and my best practice solution to build a Nuxt based frontend on top of a headless Kirby CMS. The [🍫 Cacao Kit backend](https://github.com/johannschopplich/cacao-kit-backend) is the counterpart to this frontend.
 
 ## Key Features
 
@@ -28,6 +23,10 @@ If it doesn't speak to you or if you need custom Kirby page blueprints with cust
 - 🔎 SSR generated SEO data
 - 📐 Prettier & ESLint
 - 🔢 Pre-configured [VSCode settings](./.vscode/settings.json)
+
+A block-first approach is one of the core design decisions for this Nuxt template. This means that you can use Kirby's page structure as the source of truth, without having to replicate it in Nuxt. All pages are rendered by the [catch-all route](./pages/[...slug].vue). However, you are not obliged to stick with the block-first architecture.
+
+If you find it unsuitable or if you require custom Kirby page blueprints with custom fields, you can always create Nuxt pages and query the content using KQL. See the [`pages/about.vue`](./pages/about.vue) page for an example.
 
 ## Usage
 
@@ -56,47 +55,170 @@ Build the application for production with `pnpm run build`.
 
 Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment).
 
-## Cookbook
+## Architecture & Development
 
-### Static Hosting
+### Project Structure
 
-You can use Nuxt's [static generation](https://nuxt.com/docs/getting-started/deployment#static-hosting) to pre-render the content. This is especially useful if you want to host the application on a CDN or a static hosting service like [Netlify](https://www.netlify.com).
+The Cacao Kit follows a clear architectural pattern designed around its block-first approach:
 
-### How to Add a New Block
+```
+app/
+├── components/
+│   └── Kirby/
+│       ├── Block/           # Individual block components
+│       ├── Blocks.vue       # Block renderer
+│       └── Layouts.vue      # Layout renderer
+├── composables/
+│   ├── links.ts             # Internal link handling
+│   └── proxy.ts             # Development proxy utilities
+├── pages/
+│   ├── [...slug].vue        # Universal page renderer
+│   └── about.vue            # Custom page example
+├── plugins/
+│   └── site.ts              # Global site data management
+└── queries/                 # KQL query definitions
+    ├── index.ts
+    ├── page.ts
+    ├── site.ts
+    └── prefetch.ts
+```
 
-Given you have created the block in the Kirby backend, you can add it to the frontend by following these steps:
+### Block-First Architecture
 
-- Create a new component in the [`components/Kirby/Block/`](./components/Kirby/Block/) directory.
-- Add the new block to the [`components/Kirby/Blocks.vue`](./components/Kirby/Blocks.vue) component to make it available when rendering the block's field JSON data.
+Every page is rendered through the catch-all route `[...slug].vue`, which dynamically renders either:
 
-For example, let's say you have created a new block called `NoteHeader` and want to render it with the `KirbyBlocks` component:
+- **Layouts**: Column-based content using `KirbyLayouts`
+- **Blocks**: Linear content using `KirbyBlocks`
 
-```diff
+```vue
+<template>
+  <div>
+    <KirbyLayouts v-if="page?.layouts?.length" :layouts="page.layouts" />
+    <KirbyBlocks v-else-if="page?.blocks" :blocks="page.blocks" />
+  </div>
+</template>
+```
+
+### Adding New Blocks
+
+1. **Create the block component** in `app/components/Kirby/Block/`:
+
+```vue
+<!-- app/components/Kirby/Block/MyCustomBlock.vue -->
 <script setup lang="ts">
-import {
-+  LazyKirbyBlockNoteHeader,
-} from '#components'
+import type { KirbyBlock } from '#nuxt-kirby'
 
-const blockComponents: Partial<Record<string, Component> = {
+defineProps<{
+  block: KirbyBlock<'my-custom-block'>
+}>()
+</script>
+
+<template>
+  <section class="my-custom-block">
+    <h2>{{ block.content.title }}</h2>
+    <div v-html="block.content.text" />
+  </section>
+</template>
+```
+
+2. **Register the block** in `app/components/Kirby/Blocks.vue`:
+
+```ts
+import { LazyKirbyBlockMyCustomBlock } from '#components'
+
+const blockComponents: Record<string, Component> = {
   // Custom blocks
-+  'note-header': LazyKirbyBlockNoteHeader,
+  'my-custom-block': LazyKirbyBlockMyCustomBlock,
 }
+```
+
+### Working with KQL Queries
+
+Define reusable queries in the `queries/` directory:
+
+```ts
+// app/queries/blog.ts
+import type { KirbyQuerySchema } from 'kirby-types'
+
+export const blogQuery: KirbyQuerySchema = {
+  query: 'page("blog")',
+  select: {
+    title: true,
+    children: {
+      query: 'page.children.listed',
+      select: {
+        title: true,
+        date: true,
+        excerpt: 'page.text.excerpt(300)',
+        cover: {
+          query: 'page.cover.toFile?.resize(600)',
+          select: ['url', 'alt'],
+        },
+      },
+    },
+  },
+}
+```
+
+Use them in components:
+
+```vue
+<script setup lang="ts">
+import { blogQuery } from '~/queries/blog'
+
+const { locale } = useI18n()
+const { data } = await useKql(blogQuery, {
+  language: locale.value,
+})
 </script>
 ```
 
-### How to Bring Your Own Styling
+### Internationalization
 
-This kit is written in semantic HTML and styled by the class-less CSS framework [new.css](https://newcss.net/). It is only used for the demo content. You can remove the framework by deleting the `<Link />` tag in the [`app.vue`](./app.vue) component and start over with your own styling.
+The kit includes full i18n support with [`@nuxtjs/i18n`](https://i18n.nuxtjs.org).
 
-### Deployment
+### Custom Styling
 
-Just like any other Nuxt application, the Cacao Kit can be deployed on a Node.js server, pre-rendered for static hosting, or deployed to serverless or edge (CDN) environments. Follow the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) to learn more.
+This kit uses semantic HTML with minimal styling via [new.css](https://newcss.net) for demonstration. To implement your own styling, remove the import in `app.vue` and add your custom styles.
 
-This repository includes a [`netlify.toml`](./netlify.toml) file to deploy the application to [Netlify](https://www.netlify.com). The recommended deployment provider is [Cloudflare Workers](https://workers.cloudflare.com), which doesn't require any additional configuration.
+## Deployment
 
-#### Deployment Previews
+### Static Site Generation
 
-- Cloudflare 👉 [cacao-kit.byjohann.dev](https://cacao-kit.byjohann.dev) (recommended)
+For maximum performance and CDN compatibility, generate a static site:
+
+```bash
+pnpm run generate
+```
+
+This creates a fully static version in the `dist/` directory that can be hosted on any static hosting service.
+
+### Server-Side Rendering
+
+Deploy with full SSR capabilities:
+
+```bash
+pnpm run build
+```
+
+### Environment Configuration
+
+Ensure these environment variables are set in production:
+
+```bash
+# Required: Your Kirby backend URL
+KIRBY_BASE_URL=https://your-kirby-backend.com
+
+# Required: Authentication token for KQL queries
+KIRBY_API_TOKEN=your-secret-token
+
+# Optional: Public site URL for SEO and social sharing
+NUXT_PUBLIC_SITE_URL=https://your-frontend.com
+```
+
+### Preview
+
+- Production site: [cacao-kit.byjohann.dev](https://cacao-kit.byjohann.dev)
 
 ## What's Kirby?
 
