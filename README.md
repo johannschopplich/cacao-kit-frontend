@@ -1,32 +1,39 @@
+<div align="center">
+
 [![Cacao Kit Frontend](./.github/og-image.png)](https://cacao-kit.byjohann.dev)
 
 # Cacao Kit (Frontend)
 
-> [!TIP]
-> If internationalization is **not** a requirement for your project, you can check out the [🧱 branch without Nuxt i18n](https://github.com/johannschopplich/cacao-kit-frontend/compare/main...chore/without-i18n).
->
-> If this is your first time building an application with Nuxt, I recommend taking a look at the [💚 Kirby Nuxt Starterkit](https://github.com/johannschopplich/kirby-nuxt-starterkit) first to get a basic understanding of this tech stack. It is a Nuxt and KQL port of the Kirby starter kit.
+A production-ready Nuxt starter kit for headless Kirby CMS.
 
-This repository is a minimal but feature-rich Nuxt starter kit. It is the evolved version of the [Kirby Nuxt Starterkit](https://github.com/johannschopplich/kirby-nuxt-starterkit) and my best practice solution to build a Nuxt based frontend on top of a headless Kirby CMS. The [🍫 Cacao Kit backend](https://github.com/johannschopplich/cacao-kit-backend) is the counterpart to this frontend.
+[Usage](#usage) •
+[Architecture](#architecture--development) •
+[Deployment](#deployment)
+
+</div>
+
+> [!TIP]
+> If internationalization is **not** a requirement for your project, check out the [🧱 branch without Nuxt i18n](https://github.com/johannschopplich/cacao-kit-frontend/compare/main...chore/without-i18n).
+>
+> If this is your first time building an application with Nuxt and Kirby, take a look at the [💚 Kirby Nuxt Starterkit](https://github.com/johannschopplich/kirby-nuxt-starterkit) first to get a basic understanding of this tech stack.
+
+This is a minimal but feature-rich Nuxt starter kit and the evolved version of the [Kirby Nuxt Starterkit](https://github.com/johannschopplich/kirby-nuxt-starterkit). It pairs with the [🍫 Cacao Kit backend](https://github.com/johannschopplich/cacao-kit-backend).
 
 ## Key Features
 
-> [!NOTE]
-> If i18n is **not** a requirement for your project, you can check out the [🧱 branch without i18n](https://github.com/johannschopplich/cacao-kit-frontend/compare/main...chore/without-i18n).
-
-- 🌐 Internationalization with [`@nuxtjs/i18n`](https://github.com/nuxt-modules/i18n)
-- 🏆 Motto: [“Everything is a block”](./components/Kirby/Block/) – Kirby blocks define what to render for each page
+- 🏆 Motto: ["Everything is a block"](./components/Kirby/Block/) – Kirby blocks define what to render for each page
 - 🛣️ All pages are rendered by the [catch-all route](./pages/[...slug].vue) by default (you can still create Nuxt pages)
 - 🌌 Use Kirby's page structure as the source of truth
 - 🫂 Kirby Query Language with [`nuxt-kirby`](https://nuxt-kirby.byjohann.dev)
+- 🌐 Internationalization with [`@nuxtjs/i18n`](https://github.com/nuxt-modules/i18n)
 - 🏛 Global [site data](./plugins/site.ts) similar to Kirby's `$site`
-- 🔎 SSR generated SEO data
+- 🔎 SSR-generated SEO data
 - 📐 Prettier & ESLint
 - 🔢 Pre-configured [VSCode settings](./.vscode/settings.json)
 
-A block-first approach is one of the core design decisions for this Nuxt template. This means that you can use Kirby's page structure as the source of truth, without having to replicate it in Nuxt. All pages are rendered by the [catch-all route](./pages/[...slug].vue). However, you are not obliged to stick with the block-first architecture.
+The block-first approach is a core design decision: use Kirby's page structure as the source of truth without replicating it in Nuxt. All pages are rendered by the [catch-all route](./pages/[...slug].vue).
 
-If you find it unsuitable or if you require custom Kirby page blueprints with custom fields, you can always create Nuxt pages and query the content using KQL. See the [`pages/about.vue`](./pages/about.vue) page for an example.
+If you need custom Kirby page blueprints with custom fields, you can create dedicated Nuxt pages and query the content using KQL. See [`pages/about.vue`](./pages/about.vue) for an example.
 
 ## Usage
 
@@ -220,7 +227,8 @@ NUXT_PUBLIC_SITE_URL=https://your-frontend.com
 
 - Production site: [cacao-kit.byjohann.dev](https://cacao-kit.byjohann.dev)
 
-## What's Kirby?
+<details>
+<summary>What's Kirby?</summary>
 
 - **[getkirby.com](https://getkirby.com)** – Get to know the CMS.
 - **[Try it](https://getkirby.com/try)** – Take a test ride with our online demo. Or download one of our kits to get started.
@@ -229,9 +237,11 @@ NUXT_PUBLIC_SITE_URL=https://your-frontend.com
 - **[Feedback](https://feedback.getkirby.com)** – You have an idea for Kirby? Share it.
 - **[Forum](https://forum.getkirby.com)** – Whenever you get stuck, don't hesitate to reach out for questions and support.
 - **[Discord](https://chat.getkirby.com)** – Hang out and meet the community.
-- **[YouTube](https://youtube.com/kirbyCasts)** - Watch the latest video tutorials visually with Bastian.
+- **[YouTube](https://youtube.com/kirbyCasts)** – Watch the latest video tutorials with Bastian.
 - **[Mastodon](https://mastodon.social/@getkirby)** – Spread the word.
 - **[Instagram](https://www.instagram.com/getkirby/)** – Share your creations: #madewithkirby.
+
+</details>
 
 ## License
 
