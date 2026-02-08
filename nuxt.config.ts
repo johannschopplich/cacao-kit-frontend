@@ -43,7 +43,6 @@ export default defineNuxtConfig({
     },
     bundle: {
       fullInstall: false,
-      dropMessageCompiler: true,
     },
   },
 
