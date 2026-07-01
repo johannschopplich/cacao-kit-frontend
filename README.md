@@ -21,19 +21,18 @@ This is a minimal but feature-rich Nuxt starter kit and the evolved version of t
 
 ## Key Features
 
-- 🏆 Motto: ["Everything is a block"](./components/Kirby/Block/) – Kirby blocks define what to render for each page
-- 🛣️ All pages are rendered by the [catch-all route](./pages/[...slug].vue) by default (you can still create Nuxt pages)
+- 🏆 Motto: ["Everything is a block"](./app/components/Kirby/Block/) – Kirby blocks define what to render for each page
+- 🛣️ All pages are rendered by the [catch-all route](./app/pages/[...slug].vue) by default (you can still create Nuxt pages)
 - 🌌 Use Kirby's page structure as the source of truth
 - 🫂 Kirby Query Language with [`nuxt-kirby`](https://nuxt-kirby.byjohann.dev)
 - 🌐 Internationalization with [`@nuxtjs/i18n`](https://github.com/nuxt-modules/i18n)
-- 🏛 Global [site data](./plugins/site.ts) similar to Kirby's `$site`
+- 🎨 [UnoCSS](https://unocss.dev) and [VueUse](https://vueuse.org) pre-wired
+- 🏛 Global [site data](./app/plugins/site.ts) similar to Kirby's `$site`
 - 🔎 SSR-generated SEO data
 - 📐 Prettier & ESLint
 - 🔢 Pre-configured [VSCode settings](./.vscode/settings.json)
 
-The block-first approach is a core design decision: use Kirby's page structure as the source of truth without replicating it in Nuxt. All pages are rendered by the [catch-all route](./pages/[...slug].vue).
-
-If you need custom Kirby page blueprints with custom fields, you can create dedicated Nuxt pages and query the content using KQL. See [`pages/about.vue`](./pages/about.vue) for an example.
+If you need custom Kirby page blueprints with custom fields, you can create dedicated Nuxt pages and query the content using KQL. See [`app/pages/about.vue`](./app/pages/about.vue) for an example.
 
 ## Usage
 
@@ -47,7 +46,7 @@ If you need custom Kirby page blueprints with custom fields, you can create dedi
 # Base URL of the Kirby backend
 KIRBY_BASE_URL=
 # Token for bearer authentication
-# See https://github.com/johannschopplich/cacao-kit-backend#bearer-token
+# See https://kirby.tools/docs/headless/configuration/authentication
 KIRBY_API_TOKEN=
 ```
 
@@ -77,7 +76,9 @@ app/
 │       └── Layouts.vue      # Layout renderer
 ├── composables/
 │   ├── links.ts             # Internal link handling
-│   └── proxy.ts             # Development proxy utilities
+│   ├── page.ts              # Page data and SEO meta
+│   ├── proxy.ts             # Development proxy utilities
+│   └── site.ts              # Site data access
 ├── pages/
 │   ├── [...slug].vue        # Universal page renderer
 │   └── about.vue            # Custom page example
@@ -85,6 +86,8 @@ app/
 │   └── site.ts              # Global site data management
 └── queries/                 # KQL query definitions
     ├── index.ts
+    ├── about.ts
+    ├── notes.ts
     ├── page.ts
     ├── site.ts
     └── prefetch.ts
@@ -186,7 +189,7 @@ The kit includes full i18n support with [`@nuxtjs/i18n`](https://i18n.nuxtjs.org
 
 ### Custom Styling
 
-This kit uses semantic HTML with minimal styling via [new.css](https://newcss.net) for demonstration. To implement your own styling, remove the import in `app.vue` and add your custom styles.
+This kit uses semantic HTML with minimal styling via [new.css](https://newcss.net) for demonstration. To implement your own styling, remove the import in [`app/app.vue`](./app/app.vue) and add your custom styles – [UnoCSS](https://unocss.dev) is already set up.
 
 ## Deployment
 
