@@ -1,5 +1,5 @@
-import type { NuxtApp } from '#app'
 import type { FetchError } from 'ofetch'
+import type { NuxtApp } from '#app'
 import { siteQuery } from '~/queries'
 
 export default defineNuxtPlugin(async (nuxtApp) => {

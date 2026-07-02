@@ -1,7 +1,7 @@
 import type { HookResult } from '@nuxt/schema'
 import type { KirbySharedPageData } from '~/queries'
-import { kirbyStatic } from '#nuxt-kirby'
 import { joinURL } from 'ufo'
+import { kirbyStatic } from '#nuxt-kirby'
 
 /**
  * Returns static data prefetched at build time
@@ -61,26 +61,28 @@ export function setPage<T extends KirbySharedPageData & Record<string, any>>(
     },
   })
 
-  useServerHead({
-    link: [{ rel: 'canonical', href: url }, ...alternateUrls],
-  })
-
   useSeoMeta({
     title,
   })
 
-  useServerSeoMeta({
-    description,
-    ogTitle: title,
-    ogDescription: description,
-    ogUrl: url,
-    ogType: 'website',
-    ...(image && { ogImage: image }),
-    twitterTitle: title,
-    twitterDescription: description,
-    twitterCard: image ? 'summary_large_image' : 'summary',
-    ...(image && { twitterImage: image }),
-  })
+  if (import.meta.server) {
+    useHead({
+      link: [{ rel: 'canonical', href: url }, ...alternateUrls],
+    })
+
+    useSeoMeta({
+      description,
+      ogTitle: title,
+      ogDescription: description,
+      ogUrl: url,
+      ogType: 'website',
+      ...(image && { ogImage: image }),
+      twitterTitle: title,
+      twitterDescription: description,
+      twitterCard: image ? 'summary_large_image' : 'summary',
+      ...(image && { twitterImage: image }),
+    })
+  }
 
   // Resolve components that depend on the full page data
   const nuxtApp = useNuxtApp()

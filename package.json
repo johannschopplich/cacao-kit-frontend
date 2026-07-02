@@ -1,7 +1,7 @@
 {
   "type": "module",
   "private": true,
-  "packageManager": "pnpm@10.29.1",
+  "packageManager": "pnpm@11.9.0",
   "scripts": {
     "dev": "nuxt dev",
     "dev:tunnel": "nuxt dev --tunnel",
@@ -16,25 +16,19 @@
     "prepare": "nuxt prepare"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^7.3.0",
-    "@nuxtjs/i18n": "^10.2.3",
+    "@antfu/eslint-config": "^9.1.0",
+    "@nuxtjs/i18n": "^10.4.0",
     "@sindresorhus/slugify": "^3.0.0",
-    "@types/node": "^24.10.12",
-    "@unocss/eslint-config": "^66.6.0",
-    "@unocss/nuxt": "^66.6.0",
-    "@vueuse/nuxt": "^14.2.0",
-    "eslint": "^10.0.0",
-    "nuxt": "^4.3.1",
+    "@types/node": "^26.1.0",
+    "@unocss/eslint-config": "^66.7.4",
+    "@unocss/nuxt": "^66.7.4",
+    "@vueuse/nuxt": "^14.3.0",
+    "eslint": "^10.6.0",
+    "nuxt": "^4.4.8",
     "nuxt-kirby": "^3.0.3",
-    "prettier": "^3.8.1",
-    "sitemap": "^9.0.0",
-    "typescript": "^5.9.3",
-    "vue-tsc": "^3.2.4"
-  },
-  "pnpm": {
-    "onlyBuiltDependencies": [
-      "@parcel/watcher",
-      "esbuild"
-    ]
+    "prettier": "^3.9.4",
+    "sitemap": "^9.0.1",
+    "typescript": "^6.0.3",
+    "vue-tsc": "^3.3.6"
   }
 }
