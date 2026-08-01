@@ -7,10 +7,7 @@ defineProps<{
   block: KirbyBlock<'notes-grid'>
 }>()
 
-const { locale } = useI18n()
-const { data } = await useKql<KirbyNotesResponse>(notesQuery, {
-  language: locale.value,
-})
+const { data } = await useKql<KirbyNotesResponse>(notesQuery)
 </script>
 
 <template>
@@ -22,7 +19,7 @@ const { data } = await useKql<KirbyNotesResponse>(notesQuery, {
       style="--columns: 4"
     >
       <article>
-        <NuxtLink :to="`/${locale}/${item.uri}`">
+        <NuxtLink :to="`/${item.uri}`">
           <figure style="aspect-ratio: 16/9; margin-bottom: 0">
             <img
               v-if="item?.cover"

@@ -1,12 +1,10 @@
 <script setup lang="ts">
 import '~/assets/css/main.css'
 
-const { locale } = useI18n()
-
 if (import.meta.server) {
   useHead({
     htmlAttrs: {
-      lang: locale.value,
+      lang: 'en',
     },
     link: [
       {
