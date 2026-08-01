@@ -43,7 +43,8 @@ export function setPage<T extends KirbySharedPageData & Record<string, any>>(
     const uri = getLocalizedPath(meta.uri.replace(/^home/, '/'), lang)
 
     return {
-      rel: 'alternate',
+      // Unhead discriminates its link union on `rel`, so keep it a literal
+      rel: 'alternate' as const,
       hreflang: lang,
       href: joinURL(siteUrl, uri),
     }
