@@ -3,16 +3,12 @@
 
 import { getPageQuery } from '~/queries'
 
-const { locale, localeCodes } = useI18n()
-const route = useRoute()
+// Use current slug or fall back to the homepage
+const { slug } = useRoute().params
+const pageUri =
+  (Array.isArray(slug) ? slug.filter(Boolean).join('/') : slug) || 'home'
 
-// Extract the non-localized slug
-const pageUri = getNonLocalizedSlug(route.params.slug!, localeCodes.value)
-
-const { data: pageData, error: pageError } = await useKql(
-  getPageQuery(pageUri || 'home'),
-  { language: locale.value },
-)
+const { data: pageData, error: pageError } = await useKql(getPageQuery(pageUri))
 
 let data = pageData.value
 let fetchError = pageError.value
@@ -21,7 +17,6 @@ let fetchError = pageError.value
 if (!data?.result) {
   const { data: pageData, error: pageError } = await useKql(
     getPageQuery('error'),
-    { language: locale.value },
   )
   data = pageData.value
   fetchError = pageError.value

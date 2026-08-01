@@ -17,7 +17,6 @@
   },
   "devDependencies": {
     "@antfu/eslint-config": "^9.2.0",
-    "@nuxtjs/i18n": "^10.6.0",
     "@sindresorhus/slugify": "^3.0.0",
     "@types/node": "^26.1.2",
     "@unocss/eslint-config": "^66.7.5",
