@@ -4,28 +4,28 @@ import { joinURL } from 'ufo'
 import { kirbyStatic } from '#nuxt-kirby'
 
 /**
- * Returns static data prefetched at build time
+ * Returns static data prefetched at build time.
  */
 export function useKirbyStaticData() {
   return kirbyStatic
 }
 
 /**
- * Returns the currently active page, similar to Kirby's `$page` global variable
+ * Returns the currently active page, similar to Kirby's `$page` global variable.
  */
 export function usePage<T extends Record<string, any> = Record<string, any>>() {
   return useState<T>('app.page', () => ({}) as T)
 }
 
 /**
- * Sets the currently active page and updates the document head
+ * Sets the currently active page and updates the document head.
  */
 export function setPage<T extends KirbySharedPageData & Record<string, any>>(
   page: T,
 ) {
   usePage().value = page
 
-  // Build the page meta tags
+  // Build the page meta tags.
   const { siteUrl } = useRuntimeConfig().public
   const { $i18n: i18n } = useNuxtApp()
   const { defaultLocale } = i18n
@@ -37,20 +37,19 @@ export function setPage<T extends KirbySharedPageData & Record<string, any>>(
   const url = joinURL(siteUrl, useRoute().path)
   const image = page?.cover?.url || site.value.cover?.url
 
-  // Build alternate URL
   const alternateUrls = Object.entries(page.i18nMeta).map(([lang, meta]) => {
-    // Remove homepage slug and add leading language prefix
+    // Remove homepage slug and add leading language prefix.
     const uri = getLocalizedPath(meta.uri.replace(/^home/, '/'), lang)
 
     return {
-      // Unhead discriminates its link union on `rel`, so keep it a literal
+      // Unhead discriminates its link union on `rel`, so keep it a literal.
       rel: 'alternate' as const,
       hreflang: lang,
       href: joinURL(siteUrl, uri),
     }
   })
 
-  // Add primary locale as `x-default` for SEO
+  // Add primary locale as `x-default` for SEO.
   alternateUrls.push({
     ...alternateUrls.find((i) => i.hreflang === defaultLocale)!,
     hreflang: 'x-default',
@@ -85,27 +84,27 @@ export function setPage<T extends KirbySharedPageData & Record<string, any>>(
     })
   }
 
-  // Resolve components that depend on the full page data
+  // Resolve components that depend on the full page data.
   const nuxtApp = useNuxtApp()
   nuxtApp._pageDependenciesRendered = true
   return nuxtApp.callHook('page-dependencies:rendered')
 }
 
 /**
- * Returns a promise that resolves when the page setup is complete
+ * Returns a promise that resolves when the page setup is complete.
  */
 export async function hasPage() {
   if (import.meta.server) {
     const nuxtApp = useNuxtApp()
     const error = useError()
 
-    // Defer rendering the component until the page component has rendered
+    // Defer rendering the component until the page component has rendered.
     return new Promise<void>((resolve) => {
       const resolver = () => {
         resolve()
       }
 
-      // If Nuxt has an error, immediately render the component
+      // If Nuxt has an error, immediately render the component.
       if (error.value) {
         return resolver()
       }
@@ -114,10 +113,10 @@ export async function hasPage() {
         return resolver()
       }
 
-      // Called manually by using the `setPage` composable
+      // Called manually by using the `setPage` composable.
       nuxtApp.hooks.hookOnce('page-dependencies:rendered', resolver)
 
-      // When any error happens, resolve
+      // When any error happens, resolve.
       nuxtApp.hooks.hookOnce('app:error', resolver)
       nuxtApp.hooks.hookOnce('vue:error', resolver)
     })

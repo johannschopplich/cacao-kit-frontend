@@ -3,7 +3,7 @@ import type { KirbyPageData } from '~/queries'
 import { NuxtLink } from '#components'
 
 // Wait for the page to be loaded before rendering this component,
-// otherwise `usePage()` would return `undefined`
+// otherwise `usePage()` would return `undefined`.
 await hasPage()
 
 const { locale, locales, t } = useI18n()

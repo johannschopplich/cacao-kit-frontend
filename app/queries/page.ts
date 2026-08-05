@@ -32,7 +32,7 @@ export const sharedQuerySelects: KirbyQuerySchema['select'] = {
     query: 'page.cover.toFile?.resize(1200)',
     select: ['url'],
   },
-  // Optional: Get title and URI of the current page in all languages
+  // Optional: Get title and URI of the current page in all languages.
   i18nMeta: true,
 }
 
@@ -40,8 +40,8 @@ export function getPageQuery(pageId: string): KirbyQuerySchema {
   return {
     query: `page("${pageId}")`,
     select: {
-      // The `toResolvedBlocks` method is a custom Kirby field Method to
-      // resolve images inside the image block from UUID to a file object
+      // The `toResolvedBlocks` method is a custom Kirby field method to
+      // resolve images inside the image block from UUID to a file object.
       blocks: 'page.blocks.toResolvedBlocks',
       layouts: 'page.layouts.toResolvedLayouts',
       ...sharedQuerySelects,

@@ -7,7 +7,7 @@ defineProps<{
     'image-resolved',
     {
       location: string
-      // File UUIDs are resolved server-side to the actual image data
+      // File UUIDs are resolved server-side to the actual image data.
       // See: https://kirby.tools/docs/headless/field-methods
       image: ResolvedKirbyImage[]
       src: string

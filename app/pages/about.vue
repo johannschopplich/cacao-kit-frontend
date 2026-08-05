@@ -1,6 +1,4 @@
 <script setup lang="ts">
-// This Nuxt page will render the about page
-
 import type { KirbyAboutResponse } from '~/queries'
 import { aboutQuery } from '~/queries'
 
@@ -19,7 +17,6 @@ const { data, error } = await useKql<KirbyAboutResponse>(aboutQuery, {
   language: locale.value,
 })
 
-// Store page data
 const page = data.value?.result
 setPage(page!)
 </script>

@@ -2,7 +2,7 @@ import process from 'node:process'
 import { prefetchQuery, siteQuery } from './app/queries'
 
 export default defineNuxtConfig({
-  // If you project doesn't require i18n, use the `without-i18n` branch instead:
+  // If your project doesn't require i18n, use the `without-i18n` branch instead:
   // https://github.com/johannschopplich/cacao-kit-frontend/tree/chore/without-i18n
   modules: ['@nuxtjs/i18n', '@unocss/nuxt', '@vueuse/nuxt', 'nuxt-kirby'],
 
@@ -22,7 +22,7 @@ export default defineNuxtConfig({
     auth: 'bearer',
     prefetch: {
       kirbyStatic: prefetchQuery,
-      // Currently only used to infer the type of the `site` query
+      // Currently only used to infer the type of the `site` query.
       kirbySite: siteQuery,
     },
   },
@@ -49,7 +49,7 @@ export default defineNuxtConfig({
   vite: {
     server: {
       // This is only required for the `pnpm dev:tunnel` command
-      // to proxy Kirby requests, especially images
+      // to proxy Kirby requests, especially images.
       proxy: {
         '/__kirby': {
           target: process.env.KIRBY_BASE_URL,

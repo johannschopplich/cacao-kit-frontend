@@ -7,10 +7,8 @@ export default defineNuxtPlugin(async (nuxtApp) => {
   const i18n = nuxtApp.$i18n as NuxtApp['$i18n']
 
   if (import.meta.server) {
-    // Load the site data server-side
     await updateSite()
   } else if (import.meta.client) {
-    // Update the site data on locale change
     nuxtApp.hook(
       'i18n:beforeLocaleSwitch',
       async ({ oldLocale, newLocale }) => {

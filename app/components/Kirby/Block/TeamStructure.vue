@@ -6,13 +6,12 @@ defineProps<{
   block: KirbyBlock<
     'team-structure',
     {
-      // Structure data is resolved server-side in a `blocksResolver` function
+      // Structure data is resolved server-side in a `blocksResolver` function.
       // See: https://kirby.tools/docs/headless/field-methods#custom-resolvers
       team: {
         name: string
-        // Contains the resolved image data
         image: ResolvedKirbyImage | null
-        // Contains the resolved page URI
+        // Resolved page URI.
         link: string | null
       }[]
     }

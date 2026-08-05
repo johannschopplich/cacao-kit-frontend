@@ -1,12 +1,11 @@
 <script setup lang="ts">
-// This Nuxt page will render every Kirby page
+// This Nuxt page will render every Kirby page.
 
 import { getPageQuery } from '~/queries'
 
 const { locale, localeCodes } = useI18n()
 const route = useRoute()
 
-// Extract the non-localized slug
 const pageUri = getNonLocalizedSlug(route.params.slug!, localeCodes.value)
 
 const { data: pageData, error: pageError } = await useKql(
@@ -17,7 +16,7 @@ const { data: pageData, error: pageError } = await useKql(
 let data = pageData.value
 let fetchError = pageError.value
 
-// If page content is empty, load the error page
+// If page content is empty, load the error page.
 if (!data?.result) {
   const { data: pageData, error: pageError } = await useKql(
     getPageQuery('error'),
@@ -29,7 +28,6 @@ if (!data?.result) {
   if (event) setResponseStatus(event, 404)
 }
 
-// Store page data
 const page = data?.result
 setPage(page)
 </script>

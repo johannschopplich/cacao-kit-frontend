@@ -19,14 +19,12 @@ defineProps<{
 }>()
 
 const blockComponents: Record<string, Component> = {
-  // Built-in Kirby blocks
   heading: LazyKirbyBlockHeading,
   image: LazyKirbyBlockImage,
   line: LazyKirbyBlockLine,
   list: LazyKirbyBlockList,
   quote: LazyKirbyBlockQuote,
   text: LazyKirbyBlockText,
-  // Custom blocks
   intro: LazyKirbyBlockIntro,
   'note-header': LazyKirbyBlockNoteHeader,
   'notes-grid': LazyKirbyBlockNotesGrid,
