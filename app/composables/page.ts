@@ -49,11 +49,14 @@ export function setPage<T extends KirbySharedPageData & Record<string, any>>(
     }
   })
 
-  // Add primary locale as `x-default` for SEO.
-  alternateUrls.push({
-    ...alternateUrls.find((i) => i.hreflang === defaultLocale)!,
-    hreflang: 'x-default',
-  })
+  // Add primary locale as `x-default` for SEO. Single-language installations
+  // report no `i18nMeta` at all, so there may be nothing to point at.
+  const defaultAlternateUrl = alternateUrls.find(
+    (i) => i.hreflang === defaultLocale,
+  )
+  if (defaultAlternateUrl) {
+    alternateUrls.push({ ...defaultAlternateUrl, hreflang: 'x-default' })
+  }
 
   useHead({
     bodyAttrs: {
