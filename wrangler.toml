@@ -10,5 +10,5 @@ custom_domain = true
 
 [assets]
 directory = "./.output/public"
-not_found_handling = "single-page-application"
+not_found_handling = "none"
 binding = "ASSETS"
