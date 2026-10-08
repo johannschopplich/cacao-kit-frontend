@@ -17,13 +17,13 @@ export interface KirbySharedPageData {
 }
 
 export interface KirbyPageData extends KirbySharedPageData {
-  blocks: KirbyBlock<string>[]
+  blocks: KirbyBlock[]
   layouts: KirbyLayout[]
 }
 
 export type KirbyPageResponse = KirbyQueryResponse<KirbyPageData>
 
-export const sharedQuerySelects: KirbyQuerySchema['select'] = {
+export const sharedQuerySelects = {
   uri: true,
   title: true,
   intendedTemplate: true,
@@ -34,7 +34,7 @@ export const sharedQuerySelects: KirbyQuerySchema['select'] = {
   },
   // Optional: Get title and URI of the current page in all languages.
   i18nMeta: true,
-}
+} satisfies KirbyQuerySchema['select']
 
 export function getPageQuery(pageId: string): KirbyQuerySchema {
   return {

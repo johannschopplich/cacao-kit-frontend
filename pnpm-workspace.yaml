@@ -1,3 +1,5 @@
+minimumReleaseAgeExclude:
+  - kirby-types@1.8.1
 shellEmulator: true
 trustPolicy: no-downgrade
 trustPolicyExclude:

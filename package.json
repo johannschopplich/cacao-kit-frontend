@@ -24,7 +24,7 @@
     "@unocss/nuxt": "^66.7.5",
     "@vueuse/nuxt": "^14.4.0",
     "eslint": "^10.8.0",
-    "kirby-types": "^1.6.0",
+    "kirby-types": "^1.8.1",
     "nuxt": "^4.5.1",
     "nuxt-kirby": "^3.0.3",
     "prettier": "^3.9.6",

@@ -15,7 +15,7 @@ import {
 } from '#components'
 
 defineProps<{
-  blocks: KirbyBlock<string>[]
+  blocks: KirbyBlock[]
 }>()
 
 const blockComponents: Record<string, Component> = {
