@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { KirbyBlock } from '#nuxt-kirby'
+import type { KirbyBlock } from 'kirby-types'
 import type { KirbyNotesResponse } from '~/queries'
 import { notesQuery } from '~/queries'
 
