@@ -107,7 +107,7 @@ If you need custom Kirby page blueprints with custom fields, you can create dedi
 ```vue
 <!-- app/components/Kirby/Block/MyCustomBlock.vue -->
 <script setup lang="ts">
-import type { KirbyBlock } from '#nuxt-kirby'
+import type { KirbyBlock } from 'kirby-types'
 
 defineProps<{
   block: KirbyBlock<'my-custom-block'>
