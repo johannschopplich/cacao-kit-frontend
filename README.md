@@ -16,23 +16,7 @@ A production-ready Nuxt starter kit for headless Kirby CMS.
 
 If internationalization is **not** a requirement for your project, check out the [🧱 branch without Nuxt i18n](https://github.com/johannschopplich/cacao-kit-frontend/compare/main...chore/without-i18n).
 
-If this is your first time building an application with Nuxt and Kirby, take a look at the [💚 Kirby Nuxt Starterkit](https://github.com/johannschopplich/kirby-nuxt-starterkit) first to get a basic understanding of this tech stack.
-
-<details>
-<summary>What's Kirby?</summary>
-
-- **[getkirby.com](https://getkirby.com)** – Get to know the CMS.
-- **[Try it](https://getkirby.com/try)** – Take a test ride with our online demo. Or download one of our kits to get started.
-- **[Documentation](https://getkirby.com/docs/guide)** – Read the official guide, reference and cookbook recipes.
-- **[Issues](https://github.com/getkirby/kirby/issues)** – Report bugs and other problems.
-- **[Feedback](https://feedback.getkirby.com)** – You have an idea for Kirby? Share it.
-- **[Forum](https://forum.getkirby.com)** – Whenever you get stuck, don't hesitate to reach out for questions and support.
-- **[Discord](https://chat.getkirby.com)** – Hang out and meet the community.
-- **[YouTube](https://youtube.com/kirbyCasts)** – Watch the latest video tutorials with Bastian.
-- **[Mastodon](https://mastodon.social/@getkirby)** – Spread the word.
-- **[Instagram](https://www.instagram.com/getkirby/)** – Share your creations: #madewithkirby.
-
-</details>
+If this is your first time building an application with Nuxt and [Kirby](https://getkirby.com), take a look at the [💚 Kirby Nuxt Starterkit](https://github.com/johannschopplich/kirby-nuxt-starterkit) first to get a basic understanding of this tech stack.
 
 ## Key Features
 
@@ -218,18 +202,7 @@ See the [Nuxt deployment documentation](https://nuxt.com/docs/getting-started/de
 
 ### Environment Configuration
 
-Set `KIRBY_BASE_URL` and `KIRBY_API_TOKEN` where the app is built – the build bakes them in. `NUXT_PUBLIC_SITE_URL` is read at runtime (at generate time for a static site):
-
-```bash
-# Required: Your Kirby backend URL
-KIRBY_BASE_URL=https://your-kirby-backend.com
-
-# Required: Authentication token for KQL queries
-KIRBY_API_TOKEN=your-secret-token
-
-# Optional: Public site URL for SEO and social sharing
-NUXT_PUBLIC_SITE_URL=https://your-frontend.com
-```
+Set `KIRBY_BASE_URL` and `KIRBY_API_TOKEN` where the app is built – the build bakes them in. The optional `NUXT_PUBLIC_SITE_URL`, the public URL of the frontend for SEO and social sharing, is read at runtime (at generate time for a static site).
 
 ## License
 
