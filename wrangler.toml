@@ -12,3 +12,6 @@ custom_domain = true
 directory = "./.output/public"
 not_found_handling = "none"
 binding = "ASSETS"
+
+[vars]
+NUXT_PUBLIC_SITE_URL = "https://cacao-kit.byjohann.dev"
