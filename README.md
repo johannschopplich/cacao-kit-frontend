@@ -188,7 +188,7 @@ For maximum performance and CDN compatibility, generate a static site:
 pnpm run generate
 ```
 
-This creates a fully static version in the `dist/` directory that can be hosted on any static hosting service.
+This creates a static version in the `dist/` directory that can be hosted on any static hosting service. Two parts still need the server: a language switch fetches the site data through the Kirby proxy route, and `/sitemap.xml` is a server route that is not prerendered.
 
 ### Server-Side Rendering
 
