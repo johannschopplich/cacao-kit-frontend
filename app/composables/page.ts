@@ -1,7 +1,7 @@
 import type { HookResult } from '@nuxt/schema'
 import type { KirbySharedPageData } from '~/queries'
 import { joinURL } from 'ufo'
-import { kirbyStatic } from '#nuxt-kirby'
+import { kirbyStatic } from '#nuxt-prepare'
 
 /**
  * Returns static data prefetched at build time.

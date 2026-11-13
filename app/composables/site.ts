@@ -1,4 +1,4 @@
-import type { KirbySite } from '#nuxt-kirby'
+import type { KirbySite } from '#nuxt-prepare'
 
 /**
  * Returns the global site context, similar to Kirby's `$site` global variable.

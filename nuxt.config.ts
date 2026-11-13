@@ -1,10 +1,15 @@
 import process from 'node:process'
-import { prefetchQuery, siteQuery } from './app/queries'
 
 export default defineNuxtConfig({
   // If your project doesn't require i18n, use the `without-i18n` branch instead:
   // https://github.com/johannschopplich/cacao-kit-frontend/tree/chore/without-i18n
-  modules: ['@nuxtjs/i18n', '@unocss/nuxt', '@vueuse/nuxt', 'nuxt-kirby'],
+  modules: [
+    '@nuxtjs/i18n',
+    '@unocss/nuxt',
+    '@vueuse/nuxt',
+    'nuxt-kirby',
+    'nuxt-prepare',
+  ],
 
   compatibilityDate: '2025-08-01',
 
@@ -20,10 +25,11 @@ export default defineNuxtConfig({
 
   kirby: {
     auth: 'bearer',
-    prefetch: {
-      kirbyStatic: prefetchQuery,
-      // Currently only used to infer the type of the `site` query.
-      kirbySite: siteQuery,
+  },
+
+  typescript: {
+    nodeTsConfig: {
+      include: ['../server.prepare.ts'],
     },
   },
 

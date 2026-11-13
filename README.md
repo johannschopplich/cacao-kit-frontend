@@ -59,8 +59,8 @@ app/
     ├── about.ts
     ├── notes.ts
     ├── page.ts
-    ├── site.ts
-    └── prefetch.ts
+    └── site.ts
+server.prepare.ts            # Data prefetched at build time
 ```
 
 ### Block-First Architecture
