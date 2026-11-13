@@ -6,18 +6,33 @@
 
 A production-ready Nuxt starter kit for headless Kirby CMS.
 
-[Usage](#usage) •
-[Architecture](#architecture--development) •
+[Development](#development) •
+[Cookbook](#cookbook) •
 [Deployment](#deployment)
 
 </div>
 
-> [!TIP]
-> If internationalization is **not** a requirement for your project, check out the [🧱 branch without Nuxt i18n](https://github.com/johannschopplich/cacao-kit-frontend/compare/main...chore/without-i18n).
->
-> If this is your first time building an application with Nuxt and Kirby, take a look at the [💚 Kirby Nuxt Starterkit](https://github.com/johannschopplich/kirby-nuxt-starterkit) first to get a basic understanding of this tech stack.
+## When to Use
 
-This is a minimal but feature-rich Nuxt starter kit and the evolved version of the [Kirby Nuxt Starterkit](https://github.com/johannschopplich/kirby-nuxt-starterkit). It pairs with the [🍫 Cacao Kit backend](https://github.com/johannschopplich/cacao-kit-backend).
+If internationalization is **not** a requirement for your project, check out the [🧱 branch without Nuxt i18n](https://github.com/johannschopplich/cacao-kit-frontend/compare/main...chore/without-i18n).
+
+If this is your first time building an application with Nuxt and Kirby, take a look at the [💚 Kirby Nuxt Starterkit](https://github.com/johannschopplich/kirby-nuxt-starterkit) first to get a basic understanding of this tech stack.
+
+<details>
+<summary>What's Kirby?</summary>
+
+- **[getkirby.com](https://getkirby.com)** – Get to know the CMS.
+- **[Try it](https://getkirby.com/try)** – Take a test ride with our online demo. Or download one of our kits to get started.
+- **[Documentation](https://getkirby.com/docs/guide)** – Read the official guide, reference and cookbook recipes.
+- **[Issues](https://github.com/getkirby/kirby/issues)** – Report bugs and other problems.
+- **[Feedback](https://feedback.getkirby.com)** – You have an idea for Kirby? Share it.
+- **[Forum](https://forum.getkirby.com)** – Whenever you get stuck, don't hesitate to reach out for questions and support.
+- **[Discord](https://chat.getkirby.com)** – Hang out and meet the community.
+- **[YouTube](https://youtube.com/kirbyCasts)** – Watch the latest video tutorials with Bastian.
+- **[Mastodon](https://mastodon.social/@getkirby)** – Spread the word.
+- **[Instagram](https://www.instagram.com/getkirby/)** – Share your creations: #madewithkirby.
+
+</details>
 
 ## Key Features
 
@@ -32,40 +47,11 @@ This is a minimal but feature-rich Nuxt starter kit and the evolved version of t
 - 📐 Prettier & ESLint
 - 🔢 Pre-configured [VSCode settings](./.vscode/settings.json)
 
-If you need custom Kirby page blueprints with custom fields, you can create dedicated Nuxt pages and query the content using KQL. See [`app/pages/about.vue`](./app/pages/about.vue) for an example.
+## Architecture
 
-## Usage
-
-### Prerequisites
-
-1. Enable [Corepack](https://github.com/nodejs/corepack) using `corepack enable`
-2. Install dependencies using `pnpm install`
-3. Adapt the relevant environment variables:
-
-```bash
-# Base URL of the Kirby backend
-KIRBY_BASE_URL=
-# Token for bearer authentication
-# See https://kirby.tools/docs/headless/configuration/authentication
-KIRBY_API_TOKEN=
-```
-
-### Development
-
-1. Start the development server using `pnpm run dev`
-2. Visit [localhost:3000](http://localhost:3000/)
-
-### Production
-
-Build the application for production with `pnpm run build`.
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment).
-
-## Architecture & Development
+This starter is the evolved version of the [Kirby Nuxt Starterkit](https://github.com/johannschopplich/kirby-nuxt-starterkit) and pairs with the [🍫 Cacao Kit backend](https://github.com/johannschopplich/cacao-kit-backend).
 
 ### Project Structure
-
-The Cacao Kit follows a clear architectural pattern designed around its block-first approach:
 
 ```
 app/
@@ -95,7 +81,7 @@ app/
 
 ### Block-First Architecture
 
-Every page is rendered through the catch-all route `[...slug].vue`, which dynamically renders either:
+The catch-all route `[...slug].vue` dynamically renders either:
 
 - **Layouts**: Column-based content using `KirbyLayouts`
 - **Blocks**: Linear content using `KirbyBlocks`
@@ -109,7 +95,28 @@ Every page is rendered through the catch-all route `[...slug].vue`, which dynami
 </template>
 ```
 
-### Adding New Blocks
+If you need custom Kirby page blueprints with custom fields, you can create dedicated Nuxt pages and query the content using KQL. See [`app/pages/about.vue`](./app/pages/about.vue) for an example.
+
+## Development
+
+1. Enable [Corepack](https://github.com/nodejs/corepack) using `corepack enable`
+2. Adapt the relevant environment variables:
+
+   ```bash
+   # Base URL of the Kirby backend
+   KIRBY_BASE_URL=
+   # Token for bearer authentication
+   # See https://kirby.tools/docs/headless/configuration/authentication
+   KIRBY_API_TOKEN=
+   ```
+
+3. Install dependencies using `pnpm install`
+4. Start the development server using `pnpm run dev`
+5. Visit [localhost:3000](http://localhost:3000/)
+
+## Cookbook
+
+### Add a New Block
 
 1. **Create the block component** in `app/components/Kirby/Block/`:
 
@@ -142,9 +149,9 @@ const blockComponents: Record<string, Component> = {
 }
 ```
 
-### Working with KQL Queries
+### Add a KQL Query
 
-Define reusable queries in the `queries/` directory:
+Define reusable queries in the `app/queries/` directory:
 
 ```ts
 // app/queries/blog.ts
@@ -183,13 +190,9 @@ const { data } = await useKql(blogQuery, {
 </script>
 ```
 
-### Internationalization
+### Replace the Demo Styling
 
-The kit includes full i18n support with [`@nuxtjs/i18n`](https://i18n.nuxtjs.org).
-
-### Custom Styling
-
-This kit uses semantic HTML with minimal styling via [new.css](https://newcss.net) for demonstration. To implement your own styling, remove the import in [`app/app.vue`](./app/app.vue) and add your custom styles – [UnoCSS](https://unocss.dev) is already set up.
+The demo uses [new.css](https://newcss.net) to style semantic HTML. To use your own styles, remove the new.css stylesheet from the `useHead()` call in [`app/app.vue`](./app/app.vue) – [UnoCSS](https://unocss.dev) is already set up.
 
 ## Deployment
 
@@ -211,9 +214,11 @@ Deploy with full SSR capabilities:
 pnpm run build
 ```
 
+See the [Nuxt deployment documentation](https://nuxt.com/docs/getting-started/deployment) for your host. The [production site](https://cacao-kit.byjohann.dev) runs this build.
+
 ### Environment Configuration
 
-Ensure these environment variables are set in production:
+Set `KIRBY_BASE_URL` and `KIRBY_API_TOKEN` where the app is built – the build bakes them in. `NUXT_PUBLIC_SITE_URL` is read at runtime (at generate time for a static site):
 
 ```bash
 # Required: Your Kirby backend URL
@@ -225,26 +230,6 @@ KIRBY_API_TOKEN=your-secret-token
 # Optional: Public site URL for SEO and social sharing
 NUXT_PUBLIC_SITE_URL=https://your-frontend.com
 ```
-
-### Preview
-
-- Production site: [cacao-kit.byjohann.dev](https://cacao-kit.byjohann.dev)
-
-<details>
-<summary>What's Kirby?</summary>
-
-- **[getkirby.com](https://getkirby.com)** – Get to know the CMS.
-- **[Try it](https://getkirby.com/try)** – Take a test ride with our online demo. Or download one of our kits to get started.
-- **[Documentation](https://getkirby.com/docs/guide)** – Read the official guide, reference and cookbook recipes.
-- **[Issues](https://github.com/getkirby/kirby/issues)** – Report bugs and other problems.
-- **[Feedback](https://feedback.getkirby.com)** – You have an idea for Kirby? Share it.
-- **[Forum](https://forum.getkirby.com)** – Whenever you get stuck, don't hesitate to reach out for questions and support.
-- **[Discord](https://chat.getkirby.com)** – Hang out and meet the community.
-- **[YouTube](https://youtube.com/kirbyCasts)** – Watch the latest video tutorials with Bastian.
-- **[Mastodon](https://mastodon.social/@getkirby)** – Spread the word.
-- **[Instagram](https://www.instagram.com/getkirby/)** – Share your creations: #madewithkirby.
-
-</details>
 
 ## License
 
