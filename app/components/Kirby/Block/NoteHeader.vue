@@ -6,7 +6,6 @@ const props = defineProps<{
     'note-header',
     {
       date: string
-      time: string
       tags: string
     }
   >
