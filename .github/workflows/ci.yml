@@ -30,8 +30,8 @@ jobs:
           install: false
       - run: pnpm install
         env:
-          KIRBY_BASE_URL: ${{ secrets.KIRBY_BASE_URL }}
-          KIRBY_API_TOKEN: ${{ secrets.KIRBY_API_TOKEN }}
+          NUXT_KIRBY_URL: ${{ secrets.KIRBY_BASE_URL }}
+          NUXT_KIRBY_TOKEN: ${{ secrets.KIRBY_API_TOKEN }}
       - run: pnpm run format:check
       - run: pnpm run lint
       - run: pnpm run test:types

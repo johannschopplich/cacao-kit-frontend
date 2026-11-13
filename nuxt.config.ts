@@ -58,7 +58,7 @@ export default defineNuxtConfig({
       // to proxy Kirby requests, especially images.
       proxy: {
         '/__kirby': {
-          target: process.env.KIRBY_BASE_URL,
+          target: process.env.NUXT_KIRBY_URL,
           changeOrigin: true,
           rewrite: (path) => path.replace(/^\/__kirby/, ''),
         },

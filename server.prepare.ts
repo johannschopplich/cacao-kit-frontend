@@ -1,6 +1,7 @@
 import type { KirbyQueryRequest, KirbyQueryResponse } from 'kirby-types'
 import process from 'node:process'
 import { defineNuxtPrepareHandler } from 'nuxt-prepare/config'
+import { joinURL } from 'ufo'
 import { siteQuery } from './app/queries'
 
 const staticQuery = {
@@ -11,32 +12,40 @@ const staticQuery = {
 } satisfies KirbyQueryRequest
 
 export default defineNuxtPrepareHandler(async () => {
-  const [kirbyStatic, kirbySite] = await Promise.all([
-    fetchQuery(staticQuery),
-    // Currently only used to infer the type of the `site` query.
-    fetchQuery(siteQuery),
+  const [staticResponse, siteResponse] = await Promise.all([
+    fetchQuery('kirbyStatic', staticQuery),
+    // Fetched only to infer the `KirbySite` type.
+    fetchQuery('kirbySite', siteQuery),
   ])
 
   return {
     state: {
-      kirbyStatic: kirbyStatic.result,
-      kirbySite: kirbySite.result,
+      kirbyStatic: staticResponse.result,
+      kirbySite: siteResponse.result,
     },
   }
 })
 
-async function fetchQuery(query: KirbyQueryRequest) {
-  const response = await fetch(`${process.env.KIRBY_BASE_URL}/api/kql`, {
+async function fetchQuery(key: string, query: KirbyQueryRequest) {
+  const { NUXT_KIRBY_URL, NUXT_KIRBY_TOKEN } = process.env
+  if (!NUXT_KIRBY_URL || !NUXT_KIRBY_TOKEN)
+    throw new Error(
+      'Set `NUXT_KIRBY_URL` and `NUXT_KIRBY_TOKEN` to prefetch the KQL queries.',
+    )
+
+  const response = await fetch(joinURL(NUXT_KIRBY_URL, 'api/kql'), {
     method: 'POST',
     headers: {
-      Authorization: `Bearer ${process.env.KIRBY_API_TOKEN}`,
+      Authorization: `Bearer ${NUXT_KIRBY_TOKEN}`,
       'Content-Type': 'application/json',
     },
     body: JSON.stringify(query),
   })
 
   if (!response.ok)
-    throw new Error(`KQL query failed with status ${response.status}`)
+    throw new Error(
+      `KQL query \`${key}\` failed with status ${response.status}: ${await response.text()}`,
+    )
 
   return (await response.json()) as KirbyQueryResponse
 }

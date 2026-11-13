@@ -88,10 +88,10 @@ If you need custom Kirby page blueprints with custom fields, you can create dedi
 
    ```bash
    # Base URL of the Kirby backend
-   KIRBY_BASE_URL=
+   NUXT_KIRBY_URL=
    # Token for bearer authentication
    # See https://kirby.tools/docs/headless/configuration/authentication
-   KIRBY_API_TOKEN=
+   NUXT_KIRBY_TOKEN=
    ```
 
 3. Install dependencies using `pnpm install`
@@ -202,7 +202,7 @@ See the [Nuxt deployment documentation](https://nuxt.com/docs/getting-started/de
 
 ### Environment Configuration
 
-Set `KIRBY_BASE_URL` and `KIRBY_API_TOKEN` where the app is built – the build bakes them in. `NUXT_PUBLIC_SITE_URL`, the public URL of the frontend, is required: canonical, `hreflang`, and social sharing URLs build on it, and `/sitemap.xml` fails without it. It is read at runtime (at generate time for a static site).
+Set `NUXT_KIRBY_URL` and `NUXT_KIRBY_TOKEN` where the app is built: the prepare script queries Kirby with them, and the server keeps them unless its runtime environment sets its own. `NUXT_PUBLIC_SITE_URL`, the public URL of the frontend, is required: canonical, `hreflang`, and social sharing URLs build on it, and `/sitemap.xml` fails without it. It is read at runtime (at generate time for a static site).
 
 ## License
 
