@@ -19,7 +19,7 @@ export default defineNuxtPrepareHandler(async () => {
   ])
 
   return {
-    state: {
+    data: {
       kirbyStatic: staticResponse.result,
       kirbySite: siteResponse.result,
     },

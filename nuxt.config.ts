@@ -27,12 +27,6 @@ export default defineNuxtConfig({
     auth: 'bearer',
   },
 
-  typescript: {
-    nodeTsConfig: {
-      include: ['../server.prepare.ts'],
-    },
-  },
-
   i18n: {
     locales: [
       { code: 'en', file: 'en.json' },

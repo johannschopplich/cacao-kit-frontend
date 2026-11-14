@@ -27,7 +27,7 @@
     "kirby-types": "^1.8.2",
     "nuxt": "^4.6.4",
     "nuxt-kirby": "^5.0.0",
-    "nuxt-prepare": "^4.1.0",
+    "nuxt-prepare": "^5.0.0",
     "prettier": "^3.10.1",
     "sitemap": "^10.0.0",
     "typescript": "^6.0.3",
