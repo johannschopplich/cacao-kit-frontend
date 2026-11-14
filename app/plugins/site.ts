@@ -1,5 +1,6 @@
 import type { FetchError } from 'ofetch'
 import type { NuxtApp } from '#app'
+import type { KirbySiteResponse } from '~/queries'
 import { siteQuery } from '~/queries'
 
 export default defineNuxtPlugin(async (nuxtApp) => {
@@ -25,7 +26,7 @@ export default defineNuxtPlugin(async (nuxtApp) => {
 
   async function updateSite(newLocale?: string) {
     try {
-      const data = await $kql(siteQuery, {
+      const data = await $kql<KirbySiteResponse>(siteQuery, {
         language: newLocale || i18n.locale.value,
       })
       site.value = data?.result || {}

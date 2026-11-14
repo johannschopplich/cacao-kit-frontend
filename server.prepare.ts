@@ -2,7 +2,6 @@ import type { KirbyQueryRequest, KirbyQueryResponse } from 'kirby-types'
 import process from 'node:process'
 import { defineNuxtPrepareHandler } from 'nuxt-prepare/config'
 import { joinURL } from 'ufo'
-import { siteQuery } from './app/queries'
 
 const staticQuery = {
   query: 'site',
@@ -12,16 +11,11 @@ const staticQuery = {
 } satisfies KirbyQueryRequest
 
 export default defineNuxtPrepareHandler(async () => {
-  const [staticResponse, siteResponse] = await Promise.all([
-    fetchQuery('kirbyStatic', staticQuery),
-    // Fetched only to infer the `KirbySite` type.
-    fetchQuery('kirbySite', siteQuery),
-  ])
+  const staticResponse = await fetchQuery('kirbyStatic', staticQuery)
 
   return {
     data: {
       kirbyStatic: staticResponse.result,
-      kirbySite: siteResponse.result,
     },
   }
 })
@@ -30,7 +24,7 @@ async function fetchQuery(key: string, query: KirbyQueryRequest) {
   const { NUXT_KIRBY_URL, NUXT_KIRBY_TOKEN } = process.env
   if (!NUXT_KIRBY_URL || !NUXT_KIRBY_TOKEN)
     throw new Error(
-      'Set `NUXT_KIRBY_URL` and `NUXT_KIRBY_TOKEN` to prefetch the KQL queries.',
+      'Set `NUXT_KIRBY_URL` and `NUXT_KIRBY_TOKEN` to prefetch the KQL query.',
     )
 
   const response = await fetch(joinURL(NUXT_KIRBY_URL, 'api/kql'), {

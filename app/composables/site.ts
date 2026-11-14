@@ -1,8 +1,8 @@
-import type { KirbySite } from '#nuxt-prepare'
+import type { KirbySiteData } from '~/queries'
 
 /**
  * Returns the global site context, similar to Kirby's `$site` global variable.
  */
 export function useSite() {
-  return useState<Partial<KirbySite>>('app.site', () => ({}))
+  return useState<Partial<KirbySiteData>>('app.site', () => ({}))
 }
