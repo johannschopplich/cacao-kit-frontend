@@ -1,10 +1,13 @@
+minimumReleaseAgeExcludePrune: true
 minimumReleaseAgeExclude:
-  - nuxt-prepare@4.1.0
   - nuxt-kirby@5.0.0
-shellEmulator: true
+  - nuxt-prepare@4.1.0
+
 trustPolicy: no-downgrade
 trustPolicyExclude:
   - semver@6.3.1
+
+shellEmulator: true
 
 allowBuilds:
   '@parcel/watcher': true
