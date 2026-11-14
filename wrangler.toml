@@ -1,7 +1,7 @@
 name = "cacao-kit"
 main = "./.output/server/index.mjs"
 workers_dev = false
-compatibility_date = "2025-08-01"
+compatibility_date = "2026-11-01"
 compatibility_flags = ["nodejs_compat", "no_nodejs_compat_v2"]
 
 [[routes]]

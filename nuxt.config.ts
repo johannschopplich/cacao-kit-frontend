@@ -11,7 +11,7 @@ export default defineNuxtConfig({
     'nuxt-prepare',
   ],
 
-  compatibilityDate: '2025-08-01',
+  compatibilityDate: '2026-11-01',
 
   devtools: {
     enabled: true,
