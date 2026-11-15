@@ -1,9 +1,4 @@
-import type {
-  KirbyBlock,
-  KirbyLayout,
-  KirbyQueryResponse,
-  KirbyQuerySchema,
-} from 'kirby-types'
+import type { KirbyBlock, KirbyLayout, KirbyQuerySchema } from 'kirby-types'
 
 export interface KirbySharedPageData {
   uri: string
@@ -20,8 +15,6 @@ export interface KirbyPageData extends KirbySharedPageData {
   blocks: KirbyBlock[]
   layouts: KirbyLayout[]
 }
-
-export type KirbyPageResponse = KirbyQueryResponse<KirbyPageData>
 
 export const sharedQuerySelects = {
   uri: true,

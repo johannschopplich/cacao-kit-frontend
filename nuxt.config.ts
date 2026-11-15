@@ -1,15 +1,7 @@
-import process from 'node:process'
-
 export default defineNuxtConfig({
   // If your project doesn't require i18n, use the `without-i18n` branch instead:
   // https://github.com/johannschopplich/cacao-kit-frontend/tree/chore/without-i18n
-  modules: [
-    '@nuxtjs/i18n',
-    '@unocss/nuxt',
-    '@vueuse/nuxt',
-    'nuxt-kirby',
-    'nuxt-prepare',
-  ],
+  modules: ['@nuxtjs/i18n', '@unocss/nuxt', '@vueuse/nuxt', 'nuxt-kirby'],
 
   compatibilityDate: '2026-11-01',
 
@@ -56,20 +48,6 @@ export default defineNuxtConfig({
     },
     bundle: {
       fullInstall: false,
-    },
-  },
-
-  vite: {
-    server: {
-      // This is only required for the `pnpm dev:tunnel` command
-      // to proxy Kirby requests, especially images.
-      proxy: {
-        '/__kirby': {
-          target: process.env.NUXT_KIRBY_URL,
-          changeOrigin: true,
-          rewrite: (path) => path.replace(/^\/__kirby/, ''),
-        },
-      },
     },
   },
 })

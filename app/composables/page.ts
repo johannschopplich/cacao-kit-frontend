@@ -1,14 +1,6 @@
 import type { HookResult } from '@nuxt/schema'
 import type { KirbySharedPageData } from '~/queries'
 import { joinURL } from 'ufo'
-import { kirbyStatic } from '#nuxt-prepare'
-
-/**
- * Returns static data prefetched at build time.
- */
-export function useKirbyStaticData() {
-  return kirbyStatic
-}
 
 /**
  * Returns the currently active page, similar to Kirby's `$page` global variable.

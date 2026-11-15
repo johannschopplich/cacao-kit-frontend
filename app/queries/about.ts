@@ -1,8 +1,4 @@
-import type {
-  KirbyLayout,
-  KirbyQueryResponse,
-  KirbyQuerySchema,
-} from 'kirby-types'
+import type { KirbyLayout, KirbyQuerySchema } from 'kirby-types'
 import type { KirbySharedPageData } from './page'
 import { sharedQuerySelects } from './page'
 
@@ -15,16 +11,7 @@ export interface KirbyAboutData extends KirbySharedPageData {
     platform: string
     url: string
   }[]
-  images: {
-    uuid: string
-    srcset: string
-    width: number
-    height: number
-    alt: string
-  }[]
 }
-
-export type KirbyAboutResponse = KirbyQueryResponse<KirbyAboutData>
 
 export const aboutQuery: KirbyQuerySchema = {
   query: 'page("about")',

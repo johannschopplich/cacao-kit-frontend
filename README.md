@@ -48,7 +48,6 @@ app/
 │   ├── kql.ts               # Page query that brings the site data along
 │   ├── links.ts             # Internal link handling
 │   ├── page.ts              # Page data and SEO meta
-│   ├── proxy.ts             # Development proxy utilities
 │   └── site.ts              # Site data access
 ├── pages/
 │   ├── [...slug].vue        # Universal page renderer
@@ -58,7 +57,6 @@ app/
     ├── about.ts
     ├── page.ts
     └── site.ts
-server.prepare.ts            # Data prefetched at build time
 ```
 
 ### Block-First Architecture
@@ -200,7 +198,7 @@ See the [Nuxt deployment documentation](https://nuxt.com/docs/getting-started/de
 
 ### Environment Configuration
 
-Set `NUXT_KIRBY_URL` and `NUXT_KIRBY_TOKEN` where the app is installed and built: the prepare script queries Kirby with them, and the server keeps them unless its runtime environment sets its own. `NUXT_PUBLIC_SITE_URL`, the public URL of the frontend, is required: canonical, `hreflang`, and social sharing URLs build on it, and `/sitemap.xml` fails without it. It is read at runtime (at generate time for a static site).
+Set `NUXT_KIRBY_URL` and `NUXT_KIRBY_TOKEN` where the app is built: the server keeps them unless its runtime environment sets its own. `NUXT_PUBLIC_SITE_URL`, the public URL of the frontend, is required: canonical, `hreflang`, and social sharing URLs build on it, and `/sitemap.xml` fails without it. It is read at runtime (at generate time for a static site).
 
 ## License
 
