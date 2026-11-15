@@ -26,7 +26,7 @@ If this is your first time building an application with Nuxt and [Kirby](https:/
 - 🫂 Kirby Query Language with [`nuxt-kirby`](https://nuxt-kirby.byjohann.dev)
 - 🌐 Internationalization with [`@nuxtjs/i18n`](https://github.com/nuxt-modules/i18n)
 - 🎨 [UnoCSS](https://unocss.dev) and [VueUse](https://vueuse.org) pre-wired
-- 🏛 Global [site data](./app/plugins/site.ts) similar to Kirby's `$site`
+- 🏛 Global [site data](./app/composables/site.ts) similar to Kirby's `$site`
 - 🔎 SSR-generated SEO data
 - 📐 Prettier & ESLint
 - 🔢 Pre-configured [VSCode settings](./.vscode/settings.json)
@@ -45,6 +45,7 @@ app/
 │       ├── Blocks.vue       # Block renderer
 │       └── Layouts.vue      # Layout renderer
 ├── composables/
+│   ├── kql.ts               # Page query that brings the site data along
 │   ├── links.ts             # Internal link handling
 │   ├── page.ts              # Page data and SEO meta
 │   ├── proxy.ts             # Development proxy utilities
@@ -52,8 +53,6 @@ app/
 ├── pages/
 │   ├── [...slug].vue        # Universal page renderer
 │   └── about.vue            # Custom page example
-├── plugins/
-│   └── site.ts              # Global site data management
 └── queries/                 # KQL query definitions
     ├── index.ts
     ├── about.ts
@@ -78,7 +77,7 @@ The catch-all route `[...slug].vue` dynamically renders either:
 </template>
 ```
 
-If you need custom Kirby page blueprints with custom fields, you can create dedicated Nuxt pages and query the content using KQL. See [`app/pages/about.vue`](./app/pages/about.vue) for an example.
+If you need custom Kirby page blueprints with custom fields, you can create dedicated Nuxt pages and query the content using KQL. Fetch the page with `useKqlPage()`, which brings the site data along on the first request – see [`app/pages/about.vue`](./app/pages/about.vue) for an example.
 
 ## Development
 

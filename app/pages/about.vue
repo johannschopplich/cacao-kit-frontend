@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { KirbyAboutResponse } from '~/queries'
+import type { KirbyAboutData } from '~/queries'
 import { aboutQuery } from '~/queries'
 
 defineI18nRoute({
@@ -9,13 +9,11 @@ defineI18nRoute({
   },
 })
 
-const { locale, t } = useI18n()
+const { t } = useI18n()
 const content = useTemplateRef('content')
 useInternalLinks(content)
 
-const { data, error } = await useKql<KirbyAboutResponse>(aboutQuery, {
-  language: locale.value,
-})
+const { data, error } = await useKqlPage<KirbyAboutData>(aboutQuery)
 
 const page = data.value?.result
 setPage(page!)

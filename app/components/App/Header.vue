@@ -1,4 +1,7 @@
 <script setup lang="ts">
+// The page's request also brings the site data on the first render.
+await hasPage()
+
 const { locale, t } = useI18n()
 const route = useRoute()
 const site = useSite()
