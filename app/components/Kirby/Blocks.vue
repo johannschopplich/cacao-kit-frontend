@@ -2,6 +2,7 @@
 import type { KirbyBlock } from 'kirby-types'
 import type { Component } from 'vue'
 import {
+  LazyKirbyBlockCards,
   LazyKirbyBlockHeading,
   LazyKirbyBlockImage,
   LazyKirbyBlockIntro,
@@ -10,7 +11,6 @@ import {
   LazyKirbyBlockNoteHeader,
   LazyKirbyBlockNotesGrid,
   LazyKirbyBlockQuote,
-  LazyKirbyBlockTeamStructure,
   LazyKirbyBlockText,
 } from '#components'
 
@@ -28,7 +28,7 @@ const blockComponents: Record<string, Component> = {
   intro: LazyKirbyBlockIntro,
   'note-header': LazyKirbyBlockNoteHeader,
   'notes-grid': LazyKirbyBlockNotesGrid,
-  'team-structure': LazyKirbyBlockTeamStructure,
+  cards: LazyKirbyBlockCards,
 }
 
 const content = useTemplateRef('content')
