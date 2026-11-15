@@ -32,14 +32,14 @@ setPage(page!)
     <section>
       <h2>{{ t('about.getInContact') }}</h2>
       <div ref="content" class="grid" style="--gutter: 1.5rem">
-        <section v-if="page?.address" class="column text" style="--columns: 4">
+        <section v-if="page?.address" class="column" style="--columns: 4">
           <h3>{{ t('about.address') }}</h3>
           <div v-html="page.address" />
         </section>
 
         <section
           v-if="page?.email || page?.phone"
-          class="column text"
+          class="column"
           style="--columns: 4"
         >
           <template v-if="page.email">
@@ -54,7 +54,7 @@ setPage(page!)
 
         <section
           v-if="page?.social?.length"
-          class="column text"
+          class="column"
           style="--columns: 4"
         >
           <h3>{{ t('about.onTheWeb') }}</h3>
