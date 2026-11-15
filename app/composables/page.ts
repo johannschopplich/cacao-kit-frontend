@@ -85,10 +85,7 @@ export function setPage<T extends KirbySharedPageData & Record<string, any>>(
   return nuxtApp.callHook('page-dependencies:rendered')
 }
 
-/**
- * Returns a promise that resolves when the page setup is complete.
- */
-export async function hasPage() {
+export async function waitForPage() {
   if (import.meta.server) {
     const nuxtApp = useNuxtApp()
     const error = useError()

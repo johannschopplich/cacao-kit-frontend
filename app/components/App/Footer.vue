@@ -4,7 +4,7 @@ import { NuxtLink } from '#components'
 
 // Wait for the page to be loaded before rendering this component,
 // otherwise `usePage()` would return `undefined`.
-await hasPage()
+await waitForPage()
 
 const { locale, locales, t } = useI18n()
 const site = useSite()
