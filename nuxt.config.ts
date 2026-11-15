@@ -25,6 +25,19 @@ export default defineNuxtConfig({
 
   kirby: {
     auth: 'bearer',
+    server: {
+      cache: true,
+      swr: true,
+      maxAge: 60 * 10,
+    },
+  },
+
+  $development: {
+    kirby: {
+      server: {
+        cache: false,
+      },
+    },
   },
 
   i18n: {
