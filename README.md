@@ -14,8 +14,6 @@ A production-ready Nuxt starter kit for headless Kirby CMS.
 
 ## When to Use
 
-If internationalization is **not** a requirement for your project, check out the [🧱 branch without Nuxt i18n](https://github.com/johannschopplich/cacao-kit-frontend/compare/main...chore/without-i18n).
-
 If this is your first time building an application with Nuxt and [Kirby](https://getkirby.com), take a look at the [💚 Kirby Nuxt Starterkit](https://github.com/johannschopplich/kirby-nuxt-starterkit) first to get a basic understanding of this tech stack.
 
 ## Key Features

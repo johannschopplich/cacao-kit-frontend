@@ -1,8 +1,6 @@
 const localeCodes = ['en', 'de']
 
 export default defineNuxtConfig({
-  // If your project doesn't require i18n, use the `without-i18n` branch instead:
-  // https://github.com/johannschopplich/cacao-kit-frontend/tree/chore/without-i18n
   modules: ['@nuxtjs/i18n', '@unocss/nuxt', '@vueuse/nuxt', 'nuxt-kirby'],
 
   compatibilityDate: '2026-11-01',
