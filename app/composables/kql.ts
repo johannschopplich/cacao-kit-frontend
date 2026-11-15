@@ -6,7 +6,8 @@ import { siteQuery } from '~/queries'
 
 export interface UseKqlPageOptions {
   /**
-   * Payload key, stable across server and client for the same page.
+   * Payload key, stable across server and client for the same page. It must
+   * include the locale, or the languages share one payload entry.
    * @default `page:${locale}:${hash(query)}`
    */
   key?: MaybeRefOrGetter<string>
