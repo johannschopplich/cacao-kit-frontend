@@ -86,35 +86,18 @@ export function setPage<T extends KirbySharedPageData & Record<string, any>>(
 }
 
 export async function waitForPage() {
-  if (import.meta.server) {
-    const nuxtApp = useNuxtApp()
-    const error = useError()
+  if (import.meta.client) return
 
-    // Defer rendering the component until the page component has rendered.
-    return new Promise<void>((resolve) => {
-      const resolver = () => {
-        resolve()
-      }
+  const nuxtApp = useNuxtApp()
+  const error = useError()
 
-      // If Nuxt has an error, immediately render the component.
-      if (error.value) {
-        return resolver()
-      }
+  return new Promise<void>((resolve) => {
+    if (error.value || nuxtApp._pageDependenciesRendered) return resolve()
 
-      if (nuxtApp._pageDependenciesRendered) {
-        return resolver()
-      }
-
-      // Called manually by using the `setPage` composable.
-      nuxtApp.hooks.hookOnce('page-dependencies:rendered', resolver)
-
-      // When any error happens, resolve.
-      nuxtApp.hooks.hookOnce('app:error', resolver)
-      nuxtApp.hooks.hookOnce('vue:error', resolver)
-    })
-  }
-
-  return Promise.resolve()
+    nuxtApp.hooks.hookOnce('page-dependencies:rendered', () => resolve())
+    nuxtApp.hooks.hookOnce('app:error', () => resolve())
+    nuxtApp.hooks.hookOnce('vue:error', () => resolve())
+  })
 }
 
 declare module '#app' {
