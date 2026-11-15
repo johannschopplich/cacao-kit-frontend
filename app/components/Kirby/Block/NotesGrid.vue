@@ -1,42 +1,51 @@
 <script setup lang="ts">
 import type { KirbyBlock } from 'kirby-types'
-import type { KirbyNotesResponse } from '~/queries'
-import { notesQuery } from '~/queries'
+import type { ResolvedKirbyImage } from '#shared/types/kirby'
 
 defineProps<{
-  block: KirbyBlock<'notes-grid'>
+  block: KirbyBlock<
+    'notes-grid',
+    {
+      // Resolved server-side by the `notes-grid:notes` blocks resolver.
+      // See: https://kirby.tools/docs/headless/usage/field-methods#custom-resolvers
+      notes: {
+        title: string
+        url: string
+        date: string | null
+        cover: Omit<ResolvedKirbyImage, 'srcset'> | null
+      }[]
+    }
+  >
 }>()
 
 const { locale } = useI18n()
-const { data } = await useKql<KirbyNotesResponse>(notesQuery, {
-  language: locale.value,
-})
 </script>
 
 <template>
   <div class="grid" style="--gutter: 1.5rem">
-    <div
-      v-for="(item, index) in data?.result"
+    <article
+      v-for="(note, index) in block.content.notes"
       :key="index"
       class="column"
       style="--columns: 4"
     >
-      <article>
-        <NuxtLink :to="`/${locale}/${item.uri}`">
-          <figure style="aspect-ratio: 16/9; margin-bottom: 0">
-            <img
-              v-if="item?.cover"
-              :width="item.cover.width"
-              :height="item.cover.height"
-              :src="item.cover.url"
-              :alt="item.cover.alt || undefined"
-              style="object-fit: cover; height: 100%"
-            />
-          </figure>
+      <NuxtLink :to="note.url">
+        <figure style="aspect-ratio: 16/9; margin-bottom: 0">
+          <img
+            v-if="note.cover"
+            :width="note.cover.width"
+            :height="note.cover.height"
+            :src="note.cover.url"
+            :alt="note.cover.alt || ''"
+            style="object-fit: cover; height: 100%"
+          />
+        </figure>
 
-          <h4>{{ item.title }}</h4>
-        </NuxtLink>
-      </article>
-    </div>
+        <h4>{{ note.title }}</h4>
+      </NuxtLink>
+      <time v-if="note.date" :datetime="note.date">
+        {{ formatDate(note.date, locale) }}
+      </time>
+    </article>
   </div>
 </template>

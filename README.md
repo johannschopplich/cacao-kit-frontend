@@ -57,7 +57,6 @@ app/
 └── queries/                 # KQL query definitions
     ├── index.ts
     ├── about.ts
-    ├── notes.ts
     ├── page.ts
     └── site.ts
 server.prepare.ts            # Data prefetched at build time
