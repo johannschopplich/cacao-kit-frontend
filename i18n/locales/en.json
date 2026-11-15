@@ -21,5 +21,9 @@
     "de": "German",
     "en": "English"
   },
-  "languages": "Languages"
+  "languages": "Languages",
+  "note": {
+    "publishedOn": "Published on {date}",
+    "tags": "Tags"
+  }
 }

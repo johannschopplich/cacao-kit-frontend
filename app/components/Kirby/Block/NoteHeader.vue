@@ -11,28 +11,25 @@ const props = defineProps<{
   >
 }>()
 
-function formatDateShort(date: Date) {
-  return new Intl.DateTimeFormat('en-US', {
-    year: 'numeric',
-    month: 'short',
-    day: 'numeric',
-  }).format(date)
-}
+const { locale, t } = useI18n()
 </script>
 
 <template>
   <nav>
     <time v-if="props.block.content.date" :datetime="props.block.content.date">
-      Published on
-      {{ formatDateShort(new Date(props.block.content.date)) }}
+      {{
+        t('note.publishedOn', {
+          date: formatDate(props.block.content.date, locale),
+        })
+      }}
     </time>
 
-    <h5>Tags</h5>
+    <h5>{{ t('note.tags') }}</h5>
     <span
       v-for="(tag, index) in props.block.content.tags.split(',')"
       :key="index"
     >
-      <mark>{{ tag }}</mark>
+      <mark>{{ tag.trim() }}</mark>
       &nbsp;
     </span>
   </nav>
