@@ -31,25 +31,37 @@ setPage(page!)
 
     <br />
 
-    <header>
+    <section>
       <h2>{{ t('about.getInContact') }}</h2>
       <div ref="content" class="grid" style="--gutter: 1.5rem">
-        <section class="column text" style="--columns: 4">
+        <section v-if="page?.address" class="column text" style="--columns: 4">
           <h3>{{ t('about.address') }}</h3>
-          <div v-html="page?.address" />
+          <div v-html="page.address" />
         </section>
 
-        <section class="column text" style="--columns: 4">
-          <h3>{{ t('about.email') }}</h3>
-          <p v-html="page?.email" />
-          <h3>{{ t('about.phone') }}</h3>
-          <p v-html="page?.phone" />
+        <section
+          v-if="page?.email || page?.phone"
+          class="column text"
+          style="--columns: 4"
+        >
+          <template v-if="page.email">
+            <h3>{{ t('about.email') }}</h3>
+            <p v-html="page.email" />
+          </template>
+          <template v-if="page.phone">
+            <h3>{{ t('about.phone') }}</h3>
+            <p v-html="page.phone" />
+          </template>
         </section>
 
-        <section class="column text" style="--columns: 4">
+        <section
+          v-if="page?.social?.length"
+          class="column text"
+          style="--columns: 4"
+        >
           <h3>{{ t('about.onTheWeb') }}</h3>
           <ul>
-            <li v-for="(item, index) in page?.social" :key="index">
+            <li v-for="(item, index) in page.social" :key="index">
               <a :href="item.url">
                 {{ item.platform }}
               </a>
@@ -57,6 +69,6 @@ setPage(page!)
           </ul>
         </section>
       </div>
-    </header>
+    </section>
   </div>
 </template>
