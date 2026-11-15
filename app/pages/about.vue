@@ -61,7 +61,7 @@ setPage(page!)
           <ul>
             <li v-for="(item, index) in page.social" :key="index">
               <a :href="item.url">
-                {{ item.platform }}
+                {{ item.label }}
               </a>
             </li>
           </ul>

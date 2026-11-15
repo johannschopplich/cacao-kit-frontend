@@ -8,7 +8,7 @@ export interface KirbyAboutData extends KirbySharedPageData {
   email: string
   phone: string
   social: {
-    platform: string
+    label: string
     url: string
   }[]
 }
