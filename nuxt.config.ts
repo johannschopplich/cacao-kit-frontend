@@ -1,3 +1,5 @@
+const localeCodes = ['en', 'de']
+
 export default defineNuxtConfig({
   // If your project doesn't require i18n, use the `without-i18n` branch instead:
   // https://github.com/johannschopplich/cacao-kit-frontend/tree/chore/without-i18n
@@ -32,11 +34,12 @@ export default defineNuxtConfig({
     },
   },
 
+  prerender: {
+    routes: localeCodes.map((code) => `/${code}`),
+  },
+
   i18n: {
-    locales: [
-      { code: 'en', file: 'en.json' },
-      { code: 'de', file: 'de.json' },
-    ],
+    locales: localeCodes.map((code) => ({ code, file: `${code}.json` })),
     defaultLocale: 'en',
     strategy: 'prefix',
     compilation: {

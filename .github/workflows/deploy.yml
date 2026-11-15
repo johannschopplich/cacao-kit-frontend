@@ -34,6 +34,8 @@ jobs:
           NITRO_PRESET: cloudflare_module
           NUXT_KIRBY_URL: ${{ secrets.KIRBY_BASE_URL }}
           NUXT_KIRBY_TOKEN: ${{ secrets.KIRBY_API_TOKEN }}
+          # The prerendered home pages build their canonical URLs at build time.
+          NUXT_PUBLIC_SITE_URL: https://cacao-kit.byjohann.dev
 
       - name: Deploy to Cloudflare
         run: pnpm dlx wrangler deploy
