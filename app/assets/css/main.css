@@ -9,6 +9,10 @@ html {
   padding-inline: 1.5rem;
 }
 
+.margin-xl {
+  margin-bottom: 4.5rem;
+}
+
 img {
   max-width: 100%;
   height: auto;

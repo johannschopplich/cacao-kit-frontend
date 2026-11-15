@@ -18,7 +18,7 @@ function span(width: `${string}/${string}`, columns = 12) {
       v-for="layout in layouts"
       :id="layout.id"
       :key="layout.id"
-      class="grid"
+      class="margin-xl grid"
       style="--gutter: 1.5rem"
     >
       <div
