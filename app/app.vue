@@ -21,12 +21,15 @@ if (import.meta.server) {
     ],
   })
 }
+
+const main = useTemplateRef('main')
+useInternalLinks(main)
 </script>
 
 <template>
   <AppHeader />
 
-  <main id="main">
+  <main ref="main" id="main">
     <NuxtPage />
   </main>
 

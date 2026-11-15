@@ -10,8 +10,6 @@ defineI18nRoute({
 })
 
 const { t } = useI18n()
-const content = useTemplateRef('content')
-useInternalLinks(content)
 
 const { data, error } = await useKqlPage<KirbyAboutData>(aboutQuery)
 
@@ -31,7 +29,7 @@ setPage(page!)
 
     <section>
       <h2>{{ t('about.getInContact') }}</h2>
-      <div ref="content" class="grid" style="--gutter: 1.5rem">
+      <div class="grid" style="--gutter: 1.5rem">
         <section v-if="page?.address" class="column" style="--columns: 4">
           <h3>{{ t('about.address') }}</h3>
           <div v-html="page.address" />
