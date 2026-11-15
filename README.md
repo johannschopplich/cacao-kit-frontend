@@ -176,7 +176,7 @@ const { data } = await useKql(blogQuery, {
 
 ### Replace the Demo Styling
 
-The demo uses [new.css](https://newcss.net) to style semantic HTML. To use your own styles, remove the new.css stylesheet from the `useHead()` call in [`app/app.vue`](./app/app.vue) – [UnoCSS](https://unocss.dev) is already set up.
+The demo uses [Oat](https://oat.ink) to style semantic HTML. To use your own styles, remove the Oat stylesheet from the `useHead()` call in [`app/app.vue`](./app/app.vue) and turn the reset back on in [`uno.config.ts`](./uno.config.ts) – [UnoCSS](https://unocss.dev) is already set up.
 
 ## Deployment
 

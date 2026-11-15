@@ -16,7 +16,7 @@ if (import.meta.server) {
       },
       {
         rel: 'stylesheet',
-        href: 'https://cdn.jsdelivr.net/npm/@exampledev/new.css@1.1.2/new.min.css',
+        href: 'https://cdn.jsdelivr.net/npm/@knadh/oat@1.1.0/oat.min.css',
       },
     ],
   })
