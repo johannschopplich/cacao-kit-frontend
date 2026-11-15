@@ -5,7 +5,7 @@ import { aboutQuery } from '~/queries'
 defineI18nRoute({
   paths: {
     en: '/about',
-    de: '/ueber-uns',
+    de: '/ueber-das-projekt',
   },
 })
 
