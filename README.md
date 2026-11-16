@@ -23,7 +23,7 @@ If this is your first time building an application with Nuxt and [Kirby](https:/
 - 🌌 Use Kirby's page structure as the source of truth
 - 🫂 Kirby Query Language with [`nuxt-kirby`](https://nuxt-kirby.byjohann.dev)
 - 🌐 Internationalization with [`@nuxtjs/i18n`](https://github.com/nuxt-modules/i18n)
-- 🎨 [UnoCSS](https://unocss.dev) and [VueUse](https://vueuse.org) pre-wired
+- 🧰 [VueUse](https://vueuse.org) pre-wired
 - 🏛 Global [site data](./app/composables/site.ts) similar to Kirby's `$site`
 - 🔎 SSR-generated SEO data
 - 📐 Prettier & ESLint
@@ -170,7 +170,7 @@ const { data } = await useKql(blogQuery, {
 
 ### Replace the Demo Styling
 
-The demo uses [Oat](https://oat.ink) to style semantic HTML. To use your own styles, remove the Oat stylesheet from the `useHead()` call in [`app/app.vue`](./app/app.vue) and turn the reset back on in [`uno.config.ts`](./uno.config.ts) – [UnoCSS](https://unocss.dev) is already set up.
+The demo uses [Oat](https://oat.ink) to style semantic HTML. To use your own styles, remove the Oat stylesheet from the `useHead()` call in [`app/app.vue`](./app/app.vue) and bring your own CSS.
 
 ## Deployment
 
