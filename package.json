@@ -19,8 +19,6 @@
     "@antfu/eslint-config": "^10.0.0",
     "@nuxtjs/i18n": "^10.6.0",
     "@types/node": "^26.6.6",
-    "@unocss/eslint-config": "^66.13.0",
-    "@unocss/nuxt": "^66.13.0",
     "@vueuse/nuxt": "^15.0.0",
     "eslint": "^10.14.0",
     "kirby-types": "^1.8.2",
@@ -31,7 +29,6 @@
     "sitemap": "^10.0.0",
     "typescript": "^6.0.3",
     "ufo": "^1.6.4",
-    "unocss": "^66.13.0",
     "vue-tsc": "^3.3.14"
   }
 }

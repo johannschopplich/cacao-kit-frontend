@@ -1,7 +1,7 @@
 const localeCodes = ['en', 'de']
 
 export default defineNuxtConfig({
-  modules: ['@nuxtjs/i18n', '@unocss/nuxt', '@vueuse/nuxt', 'nuxt-kirby'],
+  modules: ['@nuxtjs/i18n', '@vueuse/nuxt', 'nuxt-kirby'],
 
   compatibilityDate: '2026-11-01',
 
