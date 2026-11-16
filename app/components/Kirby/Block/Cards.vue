@@ -36,13 +36,51 @@ defineProps<{
         :width="card.image.width"
         :height="card.image.height"
         :alt="card.image.alt || ''"
-        style="aspect-ratio: 3/2; object-fit: cover; width: 100%"
       />
       <h3>
-        <a v-if="card.link" :href="card.link">{{ card.title }}</a>
+        <a v-if="card.link" :href="card.link" class="unstyled">
+          {{ card.title }}
+        </a>
         <template v-else>{{ card.title }}</template>
       </h3>
       <p v-if="card.text">{{ card.text }}</p>
     </article>
   </div>
 </template>
+
+<style scoped>
+.card {
+  position: relative;
+  transition: border-color var(--transition-fast);
+}
+
+img {
+  width: 100%;
+  aspect-ratio: 3/2;
+  object-fit: cover;
+  border-radius: var(--radius-small);
+}
+
+h3 {
+  margin-block: var(--space-4) var(--space-2);
+}
+
+p {
+  color: var(--muted-foreground);
+}
+
+/* Stretch the title link over the whole card. */
+a::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+}
+
+.card:has(a):hover {
+  border-color: var(--ring);
+}
+
+.card:has(a):hover a {
+  text-decoration: underline;
+}
+</style>
