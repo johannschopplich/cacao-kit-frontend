@@ -9,8 +9,20 @@ html {
   scroll-padding-top: 7rem;
 }
 
+/* Keep the footer at the bottom of short pages. */
+#__nuxt {
+  display: flex;
+  flex-direction: column;
+  min-height: 100dvh;
+}
+
+#__nuxt > main {
+  flex: 1;
+}
+
 /* Oat caps no width outside its `.container` class. */
 #__nuxt > :is(main, footer) {
+  width: 100%;
   max-width: var(--content-width);
   margin-inline: auto;
   padding-inline: var(--content-padding);

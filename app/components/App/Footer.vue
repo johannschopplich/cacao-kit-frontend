@@ -32,8 +32,8 @@ const translatedUris = computed(() =>
     <div class="grid">
       <div class="column" style="--columns: 2">
         <h5>{{ t('languages') }}</h5>
-        <dl>
-          <dd v-for="code in localeCodes" :key="code">
+        <ul class="unstyled">
+          <li v-for="code in localeCodes" :key="code">
             <component
               :is="code === locale ? 'span' : NuxtLink"
               :to="`/${code}${
@@ -41,20 +41,21 @@ const translatedUris = computed(() =>
                   ? `/${translatedUris[code]}`
                   : ''
               }`"
+              :aria-current="code === locale ? 'true' : undefined"
             >
               {{ t(`language.${code}`) }}
             </component>
-          </dd>
-        </dl>
+          </li>
+        </ul>
       </div>
 
       <div class="column" style="--columns: 4">
         <h5>{{ t('footer.listedPages') }}</h5>
-        <dl>
-          <dd v-for="item in listedChildren" :key="item.uri">
+        <ul class="unstyled">
+          <li v-for="item in listedChildren" :key="item.uri">
             <NuxtLink :to="`/${locale}/${item.uri}`">{{ item.title }}</NuxtLink>
-          </dd>
-        </dl>
+          </li>
+        </ul>
       </div>
 
       <div class="column" style="--columns: 6">
@@ -62,9 +63,39 @@ const translatedUris = computed(() =>
         <p v-html="t('footer.builtWith.text')" />
       </div>
 
-      <div class="column" style="--columns: 12; text-align: center">
-        <img src="/icon.svg" width="48" height="48" />
+      <div class="column footer-logo" style="--columns: 12">
+        <img src="/icon.svg" width="40" height="40" alt="" class="logo-tile" />
       </div>
     </div>
   </footer>
 </template>
+
+<style scoped>
+#__nuxt > footer {
+  padding-block-end: var(--space-8);
+  font-size: var(--text-7);
+  color: var(--muted-foreground);
+}
+
+h5 {
+  margin-block-end: var(--space-3);
+  color: var(--foreground);
+}
+
+:is(ul a, [aria-current]) {
+  color: inherit;
+}
+
+:is(ul a:hover, [aria-current]) {
+  color: var(--foreground);
+}
+
+[aria-current] {
+  font-weight: var(--font-medium);
+}
+
+.footer-logo {
+  margin-block-start: var(--space-6);
+  text-align: center;
+}
+</style>
