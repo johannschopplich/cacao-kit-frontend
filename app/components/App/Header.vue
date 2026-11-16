@@ -72,7 +72,7 @@ function isActive(path: string) {
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  gap: var(--space-3);
+  gap: var(--space-3) var(--space-6);
   width: 100%;
   max-width: var(--content-width);
   margin-inline: auto;
@@ -98,6 +98,8 @@ nav {
   flex-wrap: wrap;
   align-items: center;
   gap: var(--space-1);
+  /* Offset that lines the first link's text up with the brand once the nav wraps. */
+  margin-inline-start: calc(-1 * var(--space-3));
 }
 
 nav a {
@@ -127,11 +129,6 @@ nav .button {
 @media (max-width: 640px) {
   .header-brand small {
     display: none;
-  }
-
-  /* Line the first link's text up with the brand once the nav wraps. */
-  nav {
-    margin-inline-start: calc(-1 * var(--space-3));
   }
 }
 </style>
