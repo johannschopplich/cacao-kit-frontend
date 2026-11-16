@@ -1,12 +1,26 @@
+:root {
+  --content-width: 64rem;
+  --content-padding: 1.5rem;
+}
+
 html {
   overflow-y: scroll;
+  /* Room for the sticky header above hash targets. */
+  scroll-padding-top: 7rem;
 }
 
 /* Oat caps no width outside its `.container` class. */
-#__nuxt > :is(header, main, footer) {
-  max-width: 64rem;
+#__nuxt > :is(main, footer) {
+  max-width: var(--content-width);
   margin-inline: auto;
-  padding-inline: 1.5rem;
+  padding-inline: var(--content-padding);
+}
+
+/* The cacao logo is too dark for the dark theme on its own. */
+.logo-tile {
+  padding: 4px;
+  background-color: #bcae9f;
+  border-radius: var(--radius-medium);
 }
 
 .margin-xl {
