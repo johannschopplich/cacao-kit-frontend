@@ -29,6 +29,8 @@ const { width } = useElementSize(figure)
     <component
       :is="block.content.link ? 'a' : 'div'"
       :href="block.content.link || undefined"
+      class="image-frame"
+      :data-ratio="block.content.ratio ? '' : undefined"
       :data-contain="block.content.crop === 'false' || undefined"
       :style="{
         aspectRatio: block.content.ratio || undefined,
@@ -51,3 +53,31 @@ const { width } = useElementSize(figure)
     <figcaption v-if="block.content.caption" v-html="block.content.caption" />
   </figure>
 </template>
+
+<style scoped>
+.image-frame {
+  display: block;
+  overflow: hidden;
+  border-radius: var(--radius-medium);
+}
+
+.image-frame img {
+  display: block;
+}
+
+.image-frame[data-ratio] img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.image-frame[data-contain] img {
+  object-fit: contain;
+}
+
+figcaption {
+  margin-block-start: var(--space-2);
+  font-size: var(--text-7);
+  color: var(--muted-foreground);
+}
+</style>
