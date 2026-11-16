@@ -23,6 +23,18 @@ html {
   border-radius: var(--radius-medium);
 }
 
+/* Oat zeroes every margin outside its typography, so images and grids would
+   sit flush against the text before them. Headings keep Oat's margins, and so
+   does the block right after one. */
+.blocks > :not(h1, h2, h3, h4, h5, h6) + :not(h1, h2, h3, h4, h5, h6, hr) {
+  margin-block-start: var(--space-5);
+}
+
+.blocks > :not(h1, h2, h3, h4, h5, h6) + figure,
+.blocks > figure + :not(h1, h2, h3, h4, h5, h6) {
+  margin-block-start: var(--space-8);
+}
+
 .margin-xl {
   margin-bottom: 4.5rem;
 }

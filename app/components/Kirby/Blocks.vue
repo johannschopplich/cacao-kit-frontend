@@ -33,7 +33,7 @@ const blockComponents: Record<string, Component> = {
 </script>
 
 <template>
-  <div>
+  <div class="blocks">
     <template v-for="(block, index) in blocks" :key="index">
       <component :is="blockComponents[block.type]" :block="block" />
     </template>
