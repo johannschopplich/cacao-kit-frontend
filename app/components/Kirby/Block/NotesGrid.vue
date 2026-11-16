@@ -29,15 +29,14 @@ const { locale } = useI18n()
       class="column"
       style="--columns: 4"
     >
-      <NuxtLink :to="note.url">
-        <figure style="aspect-ratio: 16/9; margin-bottom: 0">
+      <NuxtLink :to="note.url" class="unstyled">
+        <figure>
           <img
             v-if="note.cover"
             :width="note.cover.width"
             :height="note.cover.height"
             :src="note.cover.url"
             :alt="note.cover.alt || ''"
-            style="object-fit: cover; height: 100%"
           />
         </figure>
 
@@ -49,3 +48,31 @@ const { locale } = useI18n()
     </article>
   </div>
 </template>
+
+<style scoped>
+figure {
+  aspect-ratio: 16/9;
+  overflow: hidden;
+  background-color: var(--muted);
+  border-radius: var(--radius-medium);
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+h4 {
+  margin-block: var(--space-3) var(--space-1);
+}
+
+a:hover h4 {
+  text-decoration: underline;
+}
+
+time {
+  font-size: var(--text-7);
+  color: var(--muted-foreground);
+}
+</style>
