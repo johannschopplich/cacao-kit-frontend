@@ -37,7 +37,7 @@ html {
 
 /* Keep note lines at a readable length, aligned with the header's left edge. */
 [data-template='note'] #main > * {
-  max-width: 70ch;
+  max-width: 60ch;
 }
 
 /* Oat zeroes every margin outside its typography, so images and grids would
