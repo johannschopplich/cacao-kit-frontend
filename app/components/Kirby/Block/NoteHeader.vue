@@ -12,10 +12,19 @@ const props = defineProps<{
 }>()
 
 const { locale, t } = useI18n()
+
+const tags = computed(() => [
+  ...new Set(
+    props.block.content.tags
+      .split(',')
+      .map((i) => i.trim())
+      .filter(Boolean),
+  ),
+])
 </script>
 
 <template>
-  <nav>
+  <div class="note-meta hstack">
     <time v-if="props.block.content.date" :datetime="props.block.content.date">
       {{
         t('note.publishedOn', {
@@ -24,13 +33,22 @@ const { locale, t } = useI18n()
       }}
     </time>
 
-    <h5>{{ t('note.tags') }}</h5>
-    <span
-      v-for="(tag, index) in props.block.content.tags.split(',')"
-      :key="index"
-    >
-      <mark>{{ tag.trim() }}</mark>
-      &nbsp;
-    </span>
-  </nav>
+    <ul v-if="tags.length" class="unstyled hstack" :aria-label="t('note.tags')">
+      <li v-for="tag in tags" :key="tag" class="badge outline">
+        {{ tag }}
+      </li>
+    </ul>
+  </div>
 </template>
+
+<style scoped>
+.note-meta {
+  margin-block-end: var(--space-8);
+  font-size: var(--text-7);
+  color: var(--muted-foreground);
+}
+
+ul {
+  gap: var(--space-2);
+}
+</style>
