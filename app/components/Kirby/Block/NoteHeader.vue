@@ -33,7 +33,11 @@ const tags = computed(() => [
       }}
     </time>
 
-    <ul v-if="tags.length" class="unstyled hstack" :aria-label="t('note.tags')">
+    <ul
+      v-if="tags.length"
+      class="unstyled hstack gap-2"
+      :aria-label="t('note.tags')"
+    >
       <li v-for="tag in tags" :key="tag" class="badge outline">
         {{ tag }}
       </li>
@@ -46,9 +50,5 @@ const tags = computed(() => [
   margin-block-end: var(--space-8);
   font-size: var(--text-7);
   color: var(--muted-foreground);
-}
-
-ul {
-  gap: var(--space-2);
 }
 </style>
